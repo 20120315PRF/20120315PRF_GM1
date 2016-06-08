@@ -16,13 +16,21 @@ Server.Logic.init = function()
         Server.Logic._semaphore = 0;
     }
     
-    if(!EntityFactory.init())
+    if(!EntityFactory.init() || !MapGenerator.init() || !GameManager.init())
         window.pause();
     
-    EntityFactory.getinstance().createEntity("Player",new Phaser.Point(32,450));
+    
     return true;
 }
 
+Server.Logic.prototype.create = function()
+{
+    MapGenerator.getinstance().create();
+    
+    EntityFactory.getinstance().create();
+    
+    GameManager.getinstance().create();
+}
 
 //Método de objeto
 Server.Logic.prototype.update = function()

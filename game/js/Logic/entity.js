@@ -1,12 +1,12 @@
 //clase de la heredarán todas las entidades. Esta clase no será instaciada nunca
 
-Entity = function(entityType, position)
+Entity = function(entityType, position, group)
 {
     this.Components = new Map();
     this._position = position;
     this._entityType = entityType;
     //this._entity representa el sprite de la entidad o el grupo de entidades
-    this._entityGraphic = null;
+    this._entityGraphic = (group)?EntityFactory.getinstance().Groups.get(entityType):null;
 }
 
 Entity.prototype.create = function()

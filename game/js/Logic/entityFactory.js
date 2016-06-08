@@ -4,6 +4,8 @@ EntityFactory = function()
 {
     console.assert(EntityFactory._semaphore,"Constructor EntityFactory privado");
     this.Entity = []; 
+    this._Groups = new Map();
+    this._player = null;
 }
 
 EntityFactory.init = function()
@@ -27,7 +29,18 @@ EntityFactory.prototype.preload = function()
 
 EntityFactory.prototype.create = function()
 {
+    var bulletGroup = game.add.group();
+    bulletGroup.enableBody = getAttributeEntity("enableBody","Bullet");
+    bulletGroup.physicsBodyType = Phaser.Physics.ARCADE;
     
+    var asteroidGroup = game.add.group();
+    asteroidGroup.enableBody = getAttributeEntity("enableBody","AsteroidSmall");
+    asteroidGroup.physicsBodyType = Phaser.Physics.ARCADE;
+    
+    this._Groups.set("Bullet",bulletGroup);
+    this._Groups.set("AsteroidSmall",asteroidGroup);
+    this._Groups.set("AsteroidMedium",asteroidGroup);
+    this._Groups.set("AsteroidLarge",asteroidGroup);
 }
 
 EntityFactory.prototype.update = function()
@@ -45,14 +58,17 @@ EntityFactory.prototype.createEntity = function(entityType, position)
     console.assert(Blueprints.has(entityType),"El tipo de entidad a crear no existe");
 
     //Creamos la entidad
-    var entity = new Entity(entityType,position);
+    var entity = new Entity(entityType,position,hasAttributeEntity("group",entityType));
     
     //Añadimos sus componentes
     Blueprints.forEach(function (value, key) {
-        value.forEach(function(comp)
+        if(key == entityType)
         {
-            entity.addComponent(comp["name"], comp["object"]);
-        });         
+            value.forEach(function(comp)
+            {
+                entity.addComponent(comp["name"], comp["object"]);
+            });   
+        }
     });
     
     entity.create();
@@ -60,4 +76,17 @@ EntityFactory.prototype.createEntity = function(entityType, position)
     //La añadimos al array para gestionarla desde aqui
     this.Entity.push(entity);
     
+    if(entityType == "Player")
+    {
+        this._player = entity;
+    }
+    
 }
+
+Object.defineProperty(EntityFactory.prototype,"player",{
+        get : function(){return this._player.entityGraphic;}
+});
+
+Object.defineProperty(EntityFactory.prototype,"Groups",{
+        get : function(){return this._Groups;}
+});

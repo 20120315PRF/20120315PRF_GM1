@@ -6,15 +6,29 @@ game = new Phaser.Game(750, 600, Phaser.AUTO, 'game-frame', { preload: preload, 
 
 function preload() 
 {
-
+    //  This will run in Canvas mode, so let's gain a little speed and display
+    game.renderer.clearBeforeRender = false;
+    game.renderer.roundPixels = true;
+    
     game.input.keyboard.addKeyCapture(Phaser.Keyboard.SPACEBAR);
     game.input.keyboard.addKeyCapture(Phaser.Keyboard.LEFT);
     game.input.keyboard.addKeyCapture(Phaser.Keyboard.RIGHT);
+    game.input.keyboard.addKeyCapture(Phaser.Keyboard.UP);
+    game.input.keyboard.addKeyCapture(Phaser.Keyboard.DOWN);
+    
+    game.physics.startSystem(Phaser.Physics.ARCADE);
     
     //Cargamos el sprite sheet del player.
-    game.load.spritesheet(Arquetipo.get("Player").get("nombreSprite"),Arquetipo.get("Player").get("spritesheet"),Arquetipo.get("Player").get("spritesheetX"),Arquetipo.get("Player").get("spritesheetY"));
+    //game.load.spritesheet(Arquetipo.get("Player").get("nombreSprite"),Arquetipo.get("Player").get("spritesheet"),Arquetipo.get("Player").get("spritesheetX"),Arquetipo.get("Player").get("spritesheetY"));
     
-   
+    game.load.image(getAttributeEntity("nombreSprite","Bullet"), getAttributeEntity("sprite","Bullet"));
+    game.load.image(getAttributeEntity("nombreSprite","Player"), getAttributeEntity("sprite","Player"));
+    game.load.image(getAttributeEntity("nombreSprite","AsteroidSmall"), getAttributeEntity("sprite","AsteroidSmall"));
+    game.load.image(getAttributeEntity("nombreSprite","AsteroidMedium"), getAttributeEntity("sprite","AsteroidMedium"));
+    game.load.image(getAttributeEntity("nombreSprite","AsteroidLarge"), getAttributeEntity("sprite","AsteroidLarge"));
+    
+
+    console.assert(Server.Logic.init(),"Servidor de lógica mal iniciado.");
 }
 
 function render() 
@@ -22,11 +36,8 @@ function render()
     
 }
 function create() 
-{
-    console.assert(Server.Logic.init(),"Servidor de lógica mal iniciado.");
-
-    var rnd = random();
-    console.log(rnd);
+{       
+    Server.Logic.getinstance().create();
 }
 
 function update() 
