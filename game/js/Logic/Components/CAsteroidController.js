@@ -58,9 +58,9 @@ CAsteroidController.prototype.collision = function(other,asteroidSprite)
         
         var ent = getAttributeEntity("sizeLess",this._entityType);
         console.log(this._entityType+"-"+ent);
-        EntityFactory.getinstance().createEntity(ent,new Phaser.Point(pos.x, pos.y));
+        EntityFactory.getinstance().createEntity(ent,new Phaser.Point(pos.x+10, pos.y+10));
         
-        EntityFactory.getinstance().createEntity(ent,new Phaser.Point(pos.x, pos.y));
+        EntityFactory.getinstance().createEntity(ent,new Phaser.Point(pos.x+10, pos.y+10));
     }
     
     

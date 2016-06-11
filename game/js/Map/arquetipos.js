@@ -37,11 +37,11 @@ var Arquetipo = new Map();
     Arquetipo.set("Bullet",new Map());
 
     //Valores de diseño
-    Arquetipo.get("Bullet").set("speed",300);
+    Arquetipo.get("Bullet").set("speed",200);
     Arquetipo.get("Bullet").set("scaleX",0.5);
     Arquetipo.get("Bullet").set("scaleY",0.5);
     Arquetipo.get("Bullet").set("cantidadCrear",10);
-    Arquetipo.get("Bullet").set("life",1000);
+    Arquetipo.get("Bullet").set("life",500);
     Arquetipo.get("Bullet").set("group",1);
 
     //Valores de programación
@@ -54,10 +54,10 @@ var Arquetipo = new Map();
     Arquetipo.set("AsteroidSmall",new Map());
 
     //Valores de diseño
-    Arquetipo.get("AsteroidSmall").set("minVelocity",30);
-    Arquetipo.get("AsteroidSmall").set("maxVelocity",150);
-    Arquetipo.get("AsteroidSmall").set("minAngularVelocity",50);
-    Arquetipo.get("AsteroidSmall").set("maxAngularVelocity",200);
+    Arquetipo.get("AsteroidSmall").set("minVelocity",50);
+    Arquetipo.get("AsteroidSmall").set("maxVelocity",175);
+    Arquetipo.get("AsteroidSmall").set("minAngularVelocity",100);
+    Arquetipo.get("AsteroidSmall").set("maxAngularVelocity",300);
     Arquetipo.get("AsteroidSmall").set("score",100);
     Arquetipo.get("AsteroidSmall").set("scaleX",0.5);
     Arquetipo.get("AsteroidSmall").set("scaleY",0.5);
@@ -73,10 +73,10 @@ var Arquetipo = new Map();
     Arquetipo.set("AsteroidMedium",new Map());
 
     //Valores de diseño
-    Arquetipo.get("AsteroidMedium").set("minVelocity",20);
-    Arquetipo.get("AsteroidMedium").set("maxVelocity",115);
-    Arquetipo.get("AsteroidMedium").set("minAngularVelocity",50);
-    Arquetipo.get("AsteroidMedium").set("maxAngularVelocity",200);
+    Arquetipo.get("AsteroidMedium").set("minVelocity",35);
+    Arquetipo.get("AsteroidMedium").set("maxVelocity",125);
+    Arquetipo.get("AsteroidMedium").set("minAngularVelocity",75);
+    Arquetipo.get("AsteroidMedium").set("maxAngularVelocity",250);
     Arquetipo.get("AsteroidMedium").set("score",50);
     Arquetipo.get("AsteroidMedium").set("scaleX",0.9);
     Arquetipo.get("AsteroidMedium").set("scaleY",0.9);

@@ -38,9 +38,7 @@ CBulletController.prototype.fireBullet = function()
             bullet.lifespan = getAttributeEntity("life","Bullet");
             bullet.rotation = player.rotation;
             game.physics.arcade.velocityFromRotation(player.rotation, 400, bullet.body.velocity);
-            this._bulletTime = game.time.now + 100;
-            
-//            game.debug.body(this._entity.entityGraphic);
+            this._bulletTime = game.time.now + 150;
         }
     }
 }

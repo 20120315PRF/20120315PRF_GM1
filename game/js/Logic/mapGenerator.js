@@ -33,6 +33,7 @@ MapGenerator.prototype.createAsteroids = function()
     for(var i=0;i<getAttributeEntity("startingAteroids","Map");++i)
     {
         var side = Math.round(rand(0,100)/100);
+       // console.log("side: "+side);
         var x;
         var y;
         
@@ -46,6 +47,7 @@ MapGenerator.prototype.createAsteroids = function()
             x = rand(0,100)/100 * game.width;
             y = Math.round(rand(0,100)/100) * game.height;
         }
+        console.log("Pos: "+x+"-"+y);
         EntityFactory.getinstance().createEntity("AsteroidLarge",new Phaser.Point(x,y));
     }
     
