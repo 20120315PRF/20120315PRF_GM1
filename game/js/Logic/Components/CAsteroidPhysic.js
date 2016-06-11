@@ -11,23 +11,28 @@ CAsteroidPhysic.prototype.create = function()
 
 CAsteroidPhysic.prototype.update = function()
 {  
-//    game.physics.arcade.overlap(EntityFactory.getinstance().player,EntityFactory.getinstance().Groups.get(this._entityType),this.collision,null,this);
-//    
-//    game.physics.arcade.overlap(EntityFactory.getinstance().Groups.get("Bullet"),EntityFactory.getinstance().Groups.get(this._entityType),this.collision,null,this);
+    game.physics.arcade.overlap(EntityFactory.getinstance().player,this._entity.entityGraphic,this.collision,null,this);
+    game.physics.arcade.overlap(EntityFactory.getinstance().Groups.get("Bullet"),this._entity.entityGraphic,this.collision,null,this);
+    
+//    game.debug.body(this._entity.entityGraphic);
 }
 
 CAsteroidPhysic.prototype.collision = function(other,asteroidSprite)
 {
+    var pos = asteroidSprite.position;
+    other.kill();
+//    this._entity.entityGraphic.kill();
+    EntityFactory.getinstance().deleteEntity(this._entity,asteroidSprite);
+      
+    
+    
     if(hasAttributeEntity("sizeLess",this._entityType))
     {
-        console.log("ENTRA");
-        EntityFactory.getinstance().createEntity(getAttributeEntity("sizeLess",this._entityType),new Phaser.Point(this._entity.entityGraphic.position.x, this._entity.entityGraphic.position.y));
+        var ent = getAttributeEntity("sizeLess",this._entityType);
+        console.log(this._entityType+"-"+ent);
+        EntityFactory.getinstance().createEntity(ent,new Phaser.Point(pos.x+10, pos.y+10));
         
-        EntityFactory.getinstance().createEntity(getAttributeEntity("sizeLess",this._entityType),new Phaser.Point(this._entity.entityGraphic.position.x, this._entity.entityGraphic.position.y));
+        EntityFactory.getinstance().createEntity(ent,new Phaser.Point(pos.x+10, pos.y+10));
     }
-    
-    //other.kill();
-    asteroidSprite.kill();
-    
     
 }

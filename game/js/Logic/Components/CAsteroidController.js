@@ -6,11 +6,18 @@ CAsteroidController = function(entityType,entity)
 
 CAsteroidController.prototype.create = function()
 {
-    this._asteroid = this._entity.entityGraphic.create(this._entity.getPosition.x,this._entity.getPosition.y, getAttributeEntity("nombreSprite",this._entityType));
+    if(asteroidGroup == undefined)
+    {
+        asteroidGroup = game.add.group();
+        asteroidGroup.enableBody = getAttributeEntity("enableBody",this._entityType);
+        asteroidGroup.physicsBodyType = Phaser.Physics.ARCADE;
+    }
     
-    this._asteroid.scale.setTo(getAttributeEntity("scaleX",this._entityType), getAttributeEntity("scaleY",this._entityType));
+    this._entity.entityGraphic = asteroidGroup.create(this._entity.getPosition.x,this._entity.getPosition.y, getAttributeEntity("nombreSprite",this._entityType));
     
-    this._asteroid.anchor.set(0.5, 0.5);
+    this._entity.entityGraphic.scale.setTo(getAttributeEntity("scaleX",this._entityType), getAttributeEntity("scaleY",this._entityType));
+    
+    this._entity.entityGraphic.anchor.set(0.5, 0.5);
     
     this._angularVelocity = rand(getAttributeEntity("minAngularVelocity",this._entityType), getAttributeEntity("maxAngularVelocity",this._entityType));
 
@@ -19,53 +26,13 @@ CAsteroidController.prototype.create = function()
     var randomVelocity = rand(getAttributeEntity("minVelocity",this._entityType),getAttributeEntity("maxVelocity",this._entityType));
 
     //Establecemos el movimiento del asteroide segun su angulo, y su velocidad
-    game.physics.arcade.velocityFromRotation(randomAngle, randomVelocity, this._asteroid.body.velocity);
+    game.physics.arcade.velocityFromRotation(randomAngle, randomVelocity, this._entity.entityGraphic.body.velocity);
 }
 
 CAsteroidController.prototype.update = function()
 {  
-  
-//    this._asteroid.body.angularVelocity = 0;
-    this._asteroid.body.angularVelocity = this._angularVelocity;
-    this.screenWrap(this._asteroid);
-    
-    game.physics.arcade.overlap(EntityFactory.getinstance().player,this._asteroid,this.collision,null,this);
-    
-    game.physics.arcade.overlap(EntityFactory.getinstance().Groups.get("Bullet"),this._asteroid,this.collision,null,this);
-    
-//    game.debug.body(this._asteroid);
-}
-
-CAsteroidController.prototype.fireBullet = function()
-{
-
-}
-
-
-
-CAsteroidController.prototype.collision = function(other,asteroidSprite)
-{
-    var pos = asteroidSprite.position;
-    
-    asteroidSprite.kill();
-      
-    other.kill();
-    
-    
-    if(hasAttributeEntity("sizeLess",this._entityType))
-    {
-        
-        
-        var ent = getAttributeEntity("sizeLess",this._entityType);
-        console.log(this._entityType+"-"+ent);
-        EntityFactory.getinstance().createEntity(ent,new Phaser.Point(pos.x+10, pos.y+10));
-        
-        EntityFactory.getinstance().createEntity(ent,new Phaser.Point(pos.x+10, pos.y+10));
-    }
-    
-    
-    
-    
+    this._entity.entityGraphic.body.angularVelocity = this._angularVelocity;
+    this.screenWrap(this._entity.entityGraphic);
 }
 
 CAsteroidController.prototype.screenWrap = function(sprite) {

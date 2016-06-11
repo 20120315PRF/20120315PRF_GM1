@@ -61,7 +61,6 @@ var Arquetipo = new Map();
     Arquetipo.get("AsteroidSmall").set("score",100);
     Arquetipo.get("AsteroidSmall").set("scaleX",0.5);
     Arquetipo.get("AsteroidSmall").set("scaleY",0.5);
-    Arquetipo.get("AsteroidSmall").set("group",1);
 
     //Valores de programación
     Arquetipo.get("AsteroidSmall").set("nombreSprite",'AsteroidSmallSprite');
@@ -80,7 +79,6 @@ var Arquetipo = new Map();
     Arquetipo.get("AsteroidMedium").set("score",50);
     Arquetipo.get("AsteroidMedium").set("scaleX",0.9);
     Arquetipo.get("AsteroidMedium").set("scaleY",0.9);
-    Arquetipo.get("AsteroidMedium").set("group",1);
 
     //Valores de programación
     Arquetipo.get("AsteroidMedium").set("nombreSprite",'AsteroidMediumSprite');
@@ -100,7 +98,6 @@ var Arquetipo = new Map();
     Arquetipo.get("AsteroidLarge").set("score",20);
     Arquetipo.get("AsteroidLarge").set("scaleX",1.25);
     Arquetipo.get("AsteroidLarge").set("scaleY",1.25);
-    Arquetipo.get("AsteroidLarge").set("group",1);
 
     //Valores de programación
     Arquetipo.get("AsteroidLarge").set("nombreSprite",'AsteroidLargeSprite');
