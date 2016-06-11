@@ -54,9 +54,9 @@ var Arquetipo = new Map();
     Arquetipo.set("AsteroidSmall",new Map());
 
     //Valores de diseño
-    Arquetipo.get("AsteroidSmall").set("minVelocity",25);
+    Arquetipo.get("AsteroidSmall").set("minVelocity",30);
     Arquetipo.get("AsteroidSmall").set("maxVelocity",150);
-    Arquetipo.get("AsteroidSmall").set("minAngularVelocity",0);
+    Arquetipo.get("AsteroidSmall").set("minAngularVelocity",50);
     Arquetipo.get("AsteroidSmall").set("maxAngularVelocity",200);
     Arquetipo.get("AsteroidSmall").set("score",100);
     Arquetipo.get("AsteroidSmall").set("scaleX",0.5);
@@ -73,45 +73,47 @@ var Arquetipo = new Map();
     Arquetipo.set("AsteroidMedium",new Map());
 
     //Valores de diseño
-    Arquetipo.get("AsteroidMedium").set("minVelocity",25);
-    Arquetipo.get("AsteroidMedium").set("maxVelocity",100);
-    Arquetipo.get("AsteroidMedium").set("minAngularVelocity",0);
+    Arquetipo.get("AsteroidMedium").set("minVelocity",20);
+    Arquetipo.get("AsteroidMedium").set("maxVelocity",115);
+    Arquetipo.get("AsteroidMedium").set("minAngularVelocity",50);
     Arquetipo.get("AsteroidMedium").set("maxAngularVelocity",200);
     Arquetipo.get("AsteroidMedium").set("score",50);
-    Arquetipo.get("AsteroidMedium").set("scaleX",1);
-    Arquetipo.get("AsteroidMedium").set("scaleY",1);
+    Arquetipo.get("AsteroidMedium").set("scaleX",0.9);
+    Arquetipo.get("AsteroidMedium").set("scaleY",0.9);
     Arquetipo.get("AsteroidMedium").set("group",1);
 
     //Valores de programación
     Arquetipo.get("AsteroidMedium").set("nombreSprite",'AsteroidMediumSprite');
     Arquetipo.get("AsteroidMedium").set("sprite",'game/assets/images/asteroid2.png');
     Arquetipo.get("AsteroidMedium").set("enableBody",1); //1 si tiene fisica, 0 no.
+    Arquetipo.get("AsteroidMedium").set("sizeLess","AsteroidSmall");
 
     //-----------------------------------------------------------------------------------------------------------------
 
     Arquetipo.set("AsteroidLarge",new Map());
 
     //Valores de diseño
-    Arquetipo.get("AsteroidLarge").set("minVelocity",25);
-    Arquetipo.get("AsteroidLarge").set("maxVelocity",75);
-    Arquetipo.get("AsteroidLarge").set("minAngularVelocity",0);
+    Arquetipo.get("AsteroidLarge").set("minVelocity",10);
+    Arquetipo.get("AsteroidLarge").set("maxVelocity",90);
+    Arquetipo.get("AsteroidLarge").set("minAngularVelocity",50);
     Arquetipo.get("AsteroidLarge").set("maxAngularVelocity",200);
     Arquetipo.get("AsteroidLarge").set("score",20);
-    Arquetipo.get("AsteroidLarge").set("scaleX",2);
-    Arquetipo.get("AsteroidLarge").set("scaleY",2);
+    Arquetipo.get("AsteroidLarge").set("scaleX",1.25);
+    Arquetipo.get("AsteroidLarge").set("scaleY",1.25);
     Arquetipo.get("AsteroidLarge").set("group",1);
 
     //Valores de programación
     Arquetipo.get("AsteroidLarge").set("nombreSprite",'AsteroidLargeSprite');
     Arquetipo.get("AsteroidLarge").set("sprite",'game/assets/images/asteroid1.png');
     Arquetipo.get("AsteroidLarge").set("enableBody",1); //1 si tiene fisica, 0 no.
+    Arquetipo.get("AsteroidLarge").set("sizeLess","AsteroidMedium");
 
 //-----------------------------------------------------------------------------------------------------------------
 
     Arquetipo.set("Map",new Map());
 
     //Valores de diseño
-    Arquetipo.get("Map").set("startingAteroids",15);
+    Arquetipo.get("Map").set("startingAteroids",6);
     Arquetipo.get("Map").set("maxAsteroids",20);
     Arquetipo.get("Map").set("incrementAteroids",2);
 

@@ -4,6 +4,7 @@ EntityFactory = function()
 {
     console.assert(EntityFactory._semaphore,"Constructor EntityFactory privado");
     this.Entity = []; 
+    this.Pool = [];
     this._Groups = new Map();
     this._player = null;
 }
@@ -48,7 +49,8 @@ EntityFactory.prototype.update = function()
     //Update de todas las entidades
     this.Entity.forEach(function(entity)
     {
-        entity.update();
+//        if(entity.state)//Si está vivo
+            entity.update();
     });
 }
 
@@ -80,6 +82,11 @@ EntityFactory.prototype.createEntity = function(entityType, position)
     {
         this._player = entity;
     }
+    
+}
+
+EntityFactory.prototype.deleteEntity = function(entityGraphic)
+{
     
 }
 

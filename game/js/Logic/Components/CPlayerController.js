@@ -39,11 +39,11 @@ CPlayerController.prototype.update = function()
     
     if (game.input.keyboard.isDown(Phaser.Keyboard.UP) || game.input.keyboard.isDown(Phaser.Keyboard.W))
     {
-        game.physics.arcade.accelerationFromRotation(this._entity.entityGraphic.rotation, 200, this._entity.entityGraphic.body.acceleration);
+        game.physics.arcade.accelerationFromRotation(this._entity.entityGraphic.rotation, 400, this._entity.entityGraphic.body.acceleration);
     }
     else if (game.input.keyboard.isDown(Phaser.Keyboard.DOWN) || game.input.keyboard.isDown(Phaser.Keyboard.S))
     {
-        game.physics.arcade.accelerationFromRotation(this._entity.entityGraphic.rotation, -200, this._entity.entityGraphic.body.acceleration);
+        game.physics.arcade.accelerationFromRotation(this._entity.entityGraphic.rotation, -400, this._entity.entityGraphic.body.acceleration);
     }
     else
     {
@@ -52,11 +52,11 @@ CPlayerController.prototype.update = function()
 
     if (game.input.keyboard.isDown(Phaser.Keyboard.LEFT) || game.input.keyboard.isDown(Phaser.Keyboard.A))
     {
-        this._entity.entityGraphic.body.acceleration.x = -300;
+        this._entity.entityGraphic.body.acceleration.x = -500;
     }
     else if (game.input.keyboard.isDown(Phaser.Keyboard.RIGHT) || game.input.keyboard.isDown(Phaser.Keyboard.D))
     {
-        this._entity.entityGraphic.body.acceleration.x = 300;
+        this._entity.entityGraphic.body.acceleration.x = 500;
     }
     else
     {
@@ -66,6 +66,8 @@ CPlayerController.prototype.update = function()
     this.screenWrap(this._entity.entityGraphic);
     
     this._entity.entityGraphic.rotation = game.physics.arcade.angleToPointer(this._entity.entityGraphic);
+    
+//    game.debug.body(this._entity.entityGraphic);
 }
 
 CPlayerController.prototype.screenWrap = function(sprite) {
