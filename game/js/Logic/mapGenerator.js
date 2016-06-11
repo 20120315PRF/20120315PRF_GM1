@@ -13,14 +13,15 @@ MapGenerator.init = function()
         MapGenerator._instance = new MapGenerator();
         MapGenerator._semaphore = 0;
     }
-    game.load.image('space','game/assets/images/space.png');
+    game.load.image('space','game/assets/images/space2.png');
     return true;
 }
 
 MapGenerator.prototype.create = function()
 {
-    game.add.tileSprite(0, 0, game.width, game.height, 'space');
-
+    //game.add.tileSprite(0, 0, game.width, game.height, 'space');
+    var sky = game.add.sprite(-70,-5,'space');
+    sky.scale.setTo(1.9,1.9);
 }
 
 MapGenerator.prototype.update = function()
