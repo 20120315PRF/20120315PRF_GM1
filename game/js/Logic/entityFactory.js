@@ -4,7 +4,6 @@ EntityFactory = function()
 {
     console.assert(EntityFactory._semaphore,"Constructor EntityFactory privado");
     this.Entity = []; 
-    this.Pool = [];
     this._Groups = new Map();
     this._player = null;
     asteroidGroup = null;
@@ -55,26 +54,19 @@ EntityFactory.prototype.createEntity = function(entityType, position)
     
     //Creamos la entidad
     var entity = null;
-    
-    if(this.entityInPool(entityType) == 0)
-    {
-        entity = new Entity(entityType,position,hasAttributeEntity("group",entityType));
 
-        //Añadimos sus componentes
-        Blueprints.forEach(function (value, key) {
-            if(key == entityType)
+    entity = new Entity(entityType,position,hasAttributeEntity("group",entityType));
+
+    //Añadimos sus componentes
+    Blueprints.forEach(function (value, key) {
+        if(key == entityType)
+        {
+            value.forEach(function(comp)
             {
-                value.forEach(function(comp)
-                {
-                    entity.addComponent(comp["name"], comp["object"]);
-                });   
-            }
-        });
-    }
-    else
-    {
-        entity = this.createEntityFromPool(entityType,position);
-    }
+                entity.addComponent(comp["name"], comp["object"]);
+            });   
+        }
+    });
     
     entity.create();
     
@@ -94,38 +86,6 @@ EntityFactory.prototype.deleteEntity = function(entity,entityGraphic)
 
     var index = this.Entity.indexOf(entity);
     this.Entity.splice(index,1);
-    
-    this.Pool.push(entity);
-}
-
-EntityFactory.prototype.entityInPool = function(entityType)
-{
-    var encontrado = false;
-    this.Pool.forEach(function(entity)
-    {   
-        encontrado = encontrado || entity.entityType == entityType;
-    });
-    return encontrado;
-}
-
-EntityFactory.prototype.createEntityFromPool = function(entityType, position)
-{
-    var entityFounded = null;
-    this.Pool.forEach(function(entity)
-    {
-        if(entity.entityType == entityType && !entityFounded)
-        {       
-            entity.entityGraphic.reset(position);
-            entity.respawn(position);
-
-            entityFounded = entity;
-        }
-    });
-    
-    var index = this.Pool.indexOf(entityFounded);
-    this.Pool.splice(index,1);
-    
-    return entityFounded;
 }
 
 Object.defineProperty(EntityFactory.prototype,"player",{

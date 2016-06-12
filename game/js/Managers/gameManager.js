@@ -44,6 +44,18 @@ GameManager.prototype.update = function()
 
 }
 
+GameManager.prototype.nextLevel = function()
+{
+    game.time.events.add(Phaser.Timer.SECOND * this._timeToReset, this.nextLevel2, this);
+}
+
+GameManager.prototype.nextLevel2 = function()
+{
+    asteroidGroup.removeAll(true);
+    Arquetipo.get("Map").set("startingAteroids",Arquetipo.get("Map").get("startingAteroids") + Arquetipo.get("Map").get("incrementAteroids"));
+    MapGenerator.getinstance().createAsteroids();
+}
+
 GameManager.prototype.resetShip = function()
 {
     EntityFactory.getinstance().player.entityGraphic.reset(game.width/2,game.height/2);

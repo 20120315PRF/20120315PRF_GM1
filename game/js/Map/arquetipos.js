@@ -114,9 +114,10 @@ var Arquetipo = new Map();
     Arquetipo.set("Map",new Map());
 
     //Valores de diseño
-    Arquetipo.get("Map").set("startingAteroids",6);
+    Arquetipo.get("Map").set("startingAteroids",1);
     Arquetipo.get("Map").set("maxAsteroids",20);
     Arquetipo.get("Map").set("incrementAteroids",2);
+    Arquetipo.get("Map").set("delayToStartLevel",3);
 
 //-----------------------------------------------------------------------------------------------------------------
 
