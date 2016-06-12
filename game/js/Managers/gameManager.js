@@ -28,6 +28,8 @@ GameManager.prototype.create = function()
     MapGenerator.getinstance().createAsteroids();
     shipDestroyed = false;
     
+    shipIsVulnerable = false;
+    
     this._shipLives = getAttributeEntity("shipLives","Player");
     this._timeToReset = getAttributeEntity("timeToReset","Player");
     
@@ -61,6 +63,20 @@ GameManager.prototype.resetShip = function()
     EntityFactory.getinstance().player.entityGraphic.reset(game.width/2,game.height/2);
     EntityFactory.getinstance().player.entityGraphic.angle = -90;
     shipDestroyed = false;
+    shipIsVulnerable = true;
+    game.time.events.add(Phaser.Timer.SECOND * this._timeToReset, this.shipReady, this);
+    game.time.events.repeat(Phaser.Timer.SECOND * 0.2, this._timeToReset*0.9 / 0.2, this.shipBlink, this);
+}
+
+GameManager.prototype.shipReady = function()
+{
+    shipIsVulnerable = false;
+    EntityFactory.getinstance().player.entityGraphic.visible = true;
+}
+
+GameManager.prototype.shipBlink = function()
+{
+    EntityFactory.getinstance().player.entityGraphic.visible = !EntityFactory.getinstance().player.entityGraphic.visible;
 }
 GameManager.prototype.destroyShip = function()
 {
@@ -69,7 +85,7 @@ GameManager.prototype.destroyShip = function()
     
     if (this._shipLives) 
     {
-        game.time.events.add(Phaser.Timer.SECOND * this._timeToReset, this.resetShip, this);
+        game.time.events.add(Phaser.Timer.SECOND * this._timeToReset*0.25, this.resetShip, this);
     }
     shipDestroyed = true;
 }

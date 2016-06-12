@@ -11,7 +11,10 @@ CAsteroidPhysic.prototype.create = function()
 
 CAsteroidPhysic.prototype.update = function()
 {  
-    game.physics.arcade.overlap(EntityFactory.getinstance().player.entityGraphic,this._entity.entityGraphic,this.collision,null,this);
+    if(!shipIsVulnerable)
+    {
+        game.physics.arcade.overlap(EntityFactory.getinstance().player.entityGraphic,this._entity.entityGraphic,this.collision,null,this);
+    }
     game.physics.arcade.overlap(EntityFactory.getinstance().Groups.get("Bullet"),this._entity.entityGraphic,this.collision,null,this);
 }
 
