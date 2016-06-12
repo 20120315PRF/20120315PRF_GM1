@@ -11,7 +11,7 @@ CAsteroidPhysic.prototype.create = function()
 
 CAsteroidPhysic.prototype.update = function()
 {  
-    game.physics.arcade.overlap(EntityFactory.getinstance().player,this._entity.entityGraphic,this.collision,null,this);
+    game.physics.arcade.overlap(EntityFactory.getinstance().player.entityGraphic,this._entity.entityGraphic,this.collision,null,this);
     game.physics.arcade.overlap(EntityFactory.getinstance().Groups.get("Bullet"),this._entity.entityGraphic,this.collision,null,this);
     
 //    game.debug.body(this._entity.entityGraphic);
@@ -25,14 +25,21 @@ CAsteroidPhysic.prototype.collision = function(other,asteroidSprite)
     EntityFactory.getinstance().deleteEntity(this._entity,asteroidSprite);
       
     
-    
     if(hasAttributeEntity("sizeLess",this._entityType))
     {
         var ent = getAttributeEntity("sizeLess",this._entityType);
-        console.log(this._entityType+"-"+ent);
+
         EntityFactory.getinstance().createEntity(ent,new Phaser.Point(pos.x+10, pos.y+10));
         
         EntityFactory.getinstance().createEntity(ent,new Phaser.Point(pos.x+10, pos.y+10));
+    }
+    
+    if(other == EntityFactory.getinstance().player.entityGraphic)
+    {
+        GameManager.getinstance().destroyShip();
+    }
+    else{
+        GameManager.getinstance().addScore = getAttributeEntity("score",this._entityType);
     }
     
 }

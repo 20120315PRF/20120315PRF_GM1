@@ -29,6 +29,10 @@ var Arquetipo = new Map();
     Arquetipo.get("Player").get("animaciones").set('right',[5,6,7,8]);
     Arquetipo.get("Player").get("animaciones").set('idle',[4]);
     Arquetipo.get("Player").set("collideWorldBounds",0);
+
+    Arquetipo.get("Player").set("shipLives",3);
+    Arquetipo.get("Player").set("timeToReset",3);
+    
     //Arquetipo.get("Player").set("colisiones ",[]); //Entidades con las que colisiona el player.
     //Arquetipo.get("Player").set("trigger",[]);//Entidades con las que se comportaran como trigger
 

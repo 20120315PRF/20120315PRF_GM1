@@ -17,7 +17,7 @@ CBulletController.prototype.create = function()
 
 CBulletController.prototype.update = function()
 {  
-    if (game.input.activePointer.leftButton.isDown)
+    if (game.input.activePointer.leftButton.isDown && !shipDestroyed)
     {
         this.fireBullet();
     }   
@@ -33,7 +33,7 @@ CBulletController.prototype.fireBullet = function()
 
         if (bullet)
         {
-            var player = EntityFactory.getinstance().player;
+            var player = EntityFactory.getinstance().player.entityGraphic;
             bullet.reset(player.body.x+16, player.body.y+16);
             bullet.lifespan = getAttributeEntity("life","Bullet");
             bullet.rotation = player.rotation;

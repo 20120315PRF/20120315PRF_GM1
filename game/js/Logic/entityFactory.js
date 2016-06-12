@@ -129,7 +129,7 @@ EntityFactory.prototype.createEntityFromPool = function(entityType, position)
 }
 
 Object.defineProperty(EntityFactory.prototype,"player",{
-        get : function(){return this._player.entityGraphic;}
+        get : function(){return this._player;}
 });
 
 Object.defineProperty(EntityFactory.prototype,"Groups",{
