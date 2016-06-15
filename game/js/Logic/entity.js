@@ -20,6 +20,7 @@ Entity.prototype.create = function()
     //Llamamos a create de todos sus componentes
     this.Components.forEach(function(value,key)
     {
+//        console.log("Create de la entidad: "+this._entityType+" Componente: "+key);
         value.create();
     });
 

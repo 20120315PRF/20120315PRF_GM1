@@ -70,6 +70,7 @@ var Arquetipo = new Map();
     Arquetipo.get("AsteroidSmall").set("nombreSprite",'AsteroidSmallSprite');
     Arquetipo.get("AsteroidSmall").set("sprite",'game/assets/images/asteroid1.png');
     Arquetipo.get("AsteroidSmall").set("enableBody",1); //1 si tiene fisica, 0 no.
+    Arquetipo.get("AsteroidSmall").set("Explosion",'explosionSmall');
 
     //-----------------------------------------------------------------------------------------------------------------
 
@@ -89,6 +90,7 @@ var Arquetipo = new Map();
     Arquetipo.get("AsteroidMedium").set("sprite",'game/assets/images/asteroid2.png');
     Arquetipo.get("AsteroidMedium").set("enableBody",1); //1 si tiene fisica, 0 no.
     Arquetipo.get("AsteroidMedium").set("sizeLess","AsteroidSmall");
+    Arquetipo.get("AsteroidMedium").set("Explosion",'explosionSmall');
 
     //-----------------------------------------------------------------------------------------------------------------
 
@@ -108,13 +110,14 @@ var Arquetipo = new Map();
     Arquetipo.get("AsteroidLarge").set("sprite",'game/assets/images/asteroid1.png');
     Arquetipo.get("AsteroidLarge").set("enableBody",1); //1 si tiene fisica, 0 no.
     Arquetipo.get("AsteroidLarge").set("sizeLess","AsteroidMedium");
+    Arquetipo.get("AsteroidLarge").set("Explosion",'explosionSmall');
 
 //-----------------------------------------------------------------------------------------------------------------
 
     Arquetipo.set("Map",new Map());
 
     //Valores de diseño
-    Arquetipo.get("Map").set("startingAteroids",1);
+    Arquetipo.get("Map").set("startingAteroids",10);
     Arquetipo.get("Map").set("maxAsteroids",20);
     Arquetipo.get("Map").set("incrementAteroids",2);
     Arquetipo.get("Map").set("delayToStartLevel",3);
@@ -122,6 +125,11 @@ var Arquetipo = new Map();
 //-----------------------------------------------------------------------------------------------------------------
 
 
+    //Valores de diseño
+    Arquetipo.set("Explosion",new Map());
+    Arquetipo.get("Explosion").set("sprite",'game/assets/images/muzzleflash3.png');
+
+//-----------------------------------------------------------------------------------------------------------------
 
 function getAttributeEntity(name, entityType)
 {

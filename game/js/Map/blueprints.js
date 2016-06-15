@@ -36,3 +36,9 @@ Blueprints.set("AsteroidLarge",
                     {name:"CAsteroidPhysic",object:CAsteroidPhysic},
                 ]
               );
+
+Blueprints.set("Explosion",
+               [
+                    {name:"CExplosionController",object:CExplosionController},
+                ]
+              );

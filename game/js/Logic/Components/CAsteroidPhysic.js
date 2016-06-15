@@ -6,7 +6,7 @@ CAsteroidPhysic = function(entityType,entity)
 
 CAsteroidPhysic.prototype.create = function()
 {
-
+    this.snd_dead = game.add.audio('snd_dead');
 }
 
 CAsteroidPhysic.prototype.update = function()
@@ -25,6 +25,12 @@ CAsteroidPhysic.prototype.collision = function(other,asteroidSprite)
 //    this._entity.entityGraphic.kill();
     EntityFactory.getinstance().deleteEntity(this._entity,asteroidSprite);
       
+    var exp = game.add.sprite(pos.x-5,pos.y-10, getAttributeEntity("Explosion",this._entityType));
+	exp.animations.add('explode',null,50,false);
+    exp.animations.play('explode');
+    
+//    EntityFactory.getinstance().createEntity("Explosion",pos);
+    
     if(hasAttributeEntity("sizeLess",this._entityType))
     {
         var ent = getAttributeEntity("sizeLess",this._entityType);
@@ -37,6 +43,7 @@ CAsteroidPhysic.prototype.collision = function(other,asteroidSprite)
     if(other == EntityFactory.getinstance().player.entityGraphic)
     {
         GameManager.getinstance().destroyShip();
+        this.snd_dead.play();
     }
     else{
         GameManager.getinstance().addScore = getAttributeEntity("score",this._entityType);

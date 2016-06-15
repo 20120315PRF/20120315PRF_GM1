@@ -13,6 +13,9 @@ CBulletController.prototype.create = function()
     
     this._bulletTime = 0;
     game.input.mouse.capture = true;
+    
+    this.snd_bullet = game.add.audio('snd_star',0.5);
+    
 }
 
 CBulletController.prototype.update = function()
@@ -30,7 +33,7 @@ CBulletController.prototype.fireBullet = function()
     if (game.time.now > this._bulletTime)
     {
         var bullet = this._entity.entityGraphic.getFirstExists(false);
-
+        this.snd_bullet.play();
         if (bullet)
         {
             var player = EntityFactory.getinstance().player.entityGraphic;
