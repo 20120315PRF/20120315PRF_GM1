@@ -23,6 +23,17 @@ Server.Logic.init = function()
     return true;
 }
 
+Server.Logic.prototype.destroy = function()
+{
+    Server.Logic._instance = null;
+    
+    MapGenerator.getinstance().destroy();
+    
+    EntityFactory.getinstance().destroy();
+    
+    GameManager.getinstance().destroy();
+}
+
 Server.Logic.prototype.preload = function()
 {
     MapGenerator.getinstance().preload();

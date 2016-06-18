@@ -30,7 +30,7 @@ var Arquetipo = new Map();
     Arquetipo.get("Player").get("animaciones").set('idle',[4]);
     Arquetipo.get("Player").set("collideWorldBounds",0);
 
-    Arquetipo.get("Player").set("shipLives",3);
+    Arquetipo.get("Player").set("shipLives",1);
     Arquetipo.get("Player").set("timeToReset",3);
     
     //Arquetipo.get("Player").set("colisiones ",[]); //Entidades con las que colisiona el player.
@@ -117,7 +117,7 @@ var Arquetipo = new Map();
     Arquetipo.set("Map",new Map());
 
     //Valores de diseño
-    Arquetipo.get("Map").set("startingAteroids",10);
+    Arquetipo.get("Map").set("startingAteroids",1);
     Arquetipo.get("Map").set("maxAsteroids",20);
     Arquetipo.get("Map").set("incrementAteroids",2);
     Arquetipo.get("Map").set("delayToStartLevel",3);

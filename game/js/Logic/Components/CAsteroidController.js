@@ -6,15 +6,15 @@ CAsteroidController = function(entityType,entity)
 
 CAsteroidController.prototype.create = function()
 {
-    if(asteroidGroup == undefined)
+    if(globalVar.asteroidGroup == undefined)
     {
-        asteroidGroup = game.add.group();
-        asteroidGroup.enableBody = getAttributeEntity("enableBody",this._entityType);
-        asteroidGroup.physicsBodyType = Phaser.Physics.ARCADE;
+        globalVar.asteroidGroup = game.add.group();
+        globalVar.asteroidGroup.enableBody = getAttributeEntity("enableBody",this._entityType);
+        globalVar.asteroidGroup.physicsBodyType = Phaser.Physics.ARCADE;
     }
     
 
-    this._entity.entityGraphic = asteroidGroup.create(this._entity.getPosition.x,this._entity.getPosition.y, getAttributeEntity("nombreSprite",this._entityType));
+    this._entity.entityGraphic = globalVar.asteroidGroup.create(this._entity.getPosition.x,this._entity.getPosition.y, getAttributeEntity("nombreSprite",this._entityType));
     
     this._entity.entityGraphic.scale.setTo(getAttributeEntity("scaleX",this._entityType), getAttributeEntity("scaleY",this._entityType));
     

@@ -11,9 +11,9 @@ CAsteroidPhysic.prototype.create = function()
 
 CAsteroidPhysic.prototype.update = function()
 {  
-    if(!shipIsVulnerable)
+    if(!globalVar.shipIsVulnerable)
     {
-        game.physics.arcade.overlap(EntityFactory.getinstance().player.entityGraphic,this._entity.entityGraphic,this.collision,null,this);
+        game.physics.arcade.overlap(globalVar.player.entityGraphic,this._entity.entityGraphic,this.collision,null,this);
     }
     game.physics.arcade.overlap(EntityFactory.getinstance().Groups.get("Bullet"),this._entity.entityGraphic,this.collision,null,this);
 }
@@ -40,7 +40,7 @@ CAsteroidPhysic.prototype.collision = function(other,asteroidSprite)
         EntityFactory.getinstance().createEntity(ent,new Phaser.Point(pos.x+10, pos.y+10));
     }
     
-    if(other == EntityFactory.getinstance().player.entityGraphic)
+    if(other == globalVar.player.entityGraphic)
     {
         GameManager.getinstance().destroyShip();
         this.snd_dead.play();
@@ -49,7 +49,7 @@ CAsteroidPhysic.prototype.collision = function(other,asteroidSprite)
         GameManager.getinstance().addScore = getAttributeEntity("score",this._entityType);
     }
 
-    if (!asteroidGroup.countLiving()) 
+    if (globalVar.asteroidGroup && !globalVar.asteroidGroup.countLiving()) 
     {
         GameManager.getinstance().nextLevel();
     }

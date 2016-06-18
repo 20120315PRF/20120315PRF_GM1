@@ -17,6 +17,11 @@ MapGenerator.init = function()
     return true;
 }
 
+MapGenerator.prototype.destroy = function()
+{
+    MapGenerator._instance = null;
+}
+
 MapGenerator.prototype.preload = function()
 {
     var sky = game.add.sprite(-70,-5,'space');
@@ -35,24 +40,24 @@ MapGenerator.prototype.update = function()
 
 MapGenerator.prototype.createAsteroids = function()
 {
-    for(var i=0;i<getAttributeEntity("startingAteroids","Map");++i)
+    for(var i=0;i<globalVar.startingAsteroid;++i)
     {
-        var side = Math.round(rand(0,100)/100);
+        var side = Math.round(rand(0,100)*0.01);
        // console.log("side: "+side);
         var x;
         var y;
         
         if(side)
         {
-            x = Math.round(rand(0,100)/100) * game.width;
-            y = rand(0,100)/100 * game.height;
+            x = Math.round(rand(0,100)*0.01) * game.width;
+            y = rand(0,100)*0.01 * game.height;
         }
         else
         {
-            x = rand(0,100)/100 * game.width;
-            y = Math.round(rand(0,100)/100) * game.height;
+            x = rand(0,100)*0.01 * game.width;
+            y = Math.round(rand(0,100)*0.01) * game.height;
         }
-        console.log("Pos: "+x+"-"+y);
+
         EntityFactory.getinstance().createEntity("AsteroidLarge",new Phaser.Point(x,y));
     }
     

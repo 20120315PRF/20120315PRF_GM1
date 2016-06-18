@@ -18,7 +18,7 @@ var menuState = {
     {
         var tStep = Math.sin( this.counter ) ;
 
-        this.buttonStart.y = (game.height/2) + tStep * 30 ;
+        this.buttonStart.y = (game.height*0.5) + tStep * 30 ;
         this.buttonStart.rotation += Phaser.Math.degToRad( 0.5 * tStep ) ;
         this.counter += this.step ;    
     },   

@@ -1,20 +1,23 @@
 
 var gameState ={
-    counterFontStyle:{font: '20px Arial', fill: '#FFFFFF', align: 'center'},
-    timeToBegin: 3,
-    begin : false,
     preload:function()
     {
         console.assert(Server.Logic.init(),"Servidor de lógica mal iniciado.");
     },
     create:function()
-    {
+    { 
+        this.begin = false;
+        this.timeToBegin = 3;
+        
+        initGlobalsVar();
+        
         Server.Logic.getinstance().preload();
+        
         sound_ambiental.play();
         
         game.time.events.add(Phaser.Timer.SECOND, this.updateTimeToBegin, this);
         
-        this.timeText = game.add.text(game.width/2, 30, this.timeToBegin,this.counterFontStyle);
+        this.timeText = game.add.text(game.width*0.5, 30, this.timeToBegin,globalVar.fontStyle);
     },
     update:function()
     {

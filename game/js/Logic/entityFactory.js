@@ -5,8 +5,6 @@ EntityFactory = function()
     console.assert(EntityFactory._semaphore,"Constructor EntityFactory privado");
     this.Entity = []; 
     this._Groups = new Map();
-    this._player = null;
-    asteroidGroup = null;
 }
 
 EntityFactory.init = function()
@@ -19,6 +17,18 @@ EntityFactory.init = function()
     }
 
     return true;
+}
+
+EntityFactory.prototype.destroy = function()
+{
+    EntityFactory._instance = null;
+    this._Groups.get("Bullet").destroy(true);
+    this._Groups.delete("Bullet");
+    this._Groups = null;
+    globalVar.asteroidGroup.destroy(true);
+    globalVar.asteroidGroup = null;
+    console.log("aster: "+globalVar.asteroidGroup);
+    this.Entity = [];
 }
 
 EntityFactory.getinstance = function(){return EntityFactory._instance;}
@@ -75,7 +85,7 @@ EntityFactory.prototype.createEntity = function(entityType, position)
     
     if(entityType == "Player")
     {
-        this._player = entity;
+        globalVar.player = entity;
     }
     
 }
@@ -87,10 +97,6 @@ EntityFactory.prototype.deleteEntity = function(entity,entityGraphic)
     var index = this.Entity.indexOf(entity);
     this.Entity.splice(index,1);
 }
-
-Object.defineProperty(EntityFactory.prototype,"player",{
-        get : function(){return this._player;}
-});
 
 Object.defineProperty(EntityFactory.prototype,"Groups",{
         get : function(){return this._Groups;}

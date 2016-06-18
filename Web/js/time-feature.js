@@ -3,7 +3,7 @@ var bestTimes = {};
 //Parameter variables
 var BEST_TIMES_NAME = "BestTimesLisk";
 var BEST_TIMES_MAX = 10;
-var NUMBER_OF_DECIMALS = 3;
+var NUMBER_OF_DECIMALS = 0;
 
 // Checks if local storage is available
 function checkLocalStorage(){
@@ -46,7 +46,7 @@ function orderedKeys(dict){
         timeKeys.push( parseFloat(keys[key]) );
     }
     return timeKeys.sort(function(a,b){
-        return a - b;
+        return b - a;
     });
 }
 
@@ -71,14 +71,14 @@ function addTime( time ) {
 function displayTimes(){
     if(Object.keys(bestTimes).length == 0){
         $('#best-times').empty();
-        $('#best-times').append('<p>There is no times yet.</p>');
+        $('#best-times').append('<p>There is no score yet.</p>');
     }
     else{
         var listKeys = orderedKeys(bestTimes);
         $('#best-times').empty();
         for(var i = 0, total = Object.keys(listKeys).length; i < total; i++){
             var strNumber = parseFloat(listKeys[ Object.keys(listKeys)[i] ]).toFixed(NUMBER_OF_DECIMALS);
-            $('#best-times').append('<p><span class="glyphicon glyphicon glyphicon-time"></span> '+ (i+1) + '. ' + strNumber +'"</p>');
+            $('#best-times').append('<p><span class="glyphicon glyphicon glyphicon-time"></span> '+ (i+1) + '. ' + strNumber +'</p>');
         }
         var timesTable = $('#best-times p');
         if(timesTable[0] !== undefined){

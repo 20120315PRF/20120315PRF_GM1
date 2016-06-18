@@ -1,5 +1,4 @@
-training = 0; //1 si es entrenamiento, 0 si es apuesta
-createChallenge = 0; //1 si es el que crea partida, 0 si es el que acepta apuesta. Dependiendo de cual sea, saldrá el mismo mapa o uno al azar.  
+
 
 //game representa el juego
 game = new Phaser.Game(750, 600, Phaser.AUTO, 'game-frame');
@@ -65,5 +64,6 @@ game.state.add('boot',bootState);
 game.state.add('load',loadState);
 game.state.add('menu',menuState);
 game.state.add('play',gameState);
+game.state.add('over',gameOverState);
 
 game.state.start('boot');
