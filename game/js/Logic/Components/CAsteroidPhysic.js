@@ -1,57 +1,60 @@
-CAsteroidPhysic = function(entityType,entity)
+var Components = Components || [];
+
+Components.CAsteroidPhysic = function(entityType,entity)
 {
     this._entityType = entityType;
     this._entity = entity; 
 }
 
-CAsteroidPhysic.prototype.create = function()
+Components.CAsteroidPhysic.prototype = 
 {
-    this.snd_dead = game.add.audio('snd_dead');
-}
-
-CAsteroidPhysic.prototype.update = function()
-{  
-    if(!globalVar.shipIsVulnerable)
+    create:function()
     {
-        game.physics.arcade.overlap(globalVar.player.entityGraphic,this._entity.entityGraphic,this.collision,null,this);
-    }
-    game.physics.arcade.overlap(EntityFactory.getinstance().Groups.get("Bullet"),this._entity.entityGraphic,this.collision,null,this);
-}
-
-CAsteroidPhysic.prototype.collision = function(other,asteroidSprite)
-{
-    var pos = asteroidSprite.position;
-    other.kill();
-//    this._entity.entityGraphic.kill();
-    EntityFactory.getinstance().deleteEntity(this._entity,asteroidSprite);
-      
-    var exp = game.add.sprite(pos.x-5,pos.y-10, getAttributeEntity("Explosion",this._entityType));
-	exp.animations.add('explode',null,50,false);
-    exp.animations.play('explode');
+        this.snd_dead = game.add.audio('snd_dead');
+    },
     
-//    EntityFactory.getinstance().createEntity("Explosion",pos);
-    
-    if(hasAttributeEntity("sizeLess",this._entityType))
+    update:function()
     {
-        var ent = getAttributeEntity("sizeLess",this._entityType);
-
-        EntityFactory.getinstance().createEntity(ent,new Phaser.Point(pos.x+10, pos.y+10));
-        
-        EntityFactory.getinstance().createEntity(ent,new Phaser.Point(pos.x+10, pos.y+10));
-    }
+        if(!globalVar.shipIsVulnerable)
+        {
+            game.physics.arcade.overlap(globalVar.player.entityGraphic,this._entity.entityGraphic,this.collision,null,this);
+        }
+        game.physics.arcade.overlap(Logic.EntityFactory.getinstance().Groups.get("Bullet"),this._entity.entityGraphic,this.collision,null,this);
+    },
     
-    if(other == globalVar.player.entityGraphic)
+    collision:function(other,asteroidSprite)
     {
-        GameManager.getinstance().destroyShip();
-        this.snd_dead.play();
-    }
-    else{
-        GameManager.getinstance().addScore = getAttributeEntity("score",this._entityType);
-    }
+        var pos = asteroidSprite.position;
+        other.kill();
+   
+        Logic.EntityFactory.getinstance().deleteEntity(this._entity,asteroidSprite);
 
-    if (globalVar.asteroidGroup && !globalVar.asteroidGroup.countLiving()) 
-    {
-        GameManager.getinstance().nextLevel();
+        var exp = game.add.sprite(pos.x-5,pos.y-10, getAttributeEntity("Explosion",this._entityType));
+        exp.animations.add('explode',null,50,false);
+        exp.animations.play('explode');
+
+        if(hasAttributeEntity("sizeLess",this._entityType))
+        {
+            var ent = getAttributeEntity("sizeLess",this._entityType);
+
+            Logic.EntityFactory.getinstance().createEntity(ent,new Phaser.Point(pos.x+10, pos.y+10));
+
+            Logic.EntityFactory.getinstance().createEntity(ent,new Phaser.Point(pos.x+10, pos.y+10));
+        }
+
+        if(other == globalVar.player.entityGraphic)
+        {
+            Managers.GameManager.getinstance().destroyShip();
+            this.snd_dead.play();
+        }
+        else{
+            Managers.GameManager.getinstance().addScore = getAttributeEntity("score",this._entityType);
+        }
+
+        if (globalVar.asteroidGroup && !globalVar.asteroidGroup.countLiving()) 
+        {
+            Managers.GameManager.getinstance().nextLevel();
+        }
     }
-    
-}
+};
+

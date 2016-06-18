@@ -1,103 +1,103 @@
 //Factoria de entidades. Se encarga de crear las entidades. Otro singleton
-
-EntityFactory = function()
+var Logic = Logic || [];
+Logic.EntityFactory = function()
 {
-    console.assert(EntityFactory._semaphore,"Constructor EntityFactory privado");
+    console.assert(Logic.EntityFactory._semaphore,"Constructor EntityFactory privado");
     this.Entity = []; 
     this._Groups = new Map();
 }
 
-EntityFactory.init = function()
+Logic.EntityFactory.init = function()
 {
-     if(!EntityFactory._instance)
+     if(!Logic.EntityFactory._instance)
     {
-        EntityFactory._semaphore = 1;
-        EntityFactory._instance = new EntityFactory();
-        EntityFactory._semaphore = 0;
+        Logic.EntityFactory._semaphore = 1;
+        Logic.EntityFactory._instance = new Logic.EntityFactory();
+        Logic.EntityFactory._semaphore = 0;
     }
 
     return true;
 }
 
-EntityFactory.prototype.destroy = function()
+Logic.EntityFactory.prototype =
 {
-    EntityFactory._instance = null;
-    this._Groups.get("Bullet").destroy(true);
-    this._Groups.delete("Bullet");
-    this._Groups = null;
-    globalVar.asteroidGroup.destroy(true);
-    globalVar.asteroidGroup = null;
-    console.log("aster: "+globalVar.asteroidGroup);
-    this.Entity = [];
-}
-
-EntityFactory.getinstance = function(){return EntityFactory._instance;}
-
-EntityFactory.prototype.preload = function()
-{
-
-}
-
-EntityFactory.prototype.create = function()
-{
-    var bulletGroup = game.add.group();
-    bulletGroup.enableBody = getAttributeEntity("enableBody","Bullet");
-    bulletGroup.physicsBodyType = Phaser.Physics.ARCADE;
-    
-    this._Groups.set("Bullet",bulletGroup);
-}
-
-EntityFactory.prototype.update = function()
-{
-    //Update de todas las entidades
-    this.Entity.forEach(function(entity)
+    destroy:function()
     {
-        entity.update();
-    });
-}
-
-//Esta función, por lo general, será llamada desde el creador del mapa, el cual leerá el mapa JSON y obtendrá las entidades a instanciar en la posición indicada. 
-EntityFactory.prototype.createEntity = function(entityType, position)
-{
-    console.assert(Blueprints.has(entityType),"El tipo de entidad a crear no existe");
-
+        Logic.EntityFactory._instance = null;
+        this._Groups.get("Bullet").destroy(true);
+        this._Groups.delete("Bullet");
+        this._Groups = null;
+        globalVar.asteroidGroup.destroy(true);
+        globalVar.asteroidGroup = null;
+        console.log("aster: "+globalVar.asteroidGroup);
+        this.Entity = [];
+    },
     
-    //Creamos la entidad
-    var entity = null;
+    preload:function(){},
+    
+    create:function()
+    {
+        var bulletGroup = game.add.group();
+        bulletGroup.enableBody = getAttributeEntity("enableBody","Bullet");
+        bulletGroup.physicsBodyType = Phaser.Physics.ARCADE;
 
-    entity = new Entity(entityType,position,hasAttributeEntity("group",entityType));
-
-    //Añadimos sus componentes
-    Blueprints.forEach(function (value, key) {
-        if(key == entityType)
+        this._Groups.set("Bullet",bulletGroup);
+    },
+    
+    update:function()
+    {
+        this.Entity.forEach(function(entity)
         {
-            value.forEach(function(comp)
-            {
-                entity.addComponent(comp["name"], comp["object"]);
-            });   
-        }
-    });
+            entity.update();
+        });
+    },
     
-    entity.create();
-    
-    //La añadimos al array para gestionarla desde aqui
-    this.Entity.push(entity);
-    
-    if(entityType == "Player")
+    createEntity:function(entityType, position)
     {
-        globalVar.player = entity;
-    }
+        console.assert(Blueprints.has(entityType),"El tipo de entidad a crear no existe");
+
+
+        //Creamos la entidad
+        var entity = null;
+
+        entity = new Logic.Entity(entityType,position,hasAttributeEntity("group",entityType));
+
+        //Añadimos sus componentes
+        Blueprints.forEach(function (value, key) {
+            if(key == entityType)
+            {
+                value.forEach(function(comp)
+                {
+                    entity.addComponent(comp["name"], comp["object"]);
+                });   
+            }
+        });
+
+        entity.create();
+
+        //La añadimos al array para gestionarla desde aqui
+        this.Entity.push(entity);
+
+        if(entityType == "Player")
+        {
+            globalVar.player = entity;
+        }
+
+    },
     
-}
+    deleteEntity:function(entity,entityGraphic)
+    {
+        entityGraphic.kill();
 
-EntityFactory.prototype.deleteEntity = function(entity,entityGraphic)
-{
-    entityGraphic.kill();
+        var index = this.Entity.indexOf(entity);
+        this.Entity.splice(index,1);
+    },
+    
 
-    var index = this.Entity.indexOf(entity);
-    this.Entity.splice(index,1);
-}
+};
 
-Object.defineProperty(EntityFactory.prototype,"Groups",{
+Logic.EntityFactory.getinstance = function(){return Logic.EntityFactory._instance;}
+
+Object.defineProperty(Logic.EntityFactory.prototype,"Groups",{
         get : function(){return this._Groups;}
 });

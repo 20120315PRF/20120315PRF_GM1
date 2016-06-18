@@ -16,47 +16,51 @@ Server.Logic.init = function()
         Server.Logic._semaphore = 0;
     }
     
-    if(!EntityFactory.init() || !MapGenerator.init() || !GameManager.init())
+    if(!Logic.EntityFactory.init() || !Logic.MapGenerator.init() || !Managers.GameManager.init())
         window.pause();
     
     
     return true;
 }
 
-Server.Logic.prototype.destroy = function()
+Server.Logic.prototype = 
 {
-    Server.Logic._instance = null;
+    destroy:function()
+    {
+        Server.Logic._instance = null;
     
-    MapGenerator.getinstance().destroy();
-    
-    EntityFactory.getinstance().destroy();
-    
-    GameManager.getinstance().destroy();
-}
+        Logic.MapGenerator.getinstance().destroy();
 
-Server.Logic.prototype.preload = function()
+        Logic.EntityFactory.getinstance().destroy();
+
+        Managers.GameManager.getinstance().destroy();
+    },
+    
+    preload:function()
+    {
+        Logic.MapGenerator.getinstance().preload();
+
+        Logic.EntityFactory.getinstance().preload();
+
+        Managers.GameManager.getinstance().preload();
+    },
+    
+    create:function()
+    {
+        Logic.MapGenerator.getinstance().create();
+    
+        Logic.EntityFactory.getinstance().create();
+
+        Managers.GameManager.getinstance().create();
+    },
+    
+    update:function()
+    {
+        Managers.GameManager.getinstance().update();
+    },   
+};
+
+Server.Logic.getinstance = function()
 {
-    MapGenerator.getinstance().preload();
-    
-    EntityFactory.getinstance().preload();
-    
-    GameManager.getinstance().preload();
+    return Server.Logic._instance;
 }
-
-Server.Logic.prototype.create = function()
-{
-    MapGenerator.getinstance().create();
-    
-    EntityFactory.getinstance().create();
-    
-    GameManager.getinstance().create();
-}
-
-//Método de objeto
-Server.Logic.prototype.update = function()
-{
-    GameManager.getinstance().update();
-}
-
-
-Server.Logic.getinstance = function(){return Server.Logic._instance;}

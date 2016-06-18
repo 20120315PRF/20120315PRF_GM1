@@ -32,6 +32,7 @@ var Arquetipo = new Map();
 
     Arquetipo.get("Player").set("shipLives",3);
     Arquetipo.get("Player").set("timeToReset",3);
+    Arquetipo.get("Player").set("padding",16);
     
     //Arquetipo.get("Player").set("colisiones ",[]); //Entidades con las que colisiona el player.
     //Arquetipo.get("Player").set("trigger",[]);//Entidades con las que se comportaran como trigger
@@ -71,6 +72,7 @@ var Arquetipo = new Map();
     Arquetipo.get("AsteroidSmall").set("sprite",'game/assets/images/asteroid1.png');
     Arquetipo.get("AsteroidSmall").set("enableBody",1); //1 si tiene fisica, 0 no.
     Arquetipo.get("AsteroidSmall").set("Explosion",'explosionSmall');
+    Arquetipo.get("AsteroidSmall").set("padding",16);
 
     //-----------------------------------------------------------------------------------------------------------------
 
@@ -91,6 +93,7 @@ var Arquetipo = new Map();
     Arquetipo.get("AsteroidMedium").set("enableBody",1); //1 si tiene fisica, 0 no.
     Arquetipo.get("AsteroidMedium").set("sizeLess","AsteroidSmall");
     Arquetipo.get("AsteroidMedium").set("Explosion",'explosionSmall');
+    Arquetipo.get("AsteroidMedium").set("padding",16);
 
     //-----------------------------------------------------------------------------------------------------------------
 
@@ -111,6 +114,7 @@ var Arquetipo = new Map();
     Arquetipo.get("AsteroidLarge").set("enableBody",1); //1 si tiene fisica, 0 no.
     Arquetipo.get("AsteroidLarge").set("sizeLess","AsteroidMedium");
     Arquetipo.get("AsteroidLarge").set("Explosion",'explosionSmall');
+    Arquetipo.get("AsteroidLarge").set("padding",16);
 
 //-----------------------------------------------------------------------------------------------------------------
 
