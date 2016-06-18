@@ -18,12 +18,17 @@ GameManager.init = function()
         GameManager._instance = new GameManager();
         GameManager._semaphore = 0;
     }
+    
     return true;
 }
 
-GameManager.prototype.create = function()
+GameManager.prototype.preload = function()
 {
     EntityFactory.getinstance().createEntity("Player",new Phaser.Point(game.width/2,game.height/2));
+}
+GameManager.prototype.create = function()
+{
+    
     EntityFactory.getinstance().createEntity("Bullet",new Phaser.Point(32,450));
     MapGenerator.getinstance().createAsteroids();
     shipDestroyed = false;
@@ -43,7 +48,7 @@ GameManager.prototype.create = function()
 
 GameManager.prototype.update = function()
 {
-
+    EntityFactory.getinstance().update();
 }
 
 GameManager.prototype.nextLevel = function()

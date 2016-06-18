@@ -23,6 +23,15 @@ Server.Logic.init = function()
     return true;
 }
 
+Server.Logic.prototype.preload = function()
+{
+    MapGenerator.getinstance().preload();
+    
+    EntityFactory.getinstance().preload();
+    
+    GameManager.getinstance().preload();
+}
+
 Server.Logic.prototype.create = function()
 {
     MapGenerator.getinstance().create();
@@ -35,7 +44,7 @@ Server.Logic.prototype.create = function()
 //Método de objeto
 Server.Logic.prototype.update = function()
 {
-    EntityFactory.getinstance().update();
+    GameManager.getinstance().update();
 }
 
 

@@ -7,3 +7,8 @@ function rand(a,b)
     var multiplicar = (b==undefined)?a:b;
     return Math.min(multiplicar,sumar+Math.ceil(seed / (233280.0)*multiplicar));
 }
+
+var globalVar = 
+{
+   
+}
