@@ -28,6 +28,13 @@ Logic.MapGenerator.prototype =
     {
         var sky = game.add.sprite(-70,-5,'space');
         sky.scale.setTo(1.9,1.9);
+        
+        sky.inputEnabled = true;
+        
+        sky.events.onInputOver.add(function(){
+            game.canvas.style.cursor = 'url(game/assets/images/cursor.png),auto'
+
+        }, this);
     },
     
     create:function()

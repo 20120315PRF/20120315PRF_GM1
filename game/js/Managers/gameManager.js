@@ -53,6 +53,13 @@ Managers.GameManager.prototype =
     update:function()
     {
         Logic.EntityFactory.getinstance().update();
+
+        //Esto es para cambiar el cursor cuando se sale de la pestaña del juego
+        if( game.canvas.style.cursor == 'inherit')
+        {
+            game.canvas.style.cursor = 'url(game/assets/images/cursor.png),auto';
+            console.log("Cambio de cursor");
+        }
     },
     
     nextLevel:function()

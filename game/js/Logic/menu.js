@@ -13,6 +13,8 @@ var menuState = {
             txt.events.onInputUp.add(callbackInputUp);
         txt.events.onInputOver.add(()=>{txt.fill= '#FDFFB5'; this.snd_select.play(); txt.style.font = 'bold 35pt TheMinion';}, this);
         txt.events.onInputOut.add(() => {txt.fill = '#FFFFFF';txt.font = 'bold 30pt TheMinion';}, this);
+        
+        txt.input.useHandCursor = true;
     },
     create:function()
     {         

@@ -16,11 +16,14 @@ var loadState={
         
         game.load.image('startButton','game/assets/images/startButton.png');
         game.load.image('menu-bg','game/assets/images/menu.jpg' );
+        
+        game.load.image('cursor','game/assets/images/cursor.png' );
     },
     create:function()
     {
         sound_ambiental = game.add.audio('snd_ambiental',0.5);
         
         game.state.start('menu');
+        
     }
 };

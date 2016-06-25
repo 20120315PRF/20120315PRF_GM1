@@ -3,6 +3,7 @@ var gameState ={
     preload:function()
     {
         console.assert(Server.Logic.init(),"Servidor de lógica mal iniciado.");
+        
     },
     create:function()
     { 
