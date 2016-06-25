@@ -67,6 +67,11 @@ Components.CBulletController.prototype=
         {
             sprite.y = -getAttributeEntity("padding",this._entityType);
         }
+    },
+    
+    deadEntity:function()
+    {
+        
     }
     
 };

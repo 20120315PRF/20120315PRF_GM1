@@ -88,7 +88,9 @@ Logic.EntityFactory.prototype =
     deleteEntity:function(entity,entityGraphic)
     {
         entityGraphic.kill();
-
+        
+        entity.deadEntity();
+        
         var index = this.Entity.indexOf(entity);
         this.Entity.splice(index,1);
     },

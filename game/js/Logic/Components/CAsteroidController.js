@@ -32,6 +32,7 @@ Components.CAsteroidController.prototype =
 
         //Establecemos el movimiento del asteroide segun su angulo, y su velocidad
         game.physics.arcade.velocityFromRotation(randomAngle, randomVelocity, this._entity.entityGraphic.body.velocity);
+     
     },
     
     update:function()
@@ -59,5 +60,10 @@ Components.CAsteroidController.prototype =
         {
             sprite.y = -getAttributeEntity("padding",this._entityType);
         }
+    },
+    
+    deadEntity:function()
+    {
+        
     }
 }

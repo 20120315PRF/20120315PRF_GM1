@@ -28,5 +28,6 @@ Components.CPhysics.prototype =
             this._entity.entityGraphic.body.collideWorldBounds = getAttributeEntity("collideWorldBounds", this._entityType);
     },
     
-    update:function(){}
+    update:function(){},
+    deadEntity:function(){},
 };

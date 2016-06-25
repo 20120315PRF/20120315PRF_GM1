@@ -38,6 +38,16 @@ Logic.Entity.prototype =
     {
         this.Components.set(nameComponent, new objectComponent(this._entityType,this));
     },
+    deadEntity:function()
+    {
+        this._entityGraphic.kill();
+        
+        //Comunicamos a todos los compnentes de la entidad, que la entidad acaba de morir
+        this.Components.forEach(function(value,key)
+        {
+            value.deadEntity();
+        });
+    },
 };
 
 Object.defineProperty(Logic.Entity.prototype,"entityType",{

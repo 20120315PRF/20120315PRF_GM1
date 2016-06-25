@@ -18,6 +18,8 @@ var loadState={
         game.load.image('menu-bg','game/assets/images/menu.jpg' );
         
         game.load.image('cursor','game/assets/images/cursor.png' );
+        
+        game.load.image('smokeAsteroids','game/assets/images/Smoke10.png' );
     },
     create:function()
     {

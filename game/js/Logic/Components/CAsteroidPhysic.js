@@ -55,6 +55,10 @@ Components.CAsteroidPhysic.prototype =
         {
             Managers.GameManager.getinstance().nextLevel();
         }
+    },
+    deadEntity:function()
+    {
+        
     }
 };
 

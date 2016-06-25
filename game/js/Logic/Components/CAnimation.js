@@ -19,5 +19,13 @@ Components.CAnimation.prototype =
         });
         this._entity.entityGraphic = auxEntityGraphic;
     },
+    update:function()
+    {
+        
+    },
+    deadEntity:function()
+    {
+        
+    }
     
 };

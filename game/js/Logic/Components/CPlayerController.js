@@ -61,5 +61,10 @@ Components.CPlayerController.prototype =
         {
             sprite.y = -getAttributeEntity("padding",this._entityType);
         }
-    }
+    },
+    
+    deadEntity:function()
+    {
+        
+    },
 };

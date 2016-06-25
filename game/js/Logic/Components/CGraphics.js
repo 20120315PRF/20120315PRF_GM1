@@ -15,4 +15,5 @@ Components.CGraphics.prototype =
     },
     
     update:function(){},
+    deadEntity:function(){},
 };

@@ -20,6 +20,7 @@ Blueprints.set("AsteroidSmall",
                [
                     {name:"CAsteroidController",object:Components.CAsteroidController},
                     {name:"CAsteroidPhysic",object:Components.CAsteroidPhysic},
+                    {name:"CSmokeAsteroid",object:Components.CSmokeAsteroid},
                 ]
               );
 
@@ -27,6 +28,7 @@ Blueprints.set("AsteroidMedium",
                [
                     {name:"CAsteroidController",object:Components.CAsteroidController},
                     {name:"CAsteroidPhysic",object:Components.CAsteroidPhysic},
+                    {name:"CSmokeAsteroid",object:Components.CSmokeAsteroid},
                 ]
               );
 
@@ -34,5 +36,6 @@ Blueprints.set("AsteroidLarge",
                [
                     {name:"CAsteroidController",object:Components.CAsteroidController},
                     {name:"CAsteroidPhysic",object:Components.CAsteroidPhysic},
+                    {name:"CSmokeAsteroid",object:Components.CSmokeAsteroid},
                 ]
               );
