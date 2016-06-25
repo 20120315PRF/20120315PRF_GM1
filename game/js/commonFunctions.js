@@ -17,6 +17,7 @@ function initGlobalsVar()
     globalVar.training= 1; //1 si es entrenamiento, 0 si es apuesta
     globalVar.createChallenge = 0; //1 si es el que crea partida, 0 si es el que acepta apuesta. Dependiendo de cual sea, saldrá el mismo mapa o uno al azar.  
     globalVar.fontStyle={font: '20px Arial', fill: '#FFFFFF', align: 'center'};
+    globalVar.fontStyleMenu={font: 'bold 60pt TheMinion',fill: '#FDFFB5', align: 'center' };
     globalVar.score=0;
     globalVar.shipDestroyed=false;
     globalVar.shipIsVulnerable=false;

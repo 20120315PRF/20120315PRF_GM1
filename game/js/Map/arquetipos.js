@@ -20,7 +20,7 @@ var Arquetipo = new Map();
     //Valores de programación
     Arquetipo.get("Player").set("nombreSprite",'playerSprite');
     //Arquetipo.get("Player").set("spritesheet",'game/assets/images/dude.png');
-    Arquetipo.get("Player").set("sprite",'game/assets/images/ship.png');
+    Arquetipo.get("Player").set("sprite",'game/assets/images/ship4.png');
     Arquetipo.get("Player").set("spritesheetX",32);
     Arquetipo.get("Player").set("spritesheetY",48);
     Arquetipo.get("Player").set("spritesheetY",48);
@@ -89,7 +89,7 @@ var Arquetipo = new Map();
 
     //Valores de programación
     Arquetipo.get("AsteroidMedium").set("nombreSprite",'AsteroidMediumSprite');
-    Arquetipo.get("AsteroidMedium").set("sprite",'game/assets/images/asteroid2.png');
+    Arquetipo.get("AsteroidMedium").set("sprite",'game/assets/images/asteroid24.png');
     Arquetipo.get("AsteroidMedium").set("enableBody",1); //1 si tiene fisica, 0 no.
     Arquetipo.get("AsteroidMedium").set("sizeLess","AsteroidSmall");
     Arquetipo.get("AsteroidMedium").set("Explosion",'explosionSmall');
@@ -121,7 +121,7 @@ var Arquetipo = new Map();
     Arquetipo.set("Map",new Map());
 
     //Valores de diseño
-    Arquetipo.get("Map").set("startingAteroids",2);
+    Arquetipo.get("Map").set("startingAteroids",10);
     Arquetipo.get("Map").set("maxAsteroids",20);
     Arquetipo.get("Map").set("incrementAteroids",2);
     Arquetipo.get("Map").set("delayToStartLevel",3);
