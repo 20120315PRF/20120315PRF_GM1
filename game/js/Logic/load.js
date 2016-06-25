@@ -12,7 +12,7 @@ var loadState={
         game.load.audio('snd_dead',['game/assets/audio/dead.wav']);
         game.load.audio('snd_selectMenu',['game/assets/audio/menu.wav']);
     
-        game.load.spritesheet('explosionSmall', 'game/assets/images/explosion.png', 25, 25, 5);
+        game.load.spritesheet('explosionSmall', 'game/assets/images/explode.png', 25, 25, 17);
         
         game.load.image('startButton','game/assets/images/startButton.png');
         game.load.image('menu-bg','game/assets/images/menu.jpg' );

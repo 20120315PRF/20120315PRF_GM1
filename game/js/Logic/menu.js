@@ -11,9 +11,9 @@ var menuState = {
         txt.inputEnabled = true;
         if(callbackInputUp != undefined)
             txt.events.onInputUp.add(callbackInputUp);
-        txt.events.onInputOver.add(()=>{txt.fill= '#FDFFB5'; this.snd_select.play(); txt.style.font = 'bold 35pt TheMinion';}, this);
+        txt.events.onInputOver.add(()=>{txt.fill= '#FDFFB5'; txt.style.font = 'bold 35pt TheMinion';}, this);
         txt.events.onInputOut.add(() => {txt.fill = '#FFFFFF';txt.font = 'bold 30pt TheMinion';}, this);
-        
+        txt.events.onInputDown.add(()=>{this.snd_select.play();}, this);
         txt.input.useHandCursor = true;
     },
     create:function()

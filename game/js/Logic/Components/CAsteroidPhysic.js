@@ -30,7 +30,7 @@ Components.CAsteroidPhysic.prototype =
         Logic.EntityFactory.getinstance().deleteEntity(this._entity,asteroidSprite);
 
         var exp = game.add.sprite(pos.x-5,pos.y-10, getAttributeEntity("Explosion",this._entityType));
-        exp.animations.add('explode',null,50,false);
+        exp.animations.add('explode',null,70,false);
         exp.animations.play('explode');
 
         if(hasAttributeEntity("sizeLess",this._entityType))

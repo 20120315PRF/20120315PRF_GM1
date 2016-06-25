@@ -11,6 +11,6 @@ window.onload = function()
     game.state.add('menu',menuState);
     game.state.add('play',gameState);
     game.state.add('over',gameOverState);
-
+    
     game.state.start('boot');
 }
