@@ -5,6 +5,7 @@ Logic.EntityFactory = function()
     console.assert(Logic.EntityFactory._semaphore,"Constructor EntityFactory privado");
     this.Entity = []; 
     this._Groups = new Map();
+
 }
 
 Logic.EntityFactory.init = function()
@@ -24,12 +25,16 @@ Logic.EntityFactory.prototype =
     destroy:function()
     {
         Logic.EntityFactory._instance = null;
+        
+        //Destruimos el grupo de las balas
         this._Groups.get("Bullet").destroy(true);
         this._Groups.delete("Bullet");
         this._Groups = null;
+        
+        //Destruimos el grupo de los asteroides
         globalVar.asteroidGroup.destroy(true);
         globalVar.asteroidGroup = null;
-        console.log("aster: "+globalVar.asteroidGroup);
+        
         this.Entity = [];
     },
     
@@ -37,11 +42,14 @@ Logic.EntityFactory.prototype =
     
     create:function()
     {
+        
+        
         var bulletGroup = game.add.group();
         bulletGroup.enableBody = getAttributeEntity("enableBody","Bullet");
         bulletGroup.physicsBodyType = Phaser.Physics.ARCADE;
 
-        this._Groups.set("Bullet",bulletGroup);
+        this._Groups.set("Bullet",bulletGroup); 
+        
     },
     
     update:function()
@@ -81,8 +89,8 @@ Logic.EntityFactory.prototype =
         if(entityType == "Player")
         {
             globalVar.player = entity;
-        }
-
+        }    
+        return entity;
     },
     
     deleteEntity:function(entity,entityGraphic)
@@ -93,6 +101,7 @@ Logic.EntityFactory.prototype =
         
         var index = this.Entity.indexOf(entity);
         this.Entity.splice(index,1);
+
     },
     
 

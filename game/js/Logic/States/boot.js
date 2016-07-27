@@ -1,5 +1,9 @@
 var bootState=
 {
+    preload:function()
+    {
+        game.load.image('loadBar','game/assets/images/loadBar.png');
+    },
     create:function()
     {
         //  This will run in Canvas mode, so let's gain a little speed and display
@@ -16,7 +20,10 @@ var bootState=
         
         game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
         
+        
+        
         game.state.start('load');
+        
         
         //Con esto hacemos que la música no se pare aunque ya no estemos en el navegador. 
         //game.stage.disableVisibilityChange = true;

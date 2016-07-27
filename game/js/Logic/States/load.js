@@ -1,6 +1,9 @@
 var loadState={
     preload:function()
     {
+        this.preloadBar = this.game.add.sprite(100, 300, 'loadBar');
+        this.load.setPreloadSprite(this.preloadBar);
+        
         game.load.image(getAttributeEntity("nombreSprite","Bullet"), getAttributeEntity("sprite","Bullet"));
         game.load.image(getAttributeEntity("nombreSprite","Player"), getAttributeEntity("sprite","Player"));
         game.load.image(getAttributeEntity("nombreSprite","AsteroidSmall"), getAttributeEntity("sprite","AsteroidSmall"));
@@ -12,7 +15,7 @@ var loadState={
         game.load.audio('snd_dead',['game/assets/audio/dead.wav']);
         game.load.audio('snd_selectMenu',['game/assets/audio/menu.wav']);
     
-        game.load.spritesheet('explosionSmall', 'game/assets/images/explode.png', 25, 25, 17);
+        game.load.spritesheet('explosionSmall', 'game/assets/images/explode.png', 25, 25, 18);
         
         game.load.image('startButton','game/assets/images/startButton.png');
         game.load.image('menu-bg','game/assets/images/menu.jpg' );
@@ -23,6 +26,7 @@ var loadState={
     },
     create:function()
     {
+        this.preloadBar.cropEnabled = false;
         sound_ambiental = game.add.audio('snd_ambiental',0.5);
         
         game.state.start('menu');

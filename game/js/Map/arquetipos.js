@@ -46,7 +46,7 @@ var Arquetipo = new Map();
     Arquetipo.get("Bullet").set("scaleX",0.5);
     Arquetipo.get("Bullet").set("scaleY",0.5);
     Arquetipo.get("Bullet").set("cantidadCrear",10);
-    Arquetipo.get("Bullet").set("life",500);
+    Arquetipo.get("Bullet").set("life",575);
     Arquetipo.get("Bullet").set("group",1);
 
     //Valores de programación
@@ -121,7 +121,7 @@ var Arquetipo = new Map();
     Arquetipo.set("Map",new Map());
 
     //Valores de diseño
-    Arquetipo.get("Map").set("startingAteroids",2);
+    Arquetipo.get("Map").set("startingAteroids",3);
     Arquetipo.get("Map").set("maxAsteroids",20);
     Arquetipo.get("Map").set("incrementAteroids",2);
     Arquetipo.get("Map").set("delayToStartLevel",3);

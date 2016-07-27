@@ -11,6 +11,8 @@ Components.CAsteroidPhysic.prototype =
     create:function()
     {
         this.snd_dead = game.add.audio('snd_dead');
+        this.snd_killAsteroid = game.add.sound('snd_dead');
+
     },
     
     update:function()
@@ -48,6 +50,7 @@ Components.CAsteroidPhysic.prototype =
             this.snd_dead.play();
         }
         else{
+            this.snd_killAsteroid.play('',0,0.1);
             Managers.GameManager.getinstance().addScore = getAttributeEntity("score",this._entityType);
         }
 
@@ -55,6 +58,7 @@ Components.CAsteroidPhysic.prototype =
         {
             Managers.GameManager.getinstance().nextLevel();
         }
+
     },
     deadEntity:function()
     {

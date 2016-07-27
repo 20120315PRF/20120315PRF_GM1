@@ -35,9 +35,10 @@ Components.CBulletController.prototype=
         if (game.time.now > this._bulletTime)
         {
             var bullet = this._entity.entityGraphic.getFirstExists(false);
-            this.snd_bullet.play();
+            
             if (bullet)
             {
+                this.snd_bullet.play();
                 var player = globalVar.player.entityGraphic;
                 bullet.reset(player.body.x+16, player.body.y+16);
                 bullet.lifespan = getAttributeEntity("life","Bullet");

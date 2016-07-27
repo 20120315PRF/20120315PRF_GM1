@@ -13,11 +13,11 @@ Components.CPlayerController.prototype =
     {
         if (game.input.keyboard.isDown(Phaser.Keyboard.UP) || game.input.keyboard.isDown(Phaser.Keyboard.W))
         {
-            game.physics.arcade.accelerationFromRotation(this._entity.entityGraphic.rotation, 400, this._entity.entityGraphic.body.acceleration);
+            game.physics.arcade.accelerationFromRotation(3.1416*0.5, -500, this._entity.entityGraphic.body.acceleration);
         }
         else if (game.input.keyboard.isDown(Phaser.Keyboard.DOWN) || game.input.keyboard.isDown(Phaser.Keyboard.S))
         {
-            game.physics.arcade.accelerationFromRotation(this._entity.entityGraphic.rotation, -400, this._entity.entityGraphic.body.acceleration);
+            game.physics.arcade.accelerationFromRotation(3*3.1416*0.5, -500, this._entity.entityGraphic.body.acceleration);
         }
         else
         {

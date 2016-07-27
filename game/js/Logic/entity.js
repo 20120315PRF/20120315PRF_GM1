@@ -13,8 +13,9 @@ Logic.Entity = function(entityType, position, group)
 
 Logic.Entity.prototype = 
 {
-    respawn:function()
+    respawn:function(position)
     {
+        this._entityGraphic.reset(position.x, position.y);
         this._position = position;
     },
     
