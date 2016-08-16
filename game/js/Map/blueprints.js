@@ -16,6 +16,14 @@ Blueprints.set("Bullet",
                 ]
               );
 
+Blueprints.set("AsteroidVerySmall",
+               [
+                    {name:"CAsteroidController",object:Components.CAsteroidController},
+                    {name:"CAsteroidPhysic",object:Components.CAsteroidPhysic},
+                    {name:"CSmokeAsteroid",object:Components.CSmokeAsteroid},
+                ]
+              );
+
 Blueprints.set("AsteroidSmall",
                [
                     {name:"CAsteroidController",object:Components.CAsteroidController},
