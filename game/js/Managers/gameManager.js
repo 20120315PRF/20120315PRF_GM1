@@ -75,7 +75,7 @@ Managers.GameManager.prototype =
     },
     
     resetShip:function()
-    {
+    {  
         globalVar.player.entityGraphic.reset(game.width*0.5,game.height*0.5);
         globalVar.player.entityGraphic.angle = -90;
 

@@ -40,6 +40,7 @@ Components.CPlayerController.prototype = Object.create(Componente.prototype,
             this.screenWrap(this._entity.entityGraphic);
 
             this._entity.entityGraphic.rotation = game.physics.arcade.angleToPointer(this._entity.entityGraphic);
+
         }
     },
 });

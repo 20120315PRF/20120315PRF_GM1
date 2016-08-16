@@ -131,7 +131,8 @@ var Arquetipo = new Map();
 
     //Valores de diseño
     Arquetipo.set("Explosion",new Map());
-    Arquetipo.get("Explosion").set("sprite",'game/assets/images/muzzleflash3.png');
+    Arquetipo.get("Explosion").set("sprite",'game/assets/images/explode.png');
+    Arquetipo.get("Explosion").set("nombreSprite",'explosionSprite');
 
 //-----------------------------------------------------------------------------------------------------------------
 

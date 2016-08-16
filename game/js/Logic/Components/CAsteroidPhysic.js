@@ -37,10 +37,8 @@ Components.CAsteroidPhysic.prototype.collision = function(other,asteroidSprite)
 
     Logic.EntityFactory.getinstance().deleteEntity(this._entity,asteroidSprite);
 
-    var exp = game.add.sprite(pos.x-5,pos.y-10, getAttributeEntity("Explosion",this._entityType));
-    exp.animations.add('explode',null,70,false);
-    exp.animations.play('explode');
-
+    Logic.EntityFactory.getinstance().createEntity("Explosion",new Phaser.Point(pos.x-5, pos.y-10));
+    
     if(hasAttributeEntity("sizeLess",this._entityType))
     {
         var ent = getAttributeEntity("sizeLess",this._entityType);
@@ -50,14 +48,14 @@ Components.CAsteroidPhysic.prototype.collision = function(other,asteroidSprite)
         Logic.EntityFactory.getinstance().createEntity(ent,new Phaser.Point(pos.x+10, pos.y+10));
     }
 
-    if(other == globalVar.player.entityGraphic)
+    if(other != globalVar.player.entityGraphic)
     {
-        Managers.GameManager.getinstance().destroyShip();
-        this.snd_dead.play();
+        this.snd_killAsteroid.play('',0,0.1);
+        Managers.GameManager.getinstance().addScore = getAttributeEntity("score",this._entityType);  
     }
     else{
-        this.snd_killAsteroid.play('',0,0.1);
-        Managers.GameManager.getinstance().addScore = getAttributeEntity("score",this._entityType);
+        Managers.GameManager.getinstance().destroyShip();
+        this.snd_dead.play();
     }
 
     if (globalVar.asteroidGroup && !globalVar.asteroidGroup.countLiving()) 

@@ -1,26 +1,33 @@
+var Components = Components || [];
 
-var emitter;
-
-CExplosionController = function(entityType,entity)
+Components.CExplosionController = function(entityType,entity)
 {
     this._entityType = entityType;
-    this._entity = entity; 
+    this._entity = entity;
 }
 
-CExplosionController.prototype.create = function()
+Components.CExplosionController.prototype = Object.create(Componente.prototype, 
 {
- 
-        //Esta
-    var exp = game.add.sprite(pos.x-5,pos.y-10, getAttributeEntity("Explosion",this._entityType));
-	exp.animations.add('explode',null,50,false);
-    exp.animations.play('explode');
-}
+    create:
+    {
+        value:function()
+        {
+            //Esta
+            this._entity.entityGraphic = game.add.sprite(this._entity.getPosition.x-5,this._entity.getPosition.y-10, getAttributeEntity("nombreSprite",this._entityType));
+            this._entity.entityGraphic.animations.add('explode',null,70,false);
+            this._entity.entityGraphic.animations.play('explode');
+            
+            game.time.events.add(Phaser.Timer.SECOND * 0.5, this.deadEntity, this);
+        }
+    },
+    deadEntity:
+    {
+        value:function()
+        {
+            console.log("destroy");
+            this._entity.entityGraphic.destroy();
+        }
+    }
+});
 
-CExplosionController.prototype.update = function()
-{  
-
-}
-CExplosionController.prototype.explode = function (pos) {  
-
-}
 

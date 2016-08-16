@@ -50,6 +50,10 @@ Logic.EntityFactory.prototype =
 
         this._Groups.set("Bullet",bulletGroup); 
         
+        globalVar.asteroidGroup = game.add.group();
+        globalVar.asteroidGroup.enableBody = 1;
+        globalVar.asteroidGroup.physicsBodyType = Phaser.Physics.ARCADE;
+        
     },
     
     update:function()

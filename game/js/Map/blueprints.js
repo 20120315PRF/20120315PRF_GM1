@@ -39,3 +39,9 @@ Blueprints.set("AsteroidLarge",
                     {name:"CSmokeAsteroid",object:Components.CSmokeAsteroid},
                 ]
               );
+
+Blueprints.set("Explosion",
+               [
+                    {name:"CExplosionController",object:Components.CExplosionController},
+                ]
+              );
