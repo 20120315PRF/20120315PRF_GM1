@@ -50,7 +50,7 @@ Components.CAsteroidPhysic.prototype.collision = function(other,asteroidSprite)
 
     if(other != globalVar.player.entityGraphic)
     {
-        this.snd_killAsteroid.play('',0,0.1);
+        this.snd_killAsteroid.play('',0,getAttributeEntity("volumenExplosion",this._entityType));
         Managers.GameManager.getinstance().addScore = getAttributeEntity("score",this._entityType);  
     }
     else{

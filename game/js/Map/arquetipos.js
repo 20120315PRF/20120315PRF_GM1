@@ -67,7 +67,7 @@ var Arquetipo = new Map();
     Arquetipo.get("AsteroidVerySmall").set("score",150);
     Arquetipo.get("AsteroidVerySmall").set("scaleX",0.4);
     Arquetipo.get("AsteroidVerySmall").set("scaleY",0.4);
-
+    Arquetipo.get("AsteroidVerySmall").set("volumenExplosion",0.2);
     //Valores de programación
     Arquetipo.get("AsteroidVerySmall").set("nombreSprite",'AsteroidLargeSprite');
     Arquetipo.get("AsteroidVerySmall").set("sprite",'game/assets/images/asteroid24.png');
@@ -84,7 +84,7 @@ var Arquetipo = new Map();
     Arquetipo.get("AsteroidSmall").set("score",100);
     Arquetipo.get("AsteroidSmall").set("scaleX",0.65);
     Arquetipo.get("AsteroidSmall").set("scaleY",0.65);
-
+    Arquetipo.get("AsteroidSmall").set("volumenExplosion",0.4);
     //Valores de programación
     Arquetipo.get("AsteroidSmall").set("nombreSprite",'AsteroidSmallSprite');
     Arquetipo.get("AsteroidSmall").set("sprite",'game/assets/images/asteroid1.png');
@@ -104,7 +104,7 @@ var Arquetipo = new Map();
     Arquetipo.get("AsteroidMedium").set("score",50);
     Arquetipo.get("AsteroidMedium").set("scaleX",0.85);
     Arquetipo.get("AsteroidMedium").set("scaleY",0.85);
-
+    Arquetipo.get("AsteroidMedium").set("volumenExplosion",0.7);
     //Valores de programación
     Arquetipo.get("AsteroidMedium").set("nombreSprite",'AsteroidMediumSprite');
     Arquetipo.get("AsteroidMedium").set("sprite",'game/assets/images/asteroid24.png');
@@ -124,13 +124,14 @@ var Arquetipo = new Map();
     Arquetipo.get("AsteroidLarge").set("score",20);
     Arquetipo.get("AsteroidLarge").set("scaleX",1.25);
     Arquetipo.get("AsteroidLarge").set("scaleY",1.25);
-
+    Arquetipo.get("AsteroidLarge").set("volumenExplosion",1);
     //Valores de programación
     Arquetipo.get("AsteroidLarge").set("nombreSprite",'AsteroidLargeSprite');
     Arquetipo.get("AsteroidLarge").set("sprite",'game/assets/images/asteroid1.png');
     Arquetipo.get("AsteroidLarge").set("enableBody",1); //1 si tiene fisica, 0 no.
     Arquetipo.get("AsteroidLarge").set("sizeLess","AsteroidMedium");
     Arquetipo.get("AsteroidLarge").set("padding",16);
+    
 
 //-----------------------------------------------------------------------------------------------------------------
 
