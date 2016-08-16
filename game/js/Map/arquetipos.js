@@ -62,8 +62,8 @@ var Arquetipo = new Map();
     //Valores de diseño
     Arquetipo.get("AsteroidVerySmall").set("minVelocity",100);
     Arquetipo.get("AsteroidVerySmall").set("maxVelocity",125);
-    Arquetipo.get("AsteroidVerySmall").set("minAngularVelocity",150);
-    Arquetipo.get("AsteroidVerySmall").set("maxAngularVelocity",350);
+    Arquetipo.get("AsteroidVerySmall").set("minAngularVelocity",450);
+    Arquetipo.get("AsteroidVerySmall").set("maxAngularVelocity",650);
     Arquetipo.get("AsteroidVerySmall").set("score",150);
     Arquetipo.get("AsteroidVerySmall").set("scaleX",0.4);
     Arquetipo.get("AsteroidVerySmall").set("scaleY",0.4);
@@ -79,8 +79,8 @@ var Arquetipo = new Map();
     //Valores de diseño
     Arquetipo.get("AsteroidSmall").set("minVelocity",70);
     Arquetipo.get("AsteroidSmall").set("maxVelocity",175);
-    Arquetipo.get("AsteroidSmall").set("minAngularVelocity",100);
-    Arquetipo.get("AsteroidSmall").set("maxAngularVelocity",300);
+    Arquetipo.get("AsteroidSmall").set("minAngularVelocity",250);
+    Arquetipo.get("AsteroidSmall").set("maxAngularVelocity",500);
     Arquetipo.get("AsteroidSmall").set("score",100);
     Arquetipo.get("AsteroidSmall").set("scaleX",0.65);
     Arquetipo.get("AsteroidSmall").set("scaleY",0.65);
@@ -99,8 +99,8 @@ var Arquetipo = new Map();
     //Valores de diseño
     Arquetipo.get("AsteroidMedium").set("minVelocity",60);
     Arquetipo.get("AsteroidMedium").set("maxVelocity",125);
-    Arquetipo.get("AsteroidMedium").set("minAngularVelocity",75);
-    Arquetipo.get("AsteroidMedium").set("maxAngularVelocity",250);
+    Arquetipo.get("AsteroidMedium").set("minAngularVelocity",200);
+    Arquetipo.get("AsteroidMedium").set("maxAngularVelocity",350);
     Arquetipo.get("AsteroidMedium").set("score",50);
     Arquetipo.get("AsteroidMedium").set("scaleX",0.85);
     Arquetipo.get("AsteroidMedium").set("scaleY",0.85);
@@ -119,8 +119,8 @@ var Arquetipo = new Map();
     //Valores de diseño
     Arquetipo.get("AsteroidLarge").set("minVelocity",50);
     Arquetipo.get("AsteroidLarge").set("maxVelocity",100);
-    Arquetipo.get("AsteroidLarge").set("minAngularVelocity",50);
-    Arquetipo.get("AsteroidLarge").set("maxAngularVelocity",200);
+    Arquetipo.get("AsteroidLarge").set("minAngularVelocity",100);
+    Arquetipo.get("AsteroidLarge").set("maxAngularVelocity",250);
     Arquetipo.get("AsteroidLarge").set("score",20);
     Arquetipo.get("AsteroidLarge").set("scaleX",1.25);
     Arquetipo.get("AsteroidLarge").set("scaleY",1.25);
