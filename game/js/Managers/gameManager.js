@@ -47,7 +47,7 @@ Managers.GameManager.prototype =
         this.tf_score.anchor.set(1, 0);
 
         Logic.EntityFactory.getinstance().createEntity("Bullet",new Phaser.Point(32,450));
-        Logic.MapGenerator.getinstance().createAsteroids();
+        this.resetAsteroids();
     },
     
     update:function()
@@ -62,17 +62,17 @@ Managers.GameManager.prototype =
         }
     },
     
-    nextLevel:function()
-    {
-        game.time.events.add(Phaser.Timer.SECOND * this._timeToReset, this.nextLevel2, this);
-    },
-    
-    nextLevel2:function()
-    {
-        globalVar.asteroidGroup.removeAll(true);
-        globalVar.startingAsteroid += Arquetipo.get("Map").get("incrementAteroids");
-        Logic.MapGenerator.getinstance().createAsteroids();
-    },
+//    nextLevel:function()
+//    {
+//        game.time.events.add(Phaser.Timer.SECOND * this._timeToReset, this.nextLevel2, this);
+//    },
+//    
+//    nextLevel2:function()
+//    {
+//        globalVar.asteroidGroup.removeAll(true);
+//        globalVar.startingAsteroid += Arquetipo.get("Map").get("incrementAteroids");
+//        Logic.MapGenerator.getinstance().createAsteroids();
+//    },
     
     resetShip:function()
     {  
@@ -112,6 +112,66 @@ Managers.GameManager.prototype =
             game.state.start('over');
         }
         globalVar.shipDestroyed = true;
+    },
+    
+    resetAsteroids:function()
+    {
+        for(var i=0;i<globalVar.startingAsteroid;++i)
+        {
+            this.createAsteroids();
+        }
+        game.time.events.add(Phaser.Timer.SECOND*globalVar.timeToUpdateAsteroids, this.incrementalCurrentMaxAsteroids, this);
+    },
+    createAsteroids:function()
+    {
+         var side = Math.round(rand(0,100)*0.01);
+
+        var x;
+        var y;
+
+        if(side)
+        {
+            x = Math.round(rand(0,100)*0.01) * game.width;
+            y = rand(0,100)*0.01 * game.height;
+        }
+        else
+        {
+            x = rand(0,100)*0.01 * game.width;
+            y = Math.round(rand(0,100)*0.01) * game.height;
+        }
+        
+        var tipoInt = rand(0,100);
+        var tipoString = "";
+        
+        if(tipoInt <= 35)
+        {
+            tipoString = "AsteroidLarge";
+        }
+        else if(tipoInt <= 70 && tipoInt > 35)
+        {
+            tipoString = "AsteroidMedium";
+        }
+        else if(tipoInt < 90 && tipoInt > 70)    
+        {
+            tipoString = "AsteroidSmall";
+        }
+        else
+        {
+            tipoString = "AsteroidVerySmall";
+        }
+
+        Logic.EntityFactory.getinstance().createEntity(tipoString,new Phaser.Point(x,y));
+    },
+    
+    incrementalCurrentMaxAsteroids:function()
+    {      
+        this.createAsteroids();
+
+        if(globalVar.timeToUpdateAsteroids > 2.5)
+        {
+            globalVar.timeToUpdateAsteroids = globalVar.timeToUpdateAsteroids - 0.1;
+            game.time.events.add(Phaser.Timer.SECOND*globalVar.timeToUpdateAsteroids, this.incrementalCurrentMaxAsteroids, this);
+        }
     },
 };
 

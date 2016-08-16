@@ -46,29 +46,6 @@ Logic.MapGenerator.prototype =
     {
         
     },
-    
-    createAsteroids:function()
-    {
-        for(var i=0;i<globalVar.startingAsteroid;++i)
-        {
-            var side = Math.round(rand(0,100)*0.01);
-           // console.log("side: "+side);
-            var x;
-            var y;
-
-            if(side)
-            {
-                x = Math.round(rand(0,100)*0.01) * game.width;
-                y = rand(0,100)*0.01 * game.height;
-            }
-            else
-            {
-                x = rand(0,100)*0.01 * game.width;
-                y = Math.round(rand(0,100)*0.01) * game.height;
-            }
-            Logic.EntityFactory.getinstance().createEntity("AsteroidLarge",new Phaser.Point(x,y));
-        }
-    }
 };
 
 Logic.MapGenerator.getinstance = function(){return Logic.MapGenerator._instance;}

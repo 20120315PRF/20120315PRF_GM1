@@ -24,6 +24,7 @@ function initGlobalsVar()
     globalVar.startingAsteroid=getAttributeEntity("startingAteroids","Map");
     globalVar.asteroidGroup=null;
     globalVar.player=null;
+    globalVar.timeToUpdateAsteroids = 5;
 }
 
 //Para los navegadores que no soportan la función create, podemos extender el objeto de JavaSript Object para incluir esta funcionalidad:

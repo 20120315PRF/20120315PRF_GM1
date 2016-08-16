@@ -57,11 +57,6 @@ Components.CAsteroidPhysic.prototype.collision = function(other,asteroidSprite)
         Managers.GameManager.getinstance().destroyShip();
         this.snd_dead.play();
     }
-
-    if (globalVar.asteroidGroup && !globalVar.asteroidGroup.countLiving()) 
-    {
-        Managers.GameManager.getinstance().nextLevel();
-    }
 }
 
 
