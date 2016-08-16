@@ -5,74 +5,74 @@ Components.CBulletController = function(entityType,entity)
     this._entity = entity; 
 }
 
-Components.CBulletController.prototype=
+Components.CBulletController.prototype=Object.create(Componente.prototype,
 {
-    create:function()
+    create:
     {
-        //  All 40 of them
-        this._entity.entityGraphic.createMultiple(getAttributeEntity("cantidadCrear",this._entityType), getAttributeEntity("nombreSprite",this._entityType));
-        this._entity.entityGraphic.setAll('anchor.x', getAttributeEntity("scaleX",this._entityType));
-        this._entity.entityGraphic.setAll('anchor.y', getAttributeEntity("scaleY",this._entityType));
+        value:function()
+        {
+            //  All 40 of them
+            this._entity.entityGraphic.createMultiple(getAttributeEntity("cantidadCrear",this._entityType), getAttributeEntity("nombreSprite",this._entityType));
+            this._entity.entityGraphic.setAll('anchor.x', getAttributeEntity("scaleX",this._entityType));
+            this._entity.entityGraphic.setAll('anchor.y', getAttributeEntity("scaleY",this._entityType));
 
-        this._bulletTime = 0;
-        game.input.mouse.capture = true;
+            this._bulletTime = 0;
+            game.input.mouse.capture = true;
 
-        this.snd_bullet = game.add.audio('snd_star',0.5);
+            this.snd_bullet = game.add.audio('snd_star',0.5);
+        }
     },
     
-    update:function()
+    update:
     {
-        if (game.input.activePointer.leftButton.isDown && !globalVar.shipDestroyed)
+        value:function()
         {
-            this.fireBullet();
-        }   
-       // this._entity.entityGraphic.forEachExists(this.screenWrap, this);
-        game.debug.body(this._entity.entityGraphic);
-    },
-    
-    fireBullet:function()
-    {
-        if (game.time.now > this._bulletTime)
-        {
-            var bullet = this._entity.entityGraphic.getFirstExists(false);
-            
-            if (bullet)
+            if (game.input.activePointer.leftButton.isDown && !globalVar.shipDestroyed)
             {
-                this.snd_bullet.play();
-                var player = globalVar.player.entityGraphic;
-                bullet.reset(player.body.x+16, player.body.y+16);
-                bullet.lifespan = getAttributeEntity("life","Bullet");
-                bullet.rotation = player.rotation;
-                game.physics.arcade.velocityFromRotation(player.rotation, 400, bullet.body.velocity);
-                this._bulletTime = game.time.now + 125;
-            }
+                this.fireBullet();
+            }   
+            // this._entity.entityGraphic.forEachExists(this.screenWrap, this);
+            game.debug.body(this._entity.entityGraphic);
         }
     },
-    
-    screenWrap:function(sprite)
-    {
-        if (sprite.x +getAttributeEntity("padding",this._entityType)< 0)
-        {
-            sprite.x = game.width + getAttributeEntity("padding",this._entityType);
-        }
-        else if (sprite.x - getAttributeEntity("padding",this._entityType)> game.width)
-        {
-            sprite.x = -getAttributeEntity("padding",this._entityType);
-        }
+});
 
-        if (sprite.y + getAttributeEntity("padding",this._entityType)< 0)
-        {
-            sprite.y = game.height + getAttributeEntity("padding",this._entityType);
-        }
-        else if (sprite.y - getAttributeEntity("padding",this._entityType) > game.height)
-        {
-            sprite.y = -getAttributeEntity("padding",this._entityType);
-        }
-    },
-    
-    deadEntity:function()
+Components.CBulletController.prototype.fireBullet=function()
+{
+    if (game.time.now > this._bulletTime)
     {
-        
+        var bullet = this._entity.entityGraphic.getFirstExists(false);
+
+        if (bullet)
+        {
+            this.snd_bullet.play();
+            var player = globalVar.player.entityGraphic;
+            bullet.reset(player.body.x+16, player.body.y+16);
+            bullet.lifespan = getAttributeEntity("life","Bullet");
+            bullet.rotation = player.rotation;
+            game.physics.arcade.velocityFromRotation(player.rotation, 400, bullet.body.velocity);
+            this._bulletTime = game.time.now + 125;
+        }
     }
-    
-};
+}
+
+Components.CBulletController.prototype.screenWrap=function(sprite)
+{
+    if (sprite.x +getAttributeEntity("padding",this._entityType)< 0)
+    {
+        sprite.x = game.width + getAttributeEntity("padding",this._entityType);
+    }
+    else if (sprite.x - getAttributeEntity("padding",this._entityType)> game.width)
+    {
+        sprite.x = -getAttributeEntity("padding",this._entityType);
+    }
+
+    if (sprite.y + getAttributeEntity("padding",this._entityType)< 0)
+    {
+        sprite.y = game.height + getAttributeEntity("padding",this._entityType);
+    }
+    else if (sprite.y - getAttributeEntity("padding",this._entityType) > game.height)
+    {
+        sprite.y = -getAttributeEntity("padding",this._entityType);
+    }
+}

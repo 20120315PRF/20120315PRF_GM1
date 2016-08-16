@@ -25,3 +25,12 @@ function initGlobalsVar()
     globalVar.asteroidGroup=null;
     globalVar.player=null;
 }
+
+//Para los navegadores que no soportan la función create, podemos extender el objeto de JavaSript Object para incluir esta funcionalidad:
+if (typeof Object.create !== 'function') {
+    Object.create = function (o) {
+        var F = function () {};
+        F.prototype = o;
+        return new F();
+    };
+}
