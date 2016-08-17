@@ -5,7 +5,7 @@ Logic.EntityFactory = function()
     console.assert(Logic.EntityFactory._semaphore,"Constructor EntityFactory privado");
     this.Entity = []; 
     this._Groups = new Map();
-
+    this._EntityGroupToEntity = new Map();
 }
 
 Logic.EntityFactory.init = function()
@@ -36,6 +36,7 @@ Logic.EntityFactory.prototype =
         globalVar.asteroidGroup = null;
         
         this.Entity = [];
+        this._EntityGroupToEntity = null;
     },
     
     preload:function(){},
@@ -70,9 +71,7 @@ Logic.EntityFactory.prototype =
 
 
         //Creamos la entidad
-        var entity = null;
-
-        entity = new Logic.Entity(entityType,position,hasAttributeEntity("group",entityType));
+        var entity = new Logic.Entity(entityType,position,hasAttributeEntity("group",entityType));
 
         //Añadimos sus componentes
         Blueprints.forEach(function (value, key) {
@@ -115,4 +114,8 @@ Logic.EntityFactory.getinstance = function(){return Logic.EntityFactory._instanc
 
 Object.defineProperty(Logic.EntityFactory.prototype,"Groups",{
         get : function(){return this._Groups;}
+});
+
+Object.defineProperty(Logic.EntityFactory.prototype,"EntityGroupToEntity",{
+        get : function(){return this._EntityGroupToEntity;}
 });

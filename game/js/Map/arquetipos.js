@@ -69,7 +69,7 @@ var Arquetipo = new Map();
     Arquetipo.get("AsteroidVerySmall").set("scaleY",0.4);
     Arquetipo.get("AsteroidVerySmall").set("volumenExplosion",0.2);
     //Valores de programación
-    Arquetipo.get("AsteroidVerySmall").set("nombreSprite",'AsteroidLargeSprite');
+    Arquetipo.get("AsteroidVerySmall").set("nombreSprite",'AsteroidVerySmallSprite');
     Arquetipo.get("AsteroidVerySmall").set("sprite",'game/assets/images/asteroid24.png');
     Arquetipo.get("AsteroidVerySmall").set("enableBody",1); //1 si tiene fisica, 0 no.
     Arquetipo.get("AsteroidVerySmall").set("padding",16);

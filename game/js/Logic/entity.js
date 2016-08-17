@@ -13,12 +13,6 @@ Logic.Entity = function(entityType, position, group)
 
 Logic.Entity.prototype = 
 {
-    respawn:function(position)
-    {
-        this._entityGraphic.reset(position.x, position.y);
-        this._position = position;
-    },
-    
     create:function()
     {
         this.Components.forEach(function(value,key)

@@ -9,6 +9,7 @@ var loadState={
         game.load.image(getAttributeEntity("nombreSprite","AsteroidSmall"), getAttributeEntity("sprite","AsteroidSmall"));
         game.load.image(getAttributeEntity("nombreSprite","AsteroidMedium"), getAttributeEntity("sprite","AsteroidMedium"));
         game.load.image(getAttributeEntity("nombreSprite","AsteroidLarge"), getAttributeEntity("sprite","AsteroidLarge"));
+        game.load.image(getAttributeEntity("nombreSprite","AsteroidVerySmall"), getAttributeEntity("sprite","AsteroidVerySmall"));
 
         game.load.audio('snd_star',['game/assets/audio/shoot.wav']);
         game.load.audio('snd_ambiental',['game/assets/audio/space2.ogg']);

@@ -171,6 +171,10 @@ Managers.GameManager.prototype =
         {
             globalVar.timeToUpdateAsteroids = globalVar.timeToUpdateAsteroids - 0.1;           
         }
+        else if(globalVar.timeToUpdateAsteroids <= 2.5 && globalVar.timeToUpdateAsteroids > 1.5)
+        {
+           globalVar.timeToUpdateAsteroids = globalVar.timeToUpdateAsteroids - 0.02; 
+        }
         game.time.events.add(Phaser.Timer.SECOND*globalVar.timeToUpdateAsteroids, this.incrementalCurrentMaxAsteroids, this);
     },
 };
