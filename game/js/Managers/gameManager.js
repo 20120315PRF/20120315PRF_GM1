@@ -39,12 +39,11 @@ Managers.GameManager.prototype =
         this._shipLives = getAttributeEntity("shipLives","Player");
         this._timeToReset = getAttributeEntity("timeToReset","Player");
 
-        this.tf_lives = game.add.text(20, 10, this._shipLives, globalVar.fontStyle);
+        game.add.sprite(20,10,"heart");
+        this.tf_lives = game.add.text(53, 10, this._shipLives, globalVar.fontStyle);
 
         globalVar.score = 0;
-        this.tf_score = game.add.text(game.width - 30, 10, globalVar.score, globalVar.fontStyle);
-        this.tf_score.align = 'right';
-        this.tf_score.anchor.set(1, 0);
+        this.tf_score = game.add.text(game.width*0.5, 10, globalVar.score, {font: '25px Arial', fill: '#FFFFFF', align: 'center'});
 
         Logic.EntityFactory.getinstance().createEntity("Bullet",new Phaser.Point(32,450));
         this.resetAsteroids();
@@ -61,19 +60,7 @@ Managers.GameManager.prototype =
             console.log("Cambio de cursor");
         }
     },
-    
-//    nextLevel:function()
-//    {
-//        game.time.events.add(Phaser.Timer.SECOND * this._timeToReset, this.nextLevel2, this);
-//    },
-//    
-//    nextLevel2:function()
-//    {
-//        globalVar.asteroidGroup.removeAll(true);
-//        globalVar.startingAsteroid += Arquetipo.get("Map").get("incrementAteroids");
-//        Logic.MapGenerator.getinstance().createAsteroids();
-//    },
-    
+
     resetShip:function()
     {  
         globalVar.player.entityGraphic.reset(game.width*0.5,game.height*0.5);

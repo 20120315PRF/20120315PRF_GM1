@@ -21,6 +21,7 @@ var loadState={
         game.load.image('cursor','game/assets/images/cursor.png' );
         
         game.load.image('smokeAsteroids','game/assets/images/Smoke10.png' );
+        game.load.image('heart','game/assets/images/heart.png' );
         
         game.load.spritesheet(getAttributeEntity("nombreSprite","Explosion"), getAttributeEntity("sprite","Explosion"), 25, 25, 18);
     },
