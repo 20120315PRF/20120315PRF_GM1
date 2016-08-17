@@ -7,6 +7,7 @@ var gameState ={
     },
     create:function()
     { 
+        this.aux = 0;
         this.begin = false;
         this.timeToBegin = 3;
         
@@ -18,13 +19,21 @@ var gameState ={
         
         this.game.time.events.add(Phaser.Timer.SECOND, this.updateTimeToBegin, this);
         
-        this.timeText = this.game.add.text(this.game.width*0.5, 30, this.timeToBegin,{font: '40px Arial', fill: '#FFFFFF', align: 'center'});
+        this.timeText = this.game.add.text(this.game.width*0.5, 30, this.timeToBegin,{font: '30px Arial', fill: '#FFFFFF', align: 'center'});
     },
     update:function()
     {
         if(this.begin)
         {
             Server.Logic.getinstance().update();
+        }
+        else{
+            if(this.aux == 1)
+            {
+                this.timeText.fontSize +=1;
+                this.aux = 0;
+            }
+            else { this.aux = 1;}
         }
     },
     
@@ -34,7 +43,7 @@ var gameState ={
         this.begin = true;
         --this.timeToBegin;
         this.timeText.text = this.timeToBegin;
-        
+        this.timeText.fontSize = 30;
         if(this.timeToBegin>0)
         {
             this.begin = false;           
