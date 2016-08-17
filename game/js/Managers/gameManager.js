@@ -156,12 +156,13 @@ Managers.GameManager.prototype =
 
         if(globalVar.timeToUpdateAsteroids > 2.5)
         {
-            globalVar.timeToUpdateAsteroids = globalVar.timeToUpdateAsteroids - 0.1;           
+            globalVar.timeToUpdateAsteroids = globalVar.timeToUpdateAsteroids - 0.2;           
         }
         else if(globalVar.timeToUpdateAsteroids <= 2.5 && globalVar.timeToUpdateAsteroids > 1.5)
         {
-           globalVar.timeToUpdateAsteroids = globalVar.timeToUpdateAsteroids - 0.02; 
+           globalVar.timeToUpdateAsteroids = globalVar.timeToUpdateAsteroids - 0.05; 
         }
+        console.log("Nuevo asteroide: "+globalVar.timeToUpdateAsteroids);
         game.time.events.add(Phaser.Timer.SECOND*globalVar.timeToUpdateAsteroids, this.incrementalCurrentMaxAsteroids, this);
     },
 };
