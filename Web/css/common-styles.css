@@ -7,14 +7,14 @@ body {
 
 #page {
     background-image: url('../img/background.jpg');
-    background-size: contain;
+    background-size: cover;
 }
 
 /**
 Header 
 */
 #header {
-    background-color: rgba(240, 230, 140, .4);
+    /* background-color: rgba(240, 230, 140, .4); */
 }
 #header-content {
     padding-top: 5px;
