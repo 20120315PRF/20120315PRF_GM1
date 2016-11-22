@@ -21,7 +21,7 @@ Server.Logic.init = function()
     
     
     return true;
-}
+};
 
 Server.Logic.prototype = 
 {
@@ -63,4 +63,4 @@ Server.Logic.prototype =
 Server.Logic.getinstance = function()
 {
     return Server.Logic._instance;
-}
+};

@@ -3,7 +3,7 @@ var Logic = Logic || [];
 Logic.MapGenerator = function()
 {
     console.assert(Logic.MapGenerator._semaphore,"Constructor MapGenerator privado");
-}
+};
 
 Logic.MapGenerator.init = function()
 {
@@ -48,4 +48,4 @@ Logic.MapGenerator.prototype =
     },
 };
 
-Logic.MapGenerator.getinstance = function(){return Logic.MapGenerator._instance;}
+Logic.MapGenerator.getinstance = function(){return Logic.MapGenerator._instance;};

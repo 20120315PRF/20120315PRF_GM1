@@ -1,7 +1,7 @@
 Componente = function()
 {
     
-}
+};
 
 Componente.prototype = 
 {
@@ -10,4 +10,4 @@ Componente.prototype =
     update:function(){},
     deadEntity:function(){},
     respawn:function(){},
-}
+};

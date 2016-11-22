@@ -4,7 +4,7 @@ Components.CPhysics = function(entityType,entity)
 {
     this._entityType = entityType;
     this._entity = entity;
-}
+};
 
 Components.CPhysics.prototype = Object.create(Componente.prototype, 
 {
@@ -30,4 +30,4 @@ Components.CPhysics.prototype = Object.create(Componente.prototype,
                 this._entity.entityGraphic.body.collideWorldBounds = getAttributeEntity("collideWorldBounds", this._entityType);
         }
     },
-})
+});

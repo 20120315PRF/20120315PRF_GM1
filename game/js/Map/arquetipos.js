@@ -158,10 +158,10 @@ function getAttributeEntity(name, entityType)
     console.assert(Arquetipo.has(entityType), "Tipo de entidad "+entityType+" incorrecta. No se encuentra en el arquetipo");
     console.assert(Arquetipo.get(entityType).has(name),"Atributo "+name+" en el tipo de Entidad " +entityType+ " no encontrado" );
     return Arquetipo.get(entityType).get(name);
-}
+};
 
 function hasAttributeEntity(name,entityType)
 {
     console.assert(Arquetipo.has(entityType), "Tipo de entidad "+entityType+" incorrecta. No se encuentra en el arquetipo");
     return (Arquetipo.get(entityType).has(name)) ? true : false;
-}
+};

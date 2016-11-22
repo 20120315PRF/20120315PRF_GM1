@@ -9,7 +9,7 @@ Logic.Entity = function(entityType, position, group)
     //this._entity representa el sprite de la entidad o el grupo de entidades
     this._entityGraphic = (group) ? Logic.EntityFactory.getinstance().Groups.get(this._entityType):null;
 
-}
+};
 
 Logic.Entity.prototype = 
 {

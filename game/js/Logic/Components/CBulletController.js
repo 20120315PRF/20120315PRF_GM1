@@ -3,7 +3,7 @@ Components.CBulletController = function(entityType,entity)
 {
     this._entityType = entityType;
     this._entity = entity; 
-}
+};
 
 Components.CBulletController.prototype=Object.create(Componente.prototype,
 {
@@ -54,7 +54,7 @@ Components.CBulletController.prototype.fireBullet=function()
             this._bulletTime = game.time.now + 125;
         }
     }
-}
+};
 
 Components.CBulletController.prototype.screenWrap=function(sprite)
 {
@@ -75,4 +75,4 @@ Components.CBulletController.prototype.screenWrap=function(sprite)
     {
         sprite.y = -getAttributeEntity("padding",this._entityType);
     }
-}
+};

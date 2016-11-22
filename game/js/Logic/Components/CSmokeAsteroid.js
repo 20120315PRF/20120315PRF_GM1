@@ -4,7 +4,7 @@ Components.CSmokeAsteroid = function(entityType,entity)
 {
     this._entityType = entityType;
     this._entity = entity; 
-}
+};
 
 Components.CSmokeAsteroid.prototype = Object.create(Componente.prototype,
 {

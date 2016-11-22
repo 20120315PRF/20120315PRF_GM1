@@ -4,7 +4,7 @@ Components.CAsteroidPhysic = function(entityType,entity)
 {
     this._entityType = entityType;
     this._entity = entity; 
-}
+};
 
 Components.CAsteroidPhysic.prototype = Object.create(Componente.prototype, 
 {
@@ -59,6 +59,6 @@ Components.CAsteroidPhysic.prototype.collision = function(other,asteroidSprite)
     }
     
     globalVar.asteroidGroup.remove(this._entity.entityGraphic);
-}
+};
 
 

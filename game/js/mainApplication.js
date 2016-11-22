@@ -12,4 +12,4 @@ window.onload = function()
     game.state.add('over',gameOverState);
     
     game.state.start('boot');
-}
+};

@@ -4,7 +4,7 @@ Components.CAsteroidController = function(entityType,entity)
 {
     this._entityType = entityType;
     this._entity = entity; 
-}
+};
 
 Components.CAsteroidController.prototype = Object.create(Componente.prototype,
 {
@@ -66,4 +66,4 @@ Components.CAsteroidController.prototype.screenWrap = function(sprite)
     {
         sprite.y = -getAttributeEntity("padding",this._entityType);
     }
-}
+};

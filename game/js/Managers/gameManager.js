@@ -5,7 +5,7 @@ var Managers = Managers || [];
 Managers.GameManager = function()
 {
     console.assert(Managers.GameManager._semaphore,"Constructor GameManager privado");
-}
+};
 
 Managers.GameManager.init = function()
 {
@@ -17,7 +17,7 @@ Managers.GameManager.init = function()
     }
     
     return true;
-}
+};
 
 Managers.GameManager.prototype = 
 {
@@ -171,4 +171,4 @@ Object.defineProperty(Managers.GameManager.prototype,"addScore",{
         set : function(score){globalVar.score += score; this.tf_score.text = globalVar.score;}
 });
 
-Managers.GameManager.getinstance = function(){return Managers.GameManager._instance;}
+Managers.GameManager.getinstance = function(){return Managers.GameManager._instance;};

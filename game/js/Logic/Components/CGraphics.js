@@ -5,7 +5,7 @@ Components.CGraphics = function(entityType,entity)
     this._entityType = entityType;
     this._entity = entity;
     
-}
+};
 
 Components.CGraphics.prototype = Object.create(Componente.prototype,
 {

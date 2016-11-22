@@ -3,7 +3,7 @@ Components.CPlayerController = function(entityType,entity)
 {
     this._entityType = entityType;
     this._entity = entity;
-}
+};
 
 Components.CPlayerController.prototype = Object.create(Componente.prototype,
 {
@@ -65,4 +65,4 @@ Components.CPlayerController.prototype.screenWrap = function(sprite)
     {
         sprite.y = -getAttributeEntity("padding",this._entityType);
     }
-}
+};

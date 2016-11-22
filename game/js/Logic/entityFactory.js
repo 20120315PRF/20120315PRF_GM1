@@ -6,7 +6,7 @@ Logic.EntityFactory = function()
     this.Entity = []; 
     this._Groups = new Map();
     this._EntityGroupToEntity = new Map();
-}
+};
 
 Logic.EntityFactory.init = function()
 {
@@ -18,7 +18,7 @@ Logic.EntityFactory.init = function()
     }
 
     return true;
-}
+};
 
 Logic.EntityFactory.prototype =
 {
