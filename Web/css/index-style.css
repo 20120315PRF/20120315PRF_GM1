@@ -1,6 +1,6 @@
 #big-banner{
     min-height: 600px;
-    background-image: url('../img/games-background-600.jpg');
+    background-image: url('../img/games-background-600.jpg');    
     font-famili: "josefin-sans";
     text-align: center;
 }
@@ -13,12 +13,12 @@
 
 #big-banner-content h1{
     margin: 0;
-    font-size: 3em;
+    font-size: 8rem;
 }
 
 .big-title{
     color: white;
-    font-size: 8em;
+    font-size: 8rem;
 }
 .small-title {
     color: white;
@@ -29,7 +29,7 @@
     THE INFO PANEL 
 **/
 #info-panel{
-    background-color: rgba(255,255,255, .4);
+    background-color: rgba(0,0,0, .2);
     min-height: 400px;
     font-family: "josefin-sans";
 }

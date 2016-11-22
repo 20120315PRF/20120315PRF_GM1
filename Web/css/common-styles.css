@@ -1,20 +1,22 @@
 html{
     margin: 0 !important;
+    height: 100%;
 }
 body {
     margin: 0 !important;
+    height: 100%;
 }
 
 #page {
     background-image: url('../img/background.jpg');
-    background-size: cover;
+    background-size: cover;  
 }
 
 /**
 Header 
 */
 #header {
-    /* background-color: rgba(240, 230, 140, .4); */
+    /*background-color: rgba(240, 230, 140, .4);*/
 }
 #header-content {
     padding-top: 5px;
@@ -75,7 +77,7 @@ footer ul {
 /**
 Common classes */
 .separator {
-    border: solid 3px #FFA500;
+    border: solid 3px #004C82;
     margin-top: 2px;
     margin-bottom: 5px;
 }
@@ -101,6 +103,15 @@ Common classes */
     font-weight: bold;
     font-size: 1.1em;
 }
+
+.blue-separator{
+    display: block;
+    border: solid #004C82 1px;
+    text-align: center;
+    width: 20%;
+    margin: 0 auto;
+}
+
 .red-separator {
     display: block;
     border: solid red 1px;
