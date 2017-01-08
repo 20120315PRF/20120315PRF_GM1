@@ -9,12 +9,18 @@ var Configuracion={
         maxVelocity:200,
         collideWorldBounds:0,
         padding:16,
+        lives:3,
     },
     Bullet:{
         speed:400,
         scaleX:0.5,
         scaleY:0.5,
         timeBetweenBullets:300,
+    },
+    Game:{
+        velocityDescendingEnemies:5,
+        velocityIncrementDificulty:1,
+        scoreEnemyDummy:10,
     },
 };
 

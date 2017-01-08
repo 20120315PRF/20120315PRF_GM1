@@ -1,10 +1,11 @@
 
-bulletPlayer = function(game)
+bulletPlayer = function(game,hud)
 {
     this.game = game;
-    
+    this.hud = hud;
     this.snd_bullet = game.add.audio('snd_star',0.5);
-    this.bulletTime = 0;   
+    this.bulletTime = 0;  
+    this.snd_dead = game.add.audio('snd_dead');
 }
 
 bulletPlayer.prototype.create = function()
@@ -22,9 +23,17 @@ bulletPlayer.prototype.create = function()
 }
 
 
-bulletPlayer.prototype.update = function()
+bulletPlayer.prototype.update = function(enemiesDummy)
 {
-    
+    this.game.physics.arcade.overlap(this.bulletsPlayer,enemiesDummy.getEnemiesDummy(),this.collision,null,this);
+}
+
+bulletPlayer.prototype.collision = function(bullet, enemy)
+{
+    bullet.kill();
+    enemy.kill();
+    this.snd_dead.play();
+    this.hud.addScore(Configuracion.Game.scoreEnemyDummy);
 }
 
 bulletPlayer.prototype.fireBullet = function(player)

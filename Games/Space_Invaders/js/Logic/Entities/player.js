@@ -1,8 +1,6 @@
 
 Player = function(game){
     this.game = game;
-    
-    this.bulletPlayer = new bulletPlayer(game);
 }
 
 Player.prototype.create = function(){
@@ -16,14 +14,14 @@ Player.prototype.create = function(){
     this.player.body.maxVelocity.set(Configuracion.Player.maxVelocity);
     this.player.body.collideWorldBounds = Configuracion.Player.collideWorldBounds;
     
-    this.bulletPlayer.create();
+    //this.bulletPlayer.create();
 }
 
 Player.prototype.getsprite = function(){
 	return this.sprite;
 }
 
-Player.prototype.update = function(){
+Player.prototype.update = function(bulletsObject){
     
     this.player.body.acceleration.set(0);
     
@@ -38,14 +36,14 @@ Player.prototype.update = function(){
     
     if (this.game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR))
     {
-        this.bulletPlayer.fireBullet(this.player);
+        bulletsObject.fireBullet(this.player);
     }   
     
     this.screenWrap();
 }
 
-Player.prototype.kill = function(){
-    
+Player.prototype.kill = function()
+{
 
 }
 

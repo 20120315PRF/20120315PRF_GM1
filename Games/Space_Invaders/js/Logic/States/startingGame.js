@@ -18,11 +18,11 @@ var startingGameState ={
         //Inicializamos todas las variables del juego
         initGlobalsVar();
         
-        //Iniciamos el conteo para empezar el juego
-        this.initialTiming()
-        
         //Metemos todas las entidades en el juego en forma de sprites, ya que en el siguiente estado, se destruiran
-        this.initialEntities()
+        this.initialEntities();
+        
+        //Iniciamos el conteo para empezar el juego
+        this.initialTiming();
     },
     update:function()
     {
