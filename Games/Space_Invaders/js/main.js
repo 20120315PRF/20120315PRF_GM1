@@ -1,5 +1,3 @@
-var path = "Games/Space_Invaders"; 
-
 //game representa el juego
 var game = new Phaser.Game(750, 600, Phaser.AUTO, 'game-frame');
 

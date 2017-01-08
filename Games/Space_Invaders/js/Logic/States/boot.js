@@ -4,7 +4,7 @@ var bootState=
     preload:function()
     {
         this.game=game;
-        this.game.load.image('loadBar',path+'/assets/images/loadBar.png');
+        this.game.load.image('loadBar',Sprites.loadBar);
     },
     create:function()
     {

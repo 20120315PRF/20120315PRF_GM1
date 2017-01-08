@@ -8,7 +8,7 @@ var gameState ={
         this.sky = this.game.add.tileSprite(0, 0, 750, 600, 'space');
         this.sky.inputEnabled = true;
         
-        this.player = new Player(game);
+        this.player = new Player(this.game);
         
     },
     create:function()

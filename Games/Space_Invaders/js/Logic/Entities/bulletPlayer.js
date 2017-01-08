@@ -17,6 +17,8 @@ bulletPlayer.prototype.create = function()
     this.bulletsPlayer.setAll('anchor.x', Configuracion.Bullet.scaleX);
     this.bulletsPlayer.setAll('anchor.y', Configuracion.Bullet.scaleY);
     this.bulletsPlayer.setAll('checkWorldBounds', true);
+    this.bulletsPlayer.setAll('outOfBoundsKill', true); //Muere cuando sale del juego
+    
 }
 
 
@@ -36,7 +38,6 @@ bulletPlayer.prototype.fireBullet = function(player)
             this.snd_bullet.play();
             
             bullet.reset(player.body.x+16,player.body.y+16);
-            bullet.lifespan = Configuracion.Bullet.life;
             bullet.rotation = player.rotation;
             this.game.physics.arcade.velocityFromRotation(player.rotation, 400, bullet.body.velocity);
             

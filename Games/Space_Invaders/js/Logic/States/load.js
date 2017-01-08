@@ -6,20 +6,24 @@ var loadState={
         this.preloadBar = this.game.add.sprite(100, 300, 'loadBar');
         this.load.setPreloadSprite(this.preloadBar);
         
-        this.game.load.image('bulletSprite',path+'/assets/images/bullets.png');
-        this.game.load.image('playerSprite',path+'/assets/images/ship4.png');
+        this.game.load.image('bulletSprite',Sprites.bulletPlayer);
+        this.game.load.image('playerSprite',Sprites.player);
+        
+        this.game.load.image('enemy1Sprite',Sprites.enemy1);
+        this.game.load.image('enemy2Sprite',Sprites.enemy1);
+        this.game.load.image('enemy3Sprite',Sprites.enemy1);
+        this.game.load.image('enemy4Sprite',Sprites.enemy1);
 
 
-        this.game.load.audio('snd_star',[path+'/assets/audio/shoot.wav']);
+        this.game.load.audio('snd_star',[Audios.snd_shoot]);
         //game.load.audio('snd_ambiental',[path+'/assets/audio/space2.ogg']);
-        this.game.load.audio('snd_dead',[path+'/assets/audio/dead.wav']);
-        this.game.load.audio('snd_selectMenu',[path+'/assets/audio/menu.wav']);
-        this.game.load.image('startButton',path+'/assets/images/startButton.png');
-        this.game.load.image('menu-bg',path+'/assets/images/menu.jpg' );
+        this.game.load.audio('snd_dead',[Audios.snd_dead]);
+        this.game.load.audio('snd_selectMenu',[Audios.snd_selectMenu]);
+        this.game.load.image('menu-bg', Sprites.menu );
         
-        this.game.load.image('heart',path+'/assets/images/heart.png' );
+        this.game.load.image('heart',Sprites.heart );
         
-        this.game.load.spritesheet('explosionSprite', path+'/assets/images/explode.png', 25, 25, 18);
+        this.game.load.spritesheet('explosionSprite', Sprites.explosion, 25, 25, 18);
     },
     create:function()
     {
