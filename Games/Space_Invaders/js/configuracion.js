@@ -1,0 +1,20 @@
+var Configuracion={
+    Player:{
+        speedX:300,
+        scaleX:1,
+        scaleY:1,
+        gravity:0,
+        acceleration:300,
+        drag:150,
+        maxVelocity:200,
+        collideWorldBounds:0,
+        padding:16,
+    },
+    Bullet:{
+        speed:400,
+        scaleX:0.5,
+        scaleY:0.5,
+        life:1200,
+        timeBetweenBullets:300,
+    },
+}

@@ -1,28 +1,30 @@
 var bootState=
 {
+    
     preload:function()
     {
-        game.load.image('loadBar',path+'/assets/images/loadBar.png');
+        this.game=game;
+        this.game.load.image('loadBar',path+'/assets/images/loadBar.png');
     },
     create:function()
     {
         //  This will run in Canvas mode, so let's gain a little speed and display
-        game.renderer.clearBeforeRender = false;
-        game.renderer.roundPixels = true;
+        this.game.renderer.clearBeforeRender = false;
+        this.game.renderer.roundPixels = true;
         
-        game.physics.startSystem(Phaser.Physics.ARCADE);  
+        this.game.physics.startSystem(Phaser.Physics.ARCADE);  
         
-        game.input.keyboard.addKeyCapture(Phaser.Keyboard.SPACEBAR);
-        game.input.keyboard.addKeyCapture(Phaser.Keyboard.LEFT);
-        game.input.keyboard.addKeyCapture(Phaser.Keyboard.RIGHT);
-        game.input.keyboard.addKeyCapture(Phaser.Keyboard.UP);
-        game.input.keyboard.addKeyCapture(Phaser.Keyboard.DOWN);
+        this.game.input.keyboard.addKeyCapture(Phaser.Keyboard.SPACEBAR);
+        this.game.input.keyboard.addKeyCapture(Phaser.Keyboard.LEFT);
+        this.game.input.keyboard.addKeyCapture(Phaser.Keyboard.RIGHT);
+        this.game.input.keyboard.addKeyCapture(Phaser.Keyboard.UP);
+        this.game.input.keyboard.addKeyCapture(Phaser.Keyboard.DOWN);
         
-        game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
+        this.game.scale.fullScreenScaleMode = Phaser.ScaleManager.SHOW_ALL;
         
         
         
-        game.state.start('load');
+        this.game.state.start('load');
         
         
         //Con esto hacemos que la música no se pare aunque ya no estemos en el navegador. 
