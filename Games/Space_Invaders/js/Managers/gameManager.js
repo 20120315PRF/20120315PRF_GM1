@@ -28,7 +28,9 @@ Managers.GameManager.prototype =
     
     preload:function()
     {
-        Logic.EntityFactory.getinstance().createEntity("Player",new Phaser.Point(game.width*0.5,game.height*0.5));
+        Logic.EntityFactory.getinstance().createEntity("Player",new Phaser.Point(game.width*0.5,game.height*0.85));
+        
+        globalVar.player.entityGraphic.angle = -90;
     },
     
     create:function()
@@ -53,18 +55,11 @@ Managers.GameManager.prototype =
     update:function()
     {
         Logic.EntityFactory.getinstance().update();
-
-        //Esto es para cambiar el cursor cuando se sale de la pestaña del juego
-        if( game.canvas.style.cursor == 'inherit')
-        {
-            game.canvas.style.cursor = 'url(Games/Space_Invaders/assets/images/cursor.png),auto';
-            console.log("Cambio de cursor");
-        }
     },
 
     resetShip:function()
     {  
-        globalVar.player.entityGraphic.reset(game.width*0.5,game.height*0.5);
+        globalVar.player.entityGraphic.reset(game.width*0.5,game.height*0.85);
         globalVar.player.entityGraphic.angle = -90;
 
         globalVar.shipDestroyed = false;

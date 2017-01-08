@@ -13,7 +13,8 @@ Logic.MapGenerator.init = function()
         Logic.MapGenerator._instance = new Logic.MapGenerator();
         Logic.MapGenerator._semaphore = 0;
     }
-    game.load.image('space',path+'/assets/images/space.jpg');
+    
+    game.load.image('space',path+'/assets/images/space.png');
     return true;
 }
 
@@ -26,15 +27,9 @@ Logic.MapGenerator.prototype =
     
     preload:function()
     {
-        var sky = game.add.sprite(-70,-5,'space');
-        sky.scale.setTo(1.4,1.6);
-        
-        sky.inputEnabled = true;
-        
-        sky.events.onInputOver.add(function(){
-            game.canvas.style.cursor = 'url(Games/Asteroids/assets/images/cursor.png),auto'
+        sky = game.add.tileSprite(0, 0, 800, 600, 'space');
 
-        }, this);
+        sky.inputEnabled = true;
     },
     
     create:function()
@@ -44,7 +39,7 @@ Logic.MapGenerator.prototype =
     
     update:function()
     {
-        
+        sky.tilePosition.y += 2;
     },
 };
 

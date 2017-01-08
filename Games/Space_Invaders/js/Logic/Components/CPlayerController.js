@@ -7,23 +7,30 @@ Components.CPlayerController = function(entityType,entity)
 
 Components.CPlayerController.prototype = Object.create(Componente.prototype,
 {
-    update:
+    create:
     {
         value:function()
         {
-            if (game.input.keyboard.isDown(Phaser.Keyboard.UP) || game.input.keyboard.isDown(Phaser.Keyboard.W))
-            {
-                game.physics.arcade.accelerationFromRotation(3.1416*0.5, -500, this._entity.entityGraphic.body.acceleration);
-            }
-            else if (game.input.keyboard.isDown(Phaser.Keyboard.DOWN) || game.input.keyboard.isDown(Phaser.Keyboard.S))
-            {
-                game.physics.arcade.accelerationFromRotation(3*3.1416*0.5, -500, this._entity.entityGraphic.body.acceleration);
-            }
-            else
-            {
-                this._entity.entityGraphic.body.acceleration.set(0);
-            }
+            //  All 40 of them
+            var bulletGroup = game.add.group();
+            bulletGroup.enableBody = true;
+            bulletGroup.physicsBodyType = Phaser.Physics.ARCADE;
 
+            this._Groups.set("Bullet",bulletGroup); 
+            this._entity.entityGraphic.createMultiple(getAttributeEntity("cantidadCrear",this._entityType), getAttributeEntity("nombreSprite",this._entityType));
+            this._entity.entityGraphic.setAll('anchor.x', getAttributeEntity("scaleX",this._entityType));
+            this._entity.entityGraphic.setAll('anchor.y', getAttributeEntity("scaleY",this._entityType));
+            this._entity.entityGraphic.setAll('checkWorldBounds', true);
+            this._bulletTime = 0;
+
+            this.snd_bullet = game.add.audio('snd_star',0.5);
+        }
+    },
+    update:
+    {
+        value:function()
+        {           
+            this._entity.entityGraphic.body.acceleration.set(0);
             if (game.input.keyboard.isDown(Phaser.Keyboard.LEFT) || game.input.keyboard.isDown(Phaser.Keyboard.A))
             {
                 this._entity.entityGraphic.body.acceleration.x = -500;
@@ -38,9 +45,6 @@ Components.CPlayerController.prototype = Object.create(Componente.prototype,
             }
 
             this.screenWrap(this._entity.entityGraphic);
-
-            this._entity.entityGraphic.rotation = game.physics.arcade.angleToPointer(this._entity.entityGraphic);
-
         }
     },
 });
@@ -55,14 +59,5 @@ Components.CPlayerController.prototype.screenWrap = function(sprite)
     else if (sprite.x - getAttributeEntity("padding",this._entityType)> game.width)
     {
         sprite.x = -getAttributeEntity("padding",this._entityType);
-    }
-
-    if (sprite.y + getAttributeEntity("padding",this._entityType)< 0)
-    {
-        sprite.y = game.height + getAttributeEntity("padding",this._entityType);
-    }
-    else if (sprite.y - getAttributeEntity("padding",this._entityType) > game.height)
-    {
-        sprite.y = -getAttributeEntity("padding",this._entityType);
     }
 };

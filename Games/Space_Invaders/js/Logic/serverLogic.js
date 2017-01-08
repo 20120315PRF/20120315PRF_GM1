@@ -57,6 +57,7 @@ Server.Logic.prototype =
     update:function()
     {
         Managers.GameManager.getinstance().update();
+        Logic.MapGenerator.getinstance().update();
     },   
 };
 

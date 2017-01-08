@@ -15,9 +15,8 @@ Components.CBulletController.prototype=Object.create(Componente.prototype,
             this._entity.entityGraphic.createMultiple(getAttributeEntity("cantidadCrear",this._entityType), getAttributeEntity("nombreSprite",this._entityType));
             this._entity.entityGraphic.setAll('anchor.x', getAttributeEntity("scaleX",this._entityType));
             this._entity.entityGraphic.setAll('anchor.y', getAttributeEntity("scaleY",this._entityType));
-
+            this._entity.entityGraphic.setAll('checkWorldBounds', true);
             this._bulletTime = 0;
-            game.input.mouse.capture = true;
 
             this.snd_bullet = game.add.audio('snd_star',0.5);
         }
@@ -27,11 +26,10 @@ Components.CBulletController.prototype=Object.create(Componente.prototype,
     {
         value:function()
         {
-            if (game.input.activePointer.leftButton.isDown && !globalVar.shipDestroyed)
+            if (game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR) && !globalVar.shipDestroyed)
             {
                 this.fireBullet();
             }   
-            // this._entity.entityGraphic.forEachExists(this.screenWrap, this);
             game.debug.body(this._entity.entityGraphic);
         }
     },
@@ -51,28 +49,7 @@ Components.CBulletController.prototype.fireBullet=function()
             bullet.lifespan = getAttributeEntity("life","Bullet");
             bullet.rotation = player.rotation;
             game.physics.arcade.velocityFromRotation(player.rotation, 400, bullet.body.velocity);
-            this._bulletTime = game.time.now + 125;
+            this._bulletTime = game.time.now + 300;
         }
-    }
-};
-
-Components.CBulletController.prototype.screenWrap=function(sprite)
-{
-    if (sprite.x +getAttributeEntity("padding",this._entityType)< 0)
-    {
-        sprite.x = game.width + getAttributeEntity("padding",this._entityType);
-    }
-    else if (sprite.x - getAttributeEntity("padding",this._entityType)> game.width)
-    {
-        sprite.x = -getAttributeEntity("padding",this._entityType);
-    }
-
-    if (sprite.y + getAttributeEntity("padding",this._entityType)< 0)
-    {
-        sprite.y = game.height + getAttributeEntity("padding",this._entityType);
-    }
-    else if (sprite.y - getAttributeEntity("padding",this._entityType) > game.height)
-    {
-        sprite.y = -getAttributeEntity("padding",this._entityType);
     }
 };
