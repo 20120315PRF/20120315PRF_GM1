@@ -44,7 +44,7 @@ Player.prototype.update = function(bulletsObject){
 
 Player.prototype.kill = function()
 {
-
+    gameMgr.playerKill();
 }
 
 Player.prototype.screenWrap = function()

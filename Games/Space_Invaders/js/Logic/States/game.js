@@ -9,27 +9,15 @@ var gameState ={
         this.sky.inputEnabled = true;
         
         //Creamos las entidades
-        this.player = new Player(this.game);
-        this.HUD = new HUD(this.game);
-        this.bulletPlayer = new bulletPlayer(this.game,this.HUD);
-        this.enemiesDummy = new enemyDummy(this.game);
+        gameMgr = new GameManager(this.game);
     },
     create:function()
     { 
-        this.player.create();
-        this.bulletPlayer.create();
-        this.enemiesDummy.create();
-        this.HUD.create();
+        gameMgr.create();
     },
     update:function()
     {
-        this.sky.tilePosition.y += 2;
-        
-        this.player.update(this.bulletPlayer);
-        
-        this.enemiesDummy.update();
-        
-        this.bulletPlayer.update(this.enemiesDummy);
+        gameMgr.update();
     },
     
 };

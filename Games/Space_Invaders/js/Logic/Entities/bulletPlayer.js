@@ -33,7 +33,7 @@ bulletPlayer.prototype.collision = function(bullet, enemy)
     bullet.kill();
     enemy.kill();
     this.snd_dead.play();
-    this.hud.addScore(Configuracion.Game.scoreEnemyDummy);
+    gameMgr.setScore(Configuracion.Game.scoreEnemyDummy);
 }
 
 bulletPlayer.prototype.fireBullet = function(player)
