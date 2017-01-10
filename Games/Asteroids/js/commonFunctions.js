@@ -1,7 +1,8 @@
 var seed  = Date.now();
 
 function rand(a,b)
-{
+{   
+    if(a==b){return a;}
     seed = (seed * 9301 + 49297) % 233280
     var sumar =  (b == undefined)?0:a -1 ;
     var multiplicar = (b==undefined)?a:b;

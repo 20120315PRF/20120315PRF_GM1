@@ -1,8 +1,9 @@
 
-bulletPlayer = function(game,hud)
+bulletPlayer = function(game, explosion)
 {
     this.game = game;
-    this.hud = hud;
+    this.explosion = explosion;
+    
     this.snd_bullet = game.add.audio('snd_star',0.5);
     this.bulletTime = 0;  
     this.snd_dead = game.add.audio('snd_dead');
@@ -30,13 +31,17 @@ bulletPlayer.prototype.update = function(enemiesDummy)
 
 bulletPlayer.prototype.collision = function(bullet, enemy)
 {
+    this.explosion.createExplosion(enemy.body.x, enemy.body.y);
+    
     bullet.kill();
     enemy.kill();
+    
     this.snd_dead.play();
+    
     gameMgr.setScore(Configuracion.Game.scoreEnemyDummy);
 }
 
-bulletPlayer.prototype.fireBullet = function(player)
+bulletPlayer.prototype.fireBullet = function(posX, posY, rotation)
 {
     if (this.game.time.now > this.bulletTime)
     {
@@ -46,9 +51,9 @@ bulletPlayer.prototype.fireBullet = function(player)
         {
             this.snd_bullet.play();
             
-            bullet.reset(player.body.x+16,player.body.y+16);
-            bullet.rotation = player.rotation;
-            this.game.physics.arcade.velocityFromRotation(player.rotation, 400, bullet.body.velocity);
+            bullet.reset(posX,posY);
+            bullet.rotation = rotation;
+            this.game.physics.arcade.velocityFromRotation(rotation, Configuracion.Bullet.speed, bullet.body.velocity);
             
             this.bulletTime = this.game.time.now + Configuracion.Bullet.timeBetweenBullets;
         }

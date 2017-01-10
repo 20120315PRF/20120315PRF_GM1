@@ -9,7 +9,7 @@ var Configuracion={
         maxVelocity:200,
         collideWorldBounds:0,
         padding:16,
-        lives:3,
+        lives:2,
     },
     Bullet:{
         speed:400,
@@ -21,6 +21,7 @@ var Configuracion={
         velocityDescendingEnemies:5,
         velocityIncrementDificulty:1,
         scoreEnemyDummy:10,
+        velocityInitialsShootEnemyDummy:2000, //1 disparo cada 5 segundos
     },
 };
 

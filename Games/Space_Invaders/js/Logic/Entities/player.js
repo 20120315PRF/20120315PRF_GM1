@@ -18,7 +18,7 @@ Player.prototype.create = function(){
 }
 
 Player.prototype.getsprite = function(){
-	return this.sprite;
+	return this.player;
 }
 
 Player.prototype.update = function(bulletsObject){
@@ -34,18 +34,14 @@ Player.prototype.update = function(bulletsObject){
         this.player.body.acceleration.x = 500;
     }
     
-    if (this.game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR))
+    if (this.game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR) && !shipDestroyed)
     {
-        bulletsObject.fireBullet(this.player);
+        bulletsObject.fireBullet(this.player.body.x+16,this.player.body.y+16,this.player.rotation);
     }   
     
     this.screenWrap();
 }
 
-Player.prototype.kill = function()
-{
-    gameMgr.playerKill();
-}
 
 Player.prototype.screenWrap = function()
 {

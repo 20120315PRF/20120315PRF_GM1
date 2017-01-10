@@ -2,6 +2,8 @@
 enemyDummy = function(game){
     this.game = game;
     this.numDescending = 30;
+    
+    this.aux_velocityShootEnemyDummy = 0;
     //this.bulletPlayer = new bulletPlayer(game);
 }
 
@@ -37,11 +39,42 @@ enemyDummy.prototype.descender=function()
     }
     
 }
-enemyDummy.prototype.update = function(){
-    
+enemyDummy.prototype.update = function(velocityShootEnemyDummy, bulletsObject){
+    if(this.game.time.now>this.aux_velocityShootEnemyDummy)    
+    {
+        var shooter = this.findEnemyShooter();
+        if (shooter)
+        {
+            bulletsObject.fireBullet(shooter.body.x+16,shooter.body.y+16,shooter.rotation/2*-1);
+            this.aux_velocityShootEnemyDummy = this.game.time.now + velocityShootEnemyDummy;
+        } 
+    }
 
 }
 
+
+enemyDummy.prototype.findEnemyShooter = function()
+{
+    var livingEnemies = [];
+
+    this.enemiesDummy.forEachAlive(function(enemyDummy){
+        livingEnemies.push(enemyDummy);
+    });
+
+    var shooter = undefined;
+    if (livingEnemies.length > 0)
+    {
+        var random = rand(0,livingEnemies.length-1);
+        shooter=livingEnemies[random];
+    }
+    else{
+        
+        //TODO
+        gameMgr.playerKill();
+    }
+    
+    return shooter;
+}
 enemyDummy.prototype.createEnemyDummy = function(posX, posY){
     var enemy = this.enemiesDummy.create(posX,posY,'enemy1Sprite');
     enemy.angle = -180;
