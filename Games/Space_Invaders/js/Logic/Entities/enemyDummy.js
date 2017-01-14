@@ -101,7 +101,13 @@ enemyDummy.prototype.initializeNewGroup = function(height)
         {
             for(var x = 0; x<7;++x)    
             {
-                this.createEnemyDummy(x*80, y*30);
+                var enemyDummy_exist = this.enemiesDummy.getFirstExists(false);
+                if(enemyDummy_exist)
+                {
+                    enemyDummy_exist.reset(x*80, y*30);
+                }
+                else{this.createEnemyDummy(x*80, y*30);}
+                
             }
         }
         
