@@ -19,10 +19,11 @@ enemyManager.prototype.update = function(){
 
 enemyManager.prototype.countLivingZero = function()
 {
-    if(this.entityFactory.enemiesDummy.enemiesDummy.countLiving() == 0)
+    if(this.entityFactory.enemiesDummy.enemiesDummy.countLiving() == 0 && this.entityFactory.enemiesDummy2.enemiesDummy2.countLiving() == 0)
     {
         this.round +=2;
         this.entityFactory.enemiesDummy.indicateFinished();
+        this.entityFactory.enemiesDummy2.indicateFinished();
     }
 }
 

@@ -40,7 +40,7 @@ enemyDummy.prototype.update = function(velocityShootEnemyDummy, bulletsObject){
         var shooter = this.findEnemyShooter();
         if (shooter)
         {
-            bulletsObject.fireBullet(shooter.body.x+16,shooter.body.y+16,shooter.rotation/2*-1);
+            bulletsObject.fireBullet(shooter.body.x+16,shooter.body.y+16,shooter.rotation);
             this.aux_velocityShootEnemyDummy = this.game.time.now + velocityShootEnemyDummy;
         } 
     }
@@ -54,7 +54,7 @@ enemyDummy.prototype.update = function(velocityShootEnemyDummy, bulletsObject){
             this.animacion.resume();
         }
     }
-
+    
 }
 
 
@@ -84,9 +84,9 @@ enemyDummy.prototype.findEnemyShooter = function()
 }
 enemyDummy.prototype.createEnemyDummy = function(posX, posY){
     var enemy = this.enemiesDummy.create(posX,posY,'enemy1Sprite');
-    enemy.angle = -180;
     //Le decimos al enemigo que tenga su punto de apoyo en el medio
-    enemy.anchor.setTo(0.5);
+    enemy.angle = 90;
+    enemy.anchor.setTo(0.5,0.5);
 }
 
 
@@ -110,7 +110,8 @@ enemyDummy.prototype.initializeNewGroup = function(height)
             {
                 for(var x = 0; x<7;++x)    
                 {
-                    if(Configuracion.Map.MapOrderCreateEnemyDummy2[counter]>Managers.enemyMgr.round)
+                    if(Configuracion.Map.MapOrderCreateEnemyDummy2[counter]>Managers.enemyMgr.round || 
+                      Configuracion.Map.MapOrderCreateEnemyDummy2[counter] == 0)
                     {
                         var enemyDummy_exist = this.enemiesDummy.getFirstExists(false);
                         if(enemyDummy_exist)

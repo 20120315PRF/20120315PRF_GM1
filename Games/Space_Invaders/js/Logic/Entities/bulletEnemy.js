@@ -51,8 +51,8 @@ bulletEnemy.prototype.fireBullet = function(posX, posY, rotation)
     {
         this.snd_bullet.play();
 
-        bullet.reset(posX,posY);
+        bullet.reset(posX,posY+8);
         bullet.rotation = rotation;
-        this.game.physics.arcade.velocityFromRotation(rotation, Configuracion.Bullet.speed, bullet.body.velocity);
+        this.game.physics.arcade.velocityFromRotation(bullet.rotation, Configuracion.Bullet.speed, bullet.body.velocity);
     }
 };

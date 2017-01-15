@@ -10,7 +10,7 @@ var loadState={
         this.game.load.image('playerSprite',Sprites.player);
         
         this.game.load.image('enemy1Sprite',Sprites.enemy1);
-        this.game.load.image('enemy2Sprite',Sprites.enemy1);
+        this.game.load.image('enemy2Sprite',Sprites.enemy2);
         this.game.load.image('enemy3Sprite',Sprites.enemy1);
         this.game.load.image('enemy4Sprite',Sprites.enemy1);
 

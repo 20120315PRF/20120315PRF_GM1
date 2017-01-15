@@ -6,7 +6,7 @@ Player = function(game){
 Player.prototype.create = function(){
     //La nave del player
     this.player = this.game.add.sprite(this.game.width*0.5,this.game.height*0.85,'playerSprite');
-    this.player.anchor.set(0.5);
+    this.player.anchor.set(0.5,0.5);
     this.player.angle = -90;
     
     this.game.physics.arcade.enable(this.player);
@@ -39,6 +39,7 @@ Player.prototype.update = function(bulletsObject){
         bulletsObject.fireBullet(this.player.body.x+16,this.player.body.y+16,this.player.rotation);
     }   
     
+        
     this.screenWrap();
 }
 

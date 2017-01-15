@@ -21,15 +21,16 @@ var Configuracion={
         velocityDescendingEnemies:5,
         velocityIncrementDificulty:1,
         scoreEnemyDummy:10,
+        scoreEnemyDummy2:40,
         velocityInitialsShootEnemyDummy:2000, //1 disparo cada 5 segundos
     },
     Map:{
-        MapOrderCreateEnemyDummy2:[20,20,20,1,20,20,20,
-                                   20,20,20,20,2,20,20,
-                                   20,20,20,20,20,3,20,
-                                   4,20,20,22,23,24,20,
-                                   25,5,27,28,29,30,20,
-                                   31,32,6,34,35,36,20]
+        MapOrderCreateEnemyDummy2:[0,0,0,1,0,0,0,
+                                   0,0,0,0,2,0,0,
+                                   0,0,7,0,0,3,0,
+                                   4,0,0,0,0,0,0,
+                                   0,5,0,0,0,8,0,
+                                   0,0,6,0,0,0,0]
     }
     
 };
@@ -42,7 +43,7 @@ var Sprites={
     player:pathSprite+'/ship4.png',
     heart:pathSprite+'/heart.png',
     enemy1:pathSprite+'/enemy1.png',
-    enemy2:pathSprite+'/enemy2.png',
+    enemy2:pathSprite+'/enemy3.png',
     enemy3:pathSprite+'/enemy3.png',
     enemy4:pathSprite+'/enemy4.png',
     bulletPlayer:pathSprite+'/bullets.png',
