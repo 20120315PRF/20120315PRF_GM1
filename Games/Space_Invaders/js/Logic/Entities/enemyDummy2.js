@@ -68,6 +68,8 @@ enemyDummy2.prototype.setRotation = function()
         var positionEnemy= this.enemiesDummy2.toGlobal(livingEnemies[i].position);
         var player = Managers.enemyMgr.entityFactory.player.player;
         livingEnemies[i].rotation = Math.atan2(player.position.y - positionEnemy.y,player.position.x - positionEnemy.x);
+        
+        this.game.debug.body(livingEnemies[i]);
     }
 }
 
@@ -99,6 +101,7 @@ enemyDummy2.prototype.createEnemyDummy = function(posX, posY){
     var enemy = this.enemiesDummy2.create(posX,posY,'enemy2Sprite');
     //Le decimos al enemigo que tenga su punto de apoyo en el medio
     enemy.angle = 90;
+    enemy.body.setSize(24,32,0,0);
     enemy.anchor.setTo(0.5,0.5);
 }
 
