@@ -19,6 +19,7 @@ var gameState ={
     },
     update:function()
     {
+        this.sky.tilePosition.y += 1.5;
         this.entityFactory.update();
         Managers.update();
     },
