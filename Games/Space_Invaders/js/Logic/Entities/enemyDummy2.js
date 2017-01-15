@@ -68,8 +68,6 @@ enemyDummy2.prototype.setRotation = function()
         var positionEnemy= this.enemiesDummy2.toGlobal(livingEnemies[i].position);
         var player = Managers.enemyMgr.entityFactory.player.player;
         livingEnemies[i].rotation = Math.atan2(player.position.y - positionEnemy.y,player.position.x - positionEnemy.x);
-        
-        this.game.debug.body(livingEnemies[i]);
     }
 }
 
