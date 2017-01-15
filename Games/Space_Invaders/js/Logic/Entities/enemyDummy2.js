@@ -1,5 +1,5 @@
 
-enemyDummy = function(game){
+enemyDummy2 = function(game){
     this.game = game;
     this.numDescending = 30;
     this.finishedRound = 1;
@@ -7,7 +7,7 @@ enemyDummy = function(game){
     //this.bulletPlayer = new bulletPlayer(game);
 }
 
-enemyDummy.prototype.create = function(){
+enemyDummy2.prototype.create = function(){
     
     this.enemiesDummy = this.game.add.group();
     this.enemiesDummy.enableBody = true;
@@ -25,7 +25,7 @@ enemyDummy.prototype.create = function(){
     return this.enemiesDummy;
 }
 
-enemyDummy.prototype.descender=function()
+enemyDummy2.prototype.descender=function()
 {
     if(this.numDescending!=0 && this.enemiesDummy.position.y > 40)    
     {
@@ -34,7 +34,7 @@ enemyDummy.prototype.descender=function()
     }
     
 }
-enemyDummy.prototype.update = function(velocityShootEnemyDummy, bulletsObject){
+enemyDummy2.prototype.update = function(velocityShootEnemyDummy, bulletsObject){
     if(this.game.time.now>this.aux_velocityShootEnemyDummy && this.enemiesDummy.position.y > 40)    
     {
         var shooter = this.findEnemyShooter();
@@ -58,7 +58,7 @@ enemyDummy.prototype.update = function(velocityShootEnemyDummy, bulletsObject){
 }
 
 
-enemyDummy.prototype.findEnemyShooter = function()
+enemyDummy2.prototype.findEnemyShooter = function()
 {
     var livingEnemies = [];
 
@@ -82,7 +82,7 @@ enemyDummy.prototype.findEnemyShooter = function()
     
     return shooter;
 }
-enemyDummy.prototype.createEnemyDummy = function(posX, posY){
+enemyDummy2.prototype.createEnemyDummy = function(posX, posY){
     var enemy = this.enemiesDummy.create(posX,posY,'enemy1Sprite');
     enemy.angle = -180;
     //Le decimos al enemigo que tenga su punto de apoyo en el medio
@@ -90,17 +90,17 @@ enemyDummy.prototype.createEnemyDummy = function(posX, posY){
 }
 
 
-enemyDummy.prototype.getEnemiesDummy = function()
+enemyDummy2.prototype.getEnemiesDummy = function()
 {
     return this.enemiesDummy;
 }
 
-enemyDummy.prototype.indicateFinished = function()
+enemyDummy2.prototype.indicateFinished = function()
 {
     this.finishedRound = 1;
 }
 
-enemyDummy.prototype.initializeNewGroup = function(height)
+enemyDummy2.prototype.initializeNewGroup = function(height)
 {
     if(this.finishedRound)
     {

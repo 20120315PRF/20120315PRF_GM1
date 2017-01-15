@@ -26,7 +26,10 @@ bulletPlayer.prototype.create = function()
 
 bulletPlayer.prototype.update = function(enemiesDummy)
 {
-    this.game.physics.arcade.overlap(this.bulletsPlayer,enemiesDummy.getEnemiesDummy(),this.collision,null,this);
+    if(enemiesDummy.getEnemiesDummy().position.y>40)
+    {
+        this.game.physics.arcade.overlap(this.bulletsPlayer,enemiesDummy.getEnemiesDummy(),this.collision,null,this);
+    }
 }
 
 bulletPlayer.prototype.collision = function(bullet, enemy)
@@ -38,7 +41,7 @@ bulletPlayer.prototype.collision = function(bullet, enemy)
     
     this.snd_dead.play();
     
-    gameMgr.setScore(Configuracion.Game.scoreEnemyDummy);
+    Managers.gameMgr.setScore(Configuracion.Game.scoreEnemyDummy);
 }
 
 bulletPlayer.prototype.fireBullet = function(posX, posY, rotation)

@@ -40,7 +40,7 @@ bulletEnemy.prototype.collision = function(bullet, player)
     
     this.snd_dead.play();
     
-    gameMgr.playerKill();
+    Managers.gameMgr.playerKill();
 }
 
 bulletEnemy.prototype.fireBullet = function(posX, posY, rotation)

@@ -23,6 +23,15 @@ var Configuracion={
         scoreEnemyDummy:10,
         velocityInitialsShootEnemyDummy:2000, //1 disparo cada 5 segundos
     },
+    Map:{
+        MapOrderCreateEnemyDummy2:[20,20,20,1,20,20,20,
+                                   20,20,20,20,2,20,20,
+                                   20,20,20,20,20,3,20,
+                                   4,20,20,22,23,24,20,
+                                   25,5,27,28,29,30,20,
+                                   31,32,6,34,35,36,20]
+    }
+    
 };
 
 var pathSprite = 'Games/Space_Invaders/assets/images';
