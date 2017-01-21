@@ -1,15 +1,15 @@
 var Configuracion={
     Player:{
-        speedX:300,
+        speedX:240,
         scaleX:1,
         scaleY:1,
         gravity:0,
         acceleration:300,
-        drag:150,
-        maxVelocity:200,
+        drag:1000,
+        maxVelocity:240,
         collideWorldBounds:0,
         padding:16,
-        lives:2,
+        lives:4,
     },
     Bullet:{
         speed:400,
@@ -21,16 +21,16 @@ var Configuracion={
         velocityDescendingEnemies:5,
         velocityIncrementDificulty:1,
         scoreEnemyDummy:10,
-        scoreEnemyDummy2:40,
-        velocityInitialsShootEnemyDummy:2000, //1 disparo cada 5 segundos
+        scoreEnemyDummy2:80,
+        velocityInitialsShootEnemyDummy:2400, //1 disparo cada 5 segundos
     },
     Map:{
-        MapOrderCreateEnemyDummy2:[0,0,0,1,0,0,0,
+        MapOrderCreateEnemyDummy2:[15,0,0,1,0,0,17,
                                    0,0,0,0,2,0,0,
-                                   0,0,7,0,0,3,0,
-                                   4,0,0,0,0,0,0,
-                                   0,5,0,0,0,8,0,
-                                   0,0,6,0,0,0,0]
+                                   0,0,9,0,0,3,0,
+                                   5,0,0,19,0,0,21,
+                                   0,7,0,0,0,11,0,
+                                   0,0,13,0,0,0,0]
     }
     
 };

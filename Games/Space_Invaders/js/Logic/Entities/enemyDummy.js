@@ -16,7 +16,7 @@ enemyDummy.prototype.create = function(){
     this.enemiesDummy.position.x = this.game.width*0.2;
     //Animacion 
     //Se moverá horizontalmente 100 unidades, el tiempo 1 segundo, el efecto phaser.easing, 
-    this.animacion = this.game.add.tween(this.enemiesDummy).to({x:100},1500,Phaser.Easing.Linear.None, true, 0, 1500, true);
+    this.animacion = this.game.add.tween(this.enemiesDummy).to({x:100},1000,Phaser.Easing.Linear.None, true, 0, 1000, true);
     //Le decimos a la animacion, que en cada loop descienda:
     this.animacion.onRepeat.add(this.descender,this);
     
