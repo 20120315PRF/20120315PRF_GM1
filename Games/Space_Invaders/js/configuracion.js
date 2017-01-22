@@ -1,12 +1,12 @@
 var Configuracion={
     Player:{
-        speedX:240,
+        speedX:150,
         scaleX:1,
         scaleY:1,
         gravity:0,
-        acceleration:300,
+        acceleration:2000,
         drag:1000,
-        maxVelocity:240,
+        maxVelocity:150,
         collideWorldBounds:0,
         padding:16,
         lives:4,
@@ -20,8 +20,8 @@ var Configuracion={
     Game:{
         velocityDescendingEnemies:5,
         velocityIncrementDificulty:1,
-        scoreEnemyDummy:10,
-        scoreEnemyDummy2:80,
+        scoreEnemyDummy:1,
+        scoreEnemyDummy2:5,
         velocityInitialsShootEnemyDummy:2400, //1 disparo cada 5 segundos
     },
     Map:{
