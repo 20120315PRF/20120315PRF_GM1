@@ -27,11 +27,11 @@ Player.prototype.update = function(bulletsObject){
     
     if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT) || this.game.input.keyboard.isDown(Phaser.Keyboard.A))
     {
-        this.player.body.acceleration.x = -500;
+        this.player.body.acceleration.x = -Configuracion.Player.acceleration;
     }
     else if (this.game.input.keyboard.isDown(Phaser.Keyboard.RIGHT) || this.game.input.keyboard.isDown(Phaser.Keyboard.D))
     {
-        this.player.body.acceleration.x = 500;
+        this.player.body.acceleration.x = Configuracion.Player.acceleration;
     }
     
     if (this.game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR) && !shipDestroyed)

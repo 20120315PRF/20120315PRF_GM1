@@ -31,7 +31,7 @@ bulletPlayer.prototype.update = function(enemiesDummy,enemiesDummy2)
         this.game.physics.arcade.overlap(this.bulletsPlayer,enemiesDummy.getEnemiesDummy(),this.collision,null,this);
     }
     
-    if(enemiesDummy2.getEnemiesDummy2().position.y>40)
+    if(enemiesDummy2.getEnemiesDummy2().position.y>45)
     {
         this.game.physics.arcade.overlap(this.bulletsPlayer,enemiesDummy2.getEnemiesDummy2(),this.collision2,null,this);
     }

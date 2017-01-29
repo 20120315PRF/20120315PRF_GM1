@@ -22,6 +22,10 @@ enemyManager.prototype.countLivingZero = function()
     if(this.entityFactory.enemiesDummy.enemiesDummy.countLiving() == 0 && this.entityFactory.enemiesDummy2.enemiesDummy2.countLiving() == 0)
     {
         this.round +=2;
+        if (this.velocityInitialsShootEnemyDummy>1700)
+        {
+            this.velocityInitialsShootEnemyDummy -= 150; //Resto esto al tiempo de tiro de los enemigos
+        } 
         this.entityFactory.enemiesDummy.indicateFinished();
         this.entityFactory.enemiesDummy2.indicateFinished();
     }

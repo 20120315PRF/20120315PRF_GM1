@@ -75,6 +75,10 @@ GameManager.prototype.playerKill=function()
 
 GameManager.prototype.updateDificulty=function()
 {
-    Managers.enemyMgr.velocityInitialsShootEnemyDummy = Managers.enemyMgr.velocityInitialsShootEnemyDummy*0.98;
+    if(Managers.enemyMgr.velocityInitialsShootEnemyDummy>1200)
+    {
+        Managers.enemyMgr.velocityInitialsShootEnemyDummy = Managers.enemyMgr.velocityInitialsShootEnemyDummy*0.96;
+    }
+    
 }
 
