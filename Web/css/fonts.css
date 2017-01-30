@@ -7,3 +7,13 @@
     font-family: "Alfa Slab One";
     src: url('../fonts/alfa-slab/AlfaSlabOne-Regular.ttf');
 }
+
+@font-face {
+    font-family: "roboto-thin";
+    src: url('../fonts/roboto/Roboto-Thin.ttf');
+}
+
+
+.font-gold {
+    color: #EACC00;
+}

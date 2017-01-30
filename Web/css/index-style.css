@@ -1,42 +1,60 @@
-#big-banner{
-    min-height: 600px;
-    background-image: url('../img/games-background-600.jpg');    
-    font-famili: "josefin-sans";
+#page {
+    height: 100%;
+}
+
+#big-header{
+    font-family: 'roboto-thin';
+    
+    min-height: 100%;
+    height: 100%;
+    text-align: center;  
+    background-color: #004C82;
+    background-image: url(../img/triangles-background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.subtitle-header{
     text-align: center;
 }
-
-#big-banner-content {
-    padding-top: 10em;
-    font-family: "Alfa Slab One", Verdana;
-    text-shadow: 2px 2px black;
+.subtitle-header h3{
+    font-size: 2.92rem;
+    line-height: 110%;
+    margin: 1.46rem 0 1.168rem 0;
+    font-weight: bold;
 }
 
-#big-banner-content h1{
-    margin: 0;
-    font-size: 8rem;
-}
 
-.big-title{
-    color: white;
-    font-size: 8rem;
-}
-.small-title {
-    color: white;
+
+.title-genre{
+    /*transform: rotateZ(-90deg);*/
     font-size: 4em;
+    margin-left: 2em;
+    border-bottom: solid 5px black;
 }
+
 
 /**
     THE INFO PANEL 
 **/
 #info-panel{
-    background-color: rgba(0,0,0, .2);
-    min-height: 400px;
+    background-color: rgba(0,0,0, .1);
+    min-height: 60%;
     font-family: "josefin-sans";
 }
+
+
+
+/**
+ GAMES
+*/
 
 .game {
     font-size: 1.4em;
 }
+
 .game img{
     height: 120px;
     width: 140px;
@@ -52,4 +70,70 @@
 }
 .game p a:link{
     text-decoration: none;
+}
+
+.game-name {
+    margin-top: 1em;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.game-name a, a:visited {
+    color: #004C82;
+}
+
+
+/**
+Game cell
+**/
+
+
+.game-thunb-link{
+    
+}
+.game-thumb {
+    background-color: #004C82;
+    background-size: cover;
+    height: 250px;
+    width: 300px;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,.8),
+            0 2px 14px 0 rgba(0,0,0,.7); 
+}
+.game-data{
+    text-align: left;
+}
+
+.game-data .game-title a, a:hover, a:visited{
+    margin-top: 1em;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #004C82;
+    
+}
+.game-data .game-title a:link{
+    text-decoration: none;
+}
+.game-data .game-text{
+    font-size: 1.1em;
+    font-family: sans-serif;
+}
+.game-data .game-genre{
+    font-size: 1em;
+    margin-bottom: 2px;
+    color: #999;
+    font-family: sans-serif;
+}
+.game-data .game-platform{
+background: rgba(128, 128, 128, 0.5);
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+
+#delegate-name {
+    font-weight: bold;
 }
