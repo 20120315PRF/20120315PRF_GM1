@@ -100,6 +100,7 @@ Game cell
             0 2px 14px 0 rgba(0,0,0,.7); 
 }
 .game-data{
+    margin-top: .5em;
     text-align: left;
 }
 
