@@ -13,6 +13,9 @@ function renderRestData(data){
     }
     
     $('#lsk-ammount').text(parseInt(data['balance'])/100000000);
+    
+    // Show data
+    $('#welcome-message').fadeIn();
 
 }
 

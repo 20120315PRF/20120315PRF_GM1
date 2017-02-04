@@ -138,3 +138,17 @@ background: rgba(128, 128, 128, 0.5);
 #delegate-name {
     font-weight: bold;
 }
+
+
+/** Animations */
+@keyframes rotate-gear {
+    from {transform: rotate(-180deg); color: gold;}
+    to { color: red;}
+}
+
+.fa-cog:hover {
+    color: red;
+    animation-name: rotate-gear;
+    animation-duration: 1.5s;
+    cursor: pointer;
+}
