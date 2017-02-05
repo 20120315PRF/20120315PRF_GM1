@@ -99,6 +99,12 @@ Game cell
     box-shadow: 0 2px 8px 0 rgba(0,0,0,.8),
             0 2px 14px 0 rgba(0,0,0,.7); 
 }
+
+.game-thumb:hover {
+    box-shadow: 0 2px 8px 0 rgba(21,101,192,.8),
+            0 2px 14px 0 rgba(21,101,192,.7); 
+}
+
 .game-data{
     margin-top: .5em;
     text-align: left;
@@ -137,6 +143,47 @@ background: rgba(128, 128, 128, 0.5);
 
 #delegate-name {
     font-weight: bold;
+}
+
+
+/**
+MODAL 
+*/
+#config-modal .modal-content{
+    font-family: 'roboto-thin';
+    background-color: #212121;
+    color: whitesmoke;
+}
+
+.modal-content label{
+    letter-spacing: 5px;
+}
+.modal-content input {
+    color: whitesmoke;
+    border: none;
+    border-bottom: solid 1px white;
+    background-color: transparent;
+}
+
+.btn-modal { 
+    background-color: transparent;
+    color: whitesmoke;
+    border-radius: 0;
+}
+
+.btn-modal:hover { 
+    background-color: whitesmoke;
+    color: #212121;
+    font-weight: bolder;
+    border-radius: 0;
+}
+
+.modal-header .close {
+    color: white;
+}
+
+.input-error {
+    border-bottom: solid 2px red !important;
 }
 
 

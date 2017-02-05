@@ -23,8 +23,9 @@
                         <h3 style="font-size: 2.8em;">THE FIRST GAMING PLATFORM FOR LISK</h3>
                     </div>
                 </div>
-                <div class="font-gold margin-top-m">
-                    <h1 id="welcome-message" style="display:none">Welcome,<span id="delegate-name"></span><i class="fa fa-cog" style="margin-left: .5em"></i></h1>
+                <div id="welcome-message" style="display:none" class="font-gold margin-top-m">
+                    <h1>Welcome,<span id="delegate-name"></span><i class="fa fa-cog"  data-toggle="modal" data-target="#config-modal" style="margin-left: .5em"></i></h1>
+                    <h2><i class="fa fa-database"></i></i><span id="lsk-ammount">---</span> LSK</h2>
                 </div>
             </div>
         </div>
@@ -38,12 +39,15 @@
                 <div class="row margin-top-bottom-m">
 
                     <div class="game-cell col-sm-5 col-sm-offset-2 margin-top-bottom-m">
-                        <a class="game-thumb-link" href="asteroids.html" >
-                            <div class="game-thumb" style="background-image: url('Web/img/asteroids.png');"></div>
-                        </a>
+                        <div style="display: inline-block;">
+                            <a class="game-thumb-link" href="asteroids.html" >
+                                <div class="game-thumb" style="background-image: url('Web/img/asteroids-thumb.png');"></div>
+                            </a>
+                        </div>
+                        
                         <div class="game-data">
                             <div class="game-title">
-                                <a href="asteroids.html" style="">Asteroids</a>
+                                <a href="asteroids.html" style="">Liskteroids</a>
                             </div>
                             <div class="game-text">Blast all asteroids on Lisk platform!</div>
                             <div class="game-genre">Arcade</div>
@@ -52,9 +56,11 @@
                     </div>
 
                     <div class="game-cell col-sm-5 margin-top-bottom-m">
-                        <a class="game-thumb-link" href="space_invaders.html" >
-                            <div class="game-thumb" style="background-image: url('Web/img/space_invaders.png');"></div>
-                        </a>
+                        <div style="display: inline-block;">
+                            <a class="game-thumb-link" href="space_invaders.html" >
+                                <div class="game-thumb" style="background-image: url('Web/img/space-invaders-thumb.png');"></div>
+                            </a>
+                        </div>
                         <div class="game-data">
                             <div class="game-title">
                                 <a href="space_invaders.html" style="">Space invaders</a>
@@ -88,7 +94,36 @@
     <!-- End of footer -->
     
     
+    
+    <!-- Modal configuration -->
+    <div class="modal fade" id="config-modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><i class="fa fa-cog"  data-toggle="modal" data- style="margin-left: .5em"></i> ADDRESS SETTINGS</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="center">
+                        Set your testnet account address in order to show you your balance
+                    </p>
+                    <p class="margin-top-bottom-m">
+                        <label for="account-address">Address</label>
+                        <input type="text" id="account-address" size="25"/>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-modal" onclick="reloadChanges();">Save</button>
+                    <button type="button" class="btn btn-default btn-modal" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    
     <script type="text/javascript" src="Web/js/lisk-api.js"></script>
+    <script type="text/javascript" src="Web/js/bootstrap.min.js"></script>
     
 </body>  
     
