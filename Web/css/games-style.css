@@ -1,8 +1,9 @@
 #game-frame {
-    min-width: 800;
-    min-height: 600;
-    width: 800;
-    height: 600;
+    min-width: 750px;
+    min-height: 600px;
+    width: 750px;
+    height: 600px;
+    margin: 0 auto;
 }
 
 canvas {

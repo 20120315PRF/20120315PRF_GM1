@@ -104,6 +104,11 @@ function getLiskAmmount(addressID){
 $().ready(function(){
     if(localStorageEnabled){
         currentAddress = loadAddress();
+    } 
+    
+    if(!currentAddress){
+        currentAddress = HARDCODED_REDHAWK_ADDRESS;
     }
+    
     getLiskAmmount(currentAddress);
 });
