@@ -29,6 +29,6 @@ enemyManager.prototype.countLivingZero = function()
         this.entityFactory.enemiesDummy.indicateFinished();
         this.entityFactory.enemiesDummy2.indicateFinished();
     }
-}
+};
 
 

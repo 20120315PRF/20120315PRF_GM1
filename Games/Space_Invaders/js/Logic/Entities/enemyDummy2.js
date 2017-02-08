@@ -144,4 +144,4 @@ enemyDummy2.prototype.initializeNewGroup = function(height)
 
         this.finishedRound = 0;
     }
-}
+};

@@ -55,7 +55,7 @@ enemyDummy.prototype.update = function(velocityShootEnemyDummy, bulletsObject){
         }
     }
     
-}
+};
 
 
 enemyDummy.prototype.findEnemyShooter = function()
@@ -98,7 +98,7 @@ enemyDummy.prototype.getEnemiesDummy = function()
 enemyDummy.prototype.indicateFinished = function()
 {
     this.finishedRound = 1;
-}
+};
 
 enemyDummy.prototype.initializeNewGroup = function(height)
 {
@@ -130,4 +130,4 @@ enemyDummy.prototype.initializeNewGroup = function(height)
 
         this.finishedRound = 0;
     }
-}
+};

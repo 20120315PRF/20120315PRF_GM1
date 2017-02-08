@@ -80,5 +80,5 @@ GameManager.prototype.updateDificulty=function()
         Managers.enemyMgr.velocityInitialsShootEnemyDummy = Managers.enemyMgr.velocityInitialsShootEnemyDummy*0.96;
     }
     
-}
+};
 
