@@ -49,7 +49,7 @@ var Sprites={
     bulletPlayer:pathSprite+'/bullets.png',
     explosion:pathSprite+'/explode.png',
     loadBar:pathSprite+'/loadBar.png',
-    menu:this.pathSprite+'/menu.jpg',
+    menu:this.pathSprite+'/menu.png',
 };
 
 var Audios={

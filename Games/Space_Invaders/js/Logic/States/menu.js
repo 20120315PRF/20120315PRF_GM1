@@ -26,14 +26,14 @@ var menuState = {
     },
     create:function()
     {         
-        var menuBG = this.game.add.sprite(-70,-5,'menu-bg');
+        var menuBG = this.game.add.sprite(0,100,'menu-bg');
         menuBG.scale.setTo(1,1.25);
         
-        this.game.add.text(this.game.width*0.2, 20, "SPACE INVADERS",{font: 'bold 40pt dimwitgauche',fill: '#FDFFB5', align: 'center' });
+        this.game.add.text(this.game.width*0.1, 20, "SPACE INVADERS",{font: 'bold 40pt ponderada',fill: '#FDFFB5', align: 'center' });
         
-        this.addButton(50,300,"START",'bold 30pt TheMinion','#FFFFFF','center',this.startGame);
-        this.addButton(50,375,"OPTIONS",'bold 30pt TheMinion','#FFFFFF','center');
-        this.addButton(50,450,"CREDITS",'bold 30pt TheMinion','#FFFFFF','center');
+        this.addButton(250,450,"PRESS START",'bold 25pt ponderada','#2e7d32','center',this.startGame);
+        //this.addButton(50,375,"OPTIONS",'bold 30pt TheMinion','#FFFFFF','center');
+        //this.addButton(50,450,"CREDITS",'bold 30pt TheMinion','#FFFFFF','center');
         
     },
     startGame:function()
