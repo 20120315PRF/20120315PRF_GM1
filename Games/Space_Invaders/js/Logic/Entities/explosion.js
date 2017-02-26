@@ -34,4 +34,4 @@ explosion.prototype.createExplosion=function(posX, posY)
 explosion.prototype.deadExplosion=function()
 {
     
-}
+};

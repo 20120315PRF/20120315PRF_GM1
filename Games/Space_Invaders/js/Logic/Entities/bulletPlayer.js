@@ -7,7 +7,7 @@ bulletPlayer = function(game, explosion)
     this.snd_bullet = game.add.audio('snd_star',0.5);
     this.bulletTime = 0;  
     this.snd_dead = game.add.audio('snd_dead');
-}
+};
 
 bulletPlayer.prototype.create = function()
 {
@@ -21,7 +21,7 @@ bulletPlayer.prototype.create = function()
     this.bulletsPlayer.setAll('checkWorldBounds', true);
     this.bulletsPlayer.setAll('outOfBoundsKill', true); //Muere cuando sale del juego
     
-}
+};
 
 
 bulletPlayer.prototype.update = function(enemiesDummy,enemiesDummy2)
@@ -36,7 +36,7 @@ bulletPlayer.prototype.update = function(enemiesDummy,enemiesDummy2)
         this.game.physics.arcade.overlap(this.bulletsPlayer,enemiesDummy2.getEnemiesDummy2(),this.collision2,null,this);
     }
     
-}
+};
 
 bulletPlayer.prototype.collision = function(bullet, enemy)
 {
@@ -48,7 +48,7 @@ bulletPlayer.prototype.collision = function(bullet, enemy)
     this.snd_dead.play();
     
     Managers.gameMgr.setScore(Configuracion.Game.scoreEnemyDummy);
-}
+};
 
 bulletPlayer.prototype.collision2 = function(bullet, enemy)
 {
@@ -60,7 +60,7 @@ bulletPlayer.prototype.collision2 = function(bullet, enemy)
     this.snd_dead.play();
     
     Managers.gameMgr.setScore(Configuracion.Game.scoreEnemyDummy2);
-}
+};
 
 bulletPlayer.prototype.fireBullet = function(posX, posY, rotation)
 {

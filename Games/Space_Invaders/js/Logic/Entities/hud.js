@@ -24,4 +24,4 @@ HUD.prototype.addScore = function(score){
 
 HUD.prototype.setLives = function(lives){
     this.tf_lives.setText(''+lives);
-}
+};

@@ -29,7 +29,7 @@ entityFactory.prototype.update = function(){
     this.enemiesDummy2.update(Managers.enemyMgr.velocityInitialsShootEnemyDummy,this.bulletEnemy);
     this.bulletPlayer.update(this.enemiesDummy,this.enemiesDummy2);
     this.bulletEnemy.update(this.player);
-}
+};
 
 
 

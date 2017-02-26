@@ -13,7 +13,7 @@ ManagersClass.prototype.create = function(){
 ManagersClass.prototype.update = function(){
     this.gameMgr.update();     
     this.enemyMgr.update();
-}
+};
 
 
 
