@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Battle Chain Alpha - Concept test</title>
+    <link rel="shortcut icon" href="Web/img/battlechain-icon-mini.png">
+    <script type="text/javascript" src="Web/js/jquery.js"></script>
+	<script type="text/javascript" src="Games/AppleBird/js/phaser.js"></script>
+    <script type="text/javascript" src="Web/js/time-feature.js"></script>
+    <link rel="stylesheet" href="Web/css/bootstrap.css"/>
+    <link rel="stylesheet" href="Web/css/fonts.css"/>
+    <link rel="stylesheet" href="Web/css/font-awesome.min.css" >
+    <link rel="stylesheet" href="Web/css/common-styles.css"/>
+    <link rel="stylesheet" href="Web/css/games-style.css"/>
+</head>
+<body>
+    <div id="page" class="container">
+
+        <div id="header" style="min-height: 120px; background-color: #004C82;">
+            <div id="header-content">
+                <div class="logo-left">
+                    <a href="index.html"><img src="Web/img/battlechain-ALPHA-vector-with-text.svg" style="width:300px; height: 100px;" /></a>
+                </div>
+                <div id="user-info-header" class="font-gold">
+                    <ul>
+                        <li><i class="glyphicon glyphicon glyphicon-user"></i><span id="delegate-name">---</span></li>
+                        <li><i class="fa fa-database"></i></i><span id="lsk-ammount">---</span> LSK</li>
+                        <li class="rounded-tag bg-red">TESTNET</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End of the heade -->
+
+
+        <div id="user-info" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center card">
+                <p style="padding-top: .5em">Now you are playing to...</p>
+                <p><span class="glyphicon glyphicon glyphicon-triangle-right"></span> Apple Bird <span class="rounded-tag bg-red" style="margin-left: 2em">Arcade</span> <span class="rounded-tag bg-red" style="margin-left: 1em">Play on browser</span> </p>
+            </div>
+        </div>
+        <!-- End of user info-->
+        <div id="body-content" class="row">
+            <div class="col-lg-2 col-lg-offset-0 col-sm-10 col-sm-offset-1 text-center left-panel">
+
+                <div class="transp-info-panel card" style="padding: 10px;">
+                    <p style="text-align: center; font-size: 1.3em; letter-spacing: 0.2em;"><span class="glyphicon glyphicon glyphicon-book"></span> Instructions</p>
+                    <div class="blue-separator" style="margin-bottom: 10px;"></div>
+                    <p>Dodge all platforms and eat apples for getting more score.</p>
+                    <p>The game is getting faster</p>
+                    <!-- Controls -->
+                    <p style="text-align: center; font-size: 1.3em; letter-spacing: 0.2em;"><span class="glyphicon glyphicon-th-list"></span> Controls</p>
+                    <div class="blue-separator" style="margin-bottom: 10px;"></div>
+                    <p>1. WD keys or with arrows.</p>
+                    <p>2. Enjoy.</p>
+                </div>
+
+            </div>
+            <!-- This is the game frame -->
+            <div class="col-lg-8 col-md-12">
+                <div id="game-frame">
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-lg-offset-0 col-sm-10 col-sm-offset-1 text-center right-panel">
+                <div class="transp-info-panel card" style="padding: 15px;">
+                    <p style="text-align: center; font-size: 1.3em; letter-spacing: 0.2em;"><span class="glyphicon glyphicon glyphicon-time"></span> Best Score</p>
+                    <div class="blue-separator" style="margin-bottom: 10px;"></div>
+                    <p>These are your bests times. Try to beat yourself!</p>
+                    <div id="best-times"></div>
+                    <div style="text-align: center">
+                        <input type="button" value="Reset times" class="btn btn-danger" onclick="resetTimes()" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- End of body -->
+    </div>
+
+
+    <!-- The footer of the page -->
+    <footer>
+        <div class="row">
+            <div class="col-sm-1">
+                <img src="Web/img/battlechain-ALPHA-vector-with-text-BG.svg" style="width:300px; padding-top:10px;" />
+            </div>
+            <div class="col-sm-1 col-sm-offset-2">
+                <img src="Web/img/lisk-logo-grey.png" style="margin-top: 20px;"/>
+            </div>
+            <div class="col-sm-7 col-sm-offset-1" style="margin-top: 10px;">
+                <ul>
+                    <li>This is a Battle Chain Game Alpha test for the Battle Chain Project. If like what u see, <a href="https://forum.lisk.io/viewtopic.php?f=8&t=1168">visit our lisk forum entry</a> or visit our official website <a href="http://www.battlechain.com">www.battlechain.com</a></li>
+                    <li style="text-align: right;">The Battle Chain Team</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- End of footer -->
+
+    <script type="text/javascript" src="Web/js/lisk-api.js"></script>
+    <!-- Load here de game -->
+    <script type="text/javascript" src="Games/AppleBird/js/Logic/States/boot.js"></script>
+    <script type="text/javascript" src="Games/AppleBird/js/Logic/States/load.js"></script>
+    <script type="text/javascript" src="Games/AppleBird/js/Logic/States/menu.js"></script>
+    <script type="text/javascript" src="Games/AppleBird/js/Logic/States/startingGame.js"></script>
+    <script type="text/javascript" src="Games/AppleBird/js/Logic/States/game.js"></script>
+<!--    <script type="text/javascript" src="Games/AppleBird/js/Managers/Managers.js"></script>-->
+    <script type="text/javascript" src="Games/AppleBird/js/Managers/entityFactory.js"></script>
+    <script type="text/javascript" src="Games/AppleBird/js/Logic/Entities/player.js"></script>
+    <script type="text/javascript" src="Games/AppleBird/js/Logic/Entities/hud.js"></script>
+    <script type="text/javascript" src="Games/AppleBird/js/main.js"></script>
+    <script type="text/javascript" src="Games/AppleBird/js/configuracion.js"></script>
+    <script type="text/javascript" src="Games/AppleBird/js/commonFunctions.js"></script>
+
+
+</body>
+
+</html>

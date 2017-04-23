@@ -1,0 +1,51 @@
+{"frames": [
+
+{
+	"filename": "cloud1",
+	"frame": {"x":18,"y":0,"w":145,"h":50},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":145,"h":50},
+	"sourceSize": {"w":145,"h":50}
+},
+{
+	"filename": "cloud2",
+	"frame": {"x":180,"y":0,"w":173,"h":50},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":173,"h":50},
+	"sourceSize": {"w":173,"h":50}
+},
+{
+	"filename": "cloud3",
+	"frame": {"x":363,"y":0,"w":169,"h":47},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":169,"h":47},
+	"sourceSize": {"w":169,"h":47}
+},
+{
+	"filename": "cloud4",
+	"frame": {"x":541,"y":0,"w":171,"h":50},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":171,"h":50},
+	"sourceSize": {"w":171,"h":50}
+},
+{
+	"filename": "cloud5",
+	"frame": {"x":722,"y":0,"w":167,"h":50},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":167,"h":50},
+	"sourceSize": {"w":167,"h":50}
+},
+{
+	"filename": "cloud6",
+	"frame": {"x":905,"y":0,"w":163,"h":50},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":163,"h":50},
+	"sourceSize": {"w":163,"h":50}
+}]
+}
