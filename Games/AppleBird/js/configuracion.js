@@ -4,7 +4,7 @@ var Configuracion={
         scaleX:1,
         scaleY:1,
         gravity:0,
-        collideWorldBounds:0,
+        collideWorldBounds:1,
         padding:16,
     },
     Game:{

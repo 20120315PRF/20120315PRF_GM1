@@ -10,19 +10,20 @@ var gameState ={
         
         //Creamos las entidades
         this.entityFactory = new entityFactory(this.game);
-//        Managers = new ManagersClass(this.game, this.entityFactory);
+        Managers = new MapManager(this.game, this.entityFactory);
     },
     create:function()
     { 
+        Managers.create();
         this.entityFactory.create();
-//        Managers.create();
+        
         
     },
     update:function()
     {
         this.sky.tilePosition.y += 1.5;
+        Managers.update();
         this.entityFactory.update();
-//        Managers.update();
     },
     
 };
