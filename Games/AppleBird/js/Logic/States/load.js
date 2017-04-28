@@ -10,7 +10,8 @@ var loadState={
         this.game.load.image('backgroundSprite',Sprites.background);
         this.game.load.image('appleSprite',Sprites.apple);
         
-        this.game.load.image('platformSprite',Sprites.platform);
+        this.game.load.image('platform1Sprite',Sprites.platform1);
+        this.game.load.image('platform2Sprite',Sprites.platform2);
         
         this.game.load.audio('snd_apple',[Audios.snd_apple]);
         

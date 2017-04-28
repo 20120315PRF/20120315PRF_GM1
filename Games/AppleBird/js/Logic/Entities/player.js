@@ -6,25 +6,43 @@ Player = function(game){
 Player.prototype.create = function(){
     //La nave del player
     this.player = this.game.add.sprite(this.game.width*0.5,this.game.height*0.85,'bird');
-        
+    this.position_initial_y = this.player.position.y;
+    
     this.player.anchor.set(0.5);
-    this.player.scale.setTo(1.5,1.5);
+    this.player.scale.setTo(1.25,1.25);
     var fly = this.player.animations.add('fly');
     this.player.animations.play('fly', 10, true);
     
     this.game.physics.arcade.enable(this.player);
-    this.player.body.collideWorldBounds = Configuracion.Player.collideWorldBounds;
-    
-    console.log("create player")
-    //this.bulletPlayer.create();
+    this.player.body.collideWorldBounds = false;
 }
 
 Player.prototype.getsprite = function(){
 	return this.player;
 }
 
-Player.prototype.update = function(bulletsObject){
+Player.prototype.update = function(plataformas){
+    a =this.game.physics.arcade.collide(this.player, plataformas);
+    
+    this.player.body.velocity.y = 0;
     this.player.body.velocity.x = 0;
+    
+    if (!a && this.player.position.y > this.position_initial_y)
+    {
+        if (this.player.position.y - 120 < this.position_inicial_y)
+        {
+            this.player.body.velocity.y = this.player.position.y - this.position_initial_y;
+        }
+        else
+        {
+            this.player.body.velocity.y = -120;
+        }
+    }
+    
+    if (this.player.position.y > 625)
+    {
+        this.game.state.start('over');
+    }
     
     if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT) || this.game.input.keyboard.isDown(Phaser.Keyboard.A))
     {
@@ -34,5 +52,18 @@ Player.prototype.update = function(bulletsObject){
     {
         this.player.body.velocity.x = Configuracion.Player.speedX;
     }
+    
+    this.screenWrap();
+}
 
+Player.prototype.screenWrap = function()
+{
+    if (this.player.x +Configuracion.Player.padding< 0)
+    {
+        this.player.x = this.game.width + Configuracion.Player.padding;
+    }
+    else if (this.player.x - Configuracion.Player.padding> this.game.width)
+    {
+        this.player.x = -Configuracion.Player.padding;
+    }
 };

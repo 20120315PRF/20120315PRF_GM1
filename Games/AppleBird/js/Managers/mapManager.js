@@ -15,9 +15,22 @@ MapManager.prototype.create = function(){
     
     this.clouds = [cloud1, cloud2, cloud3, cloud4, cloud5, cloud6];
     
+    this.platforms_kill = 0;
+    
     for (i = 0; i < this.clouds.length; i++) { 
         this.clouds[i].scale.setTo(1.5,1.5);
     };
+    
+    this.plataformas1 = game.add.group();
+    this.plataformas1.enableBody = true;
+    this.plataformas1.physicsBodyType = Phaser.Physics.ARCADE;
+    this.plataformas1.createMultiple(30,'platform1Sprite');
+
+    this.generarPlataforma(350);
+    this.generarPlataforma(125);
+    this.generarPlataforma(-100);
+    this.generarPlataforma(-325);
+
 }
 
 MapManager.prototype.update = function(){
@@ -29,4 +42,45 @@ MapManager.prototype.update = function(){
             this.clouds[i].position.y = -500
         }
     }; 
+
+    var kill = 0;
+    this.plataformas1.forEachAlive(function(plataforma){
+        if (plataforma.position.y > 700)
+        {
+            kill = 1;
+            plataforma.kill();       
+        }
+    });
+    if (kill)
+    {
+        this.generarPlataforma(-180);
+        this.platforms_kill = 0;
+    }
 };
+
+
+MapManager.prototype.generarPlataforma = function(posY){
+    pos = rand(0,Plataformas.length);
+    
+    positionX=Plataformas[pos].slice();
+    
+    len = positionX.length;
+    for (i=0;i<len;++i)
+    {
+        var platform1 = this.plataformas1.getFirstExists(false);
+        if (platform1)
+        {
+            rnd = rand(0,positionX.length)
+            platform1.reset(positionX[rnd],posY);
+            platform1.body.immovable = true;
+            platform1.scale.setTo(1,0.75);
+            platform1.body.velocity.y = 100;
+            positionX.splice(rnd, 1);
+        }
+    }
+}
+
+MapManager.prototype.getPlataformas = function()
+{
+    return this.plataformas1
+}

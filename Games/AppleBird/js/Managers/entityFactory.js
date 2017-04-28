@@ -17,8 +17,8 @@ entityFactory.prototype.create = function(){
     this.HUD.create();
 }
 
-entityFactory.prototype.update = function(){
-    this.player.update(this.bulletPlayer);  
+entityFactory.prototype.update = function(plataformas){
+    this.player.update(plataformas);  
 };
 
 

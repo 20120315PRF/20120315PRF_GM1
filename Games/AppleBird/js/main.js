@@ -7,7 +7,7 @@ game.state.add('load',loadState);
 game.state.add('startingGame',startingGameState);
 game.state.add('menu',menuState);
 game.state.add('play',gameState);
-//game.state.add('over',gameOverState);
+game.state.add('over',gameOverState);
 
 game.state.start('boot');
 

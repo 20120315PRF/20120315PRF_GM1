@@ -15,6 +15,20 @@ var Configuracion={
     
 };
 
+var Plataformas=[
+    [0,150,300,450],
+    [0,150,300,600],
+    [0,150,450,600],
+    [0,300,450,600],
+    [150,300,450,600],
+    [0,300,600],
+    [0,300,450],
+    [0,150,450],
+    [150,450,600],
+    [150,300,600],
+    [150,450,600],
+    [150,300,450]
+]
 var pathSprite = 'Games/AppleBird/assets/images';
 var pathAudio = 'Games/AppleBird/assets/audio';
 
@@ -24,7 +38,8 @@ var Sprites={
     apple:pathSprite+'/apple.png',
     clouds_json:pathSprite+'/Clouds.json',
     clouds_png:pathSprite+'/Clouds.png',
-    platform:pathSprite+'/platform.png',
+    platform1:pathSprite+'/platform1.png',
+    platform2:pathSprite+'/platform2.png',
     loadBar:pathSprite+'/loadBar.png',
 };
 

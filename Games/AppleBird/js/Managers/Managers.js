@@ -12,8 +12,9 @@ ManagersClass.prototype.create = function(){
 
 ManagersClass.prototype.update = function(){
 //    this.gameMgr.update();  
-    this.mapMgrs.update(); 
+    this.mapMgr.update(); 
+}
+ManagersClass.prototype.getMapMgr= function()
+{
+    return this.mapMgr;
 };
-
-
-
