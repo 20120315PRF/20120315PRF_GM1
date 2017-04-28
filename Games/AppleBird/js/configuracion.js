@@ -8,8 +8,8 @@ var Configuracion={
         padding:16,
     },
     Game:{
-        velocityDescending:5,
-        dificulty:1,
+        velocityDescendingInitial:175,
+        velocityDescendingCurrent:175,
         scoreApple:1
     },
     

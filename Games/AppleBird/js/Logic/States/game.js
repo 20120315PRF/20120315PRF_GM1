@@ -14,6 +14,7 @@ var gameState ={
     },
     create:function()
     { 
+        Configuracion.Game.velocityDescendingCurrent = Configuracion.Game.velocityDescendingInitial;
         Managers.create();
         this.entityFactory.create();
         

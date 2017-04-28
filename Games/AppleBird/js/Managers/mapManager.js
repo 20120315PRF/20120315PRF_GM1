@@ -45,6 +45,7 @@ MapManager.prototype.update = function(){
 
     var kill = 0;
     this.plataformas1.forEachAlive(function(plataforma){
+        plataforma.body.velocity.y = Configuracion.Game.velocityDescendingCurrent;
         if (plataforma.position.y > 700)
         {
             kill = 1;
@@ -74,7 +75,6 @@ MapManager.prototype.generarPlataforma = function(posY){
             platform1.reset(positionX[rnd],posY);
             platform1.body.immovable = true;
             platform1.scale.setTo(1,0.75);
-            platform1.body.velocity.y = 100;
             positionX.splice(rnd, 1);
         }
     }
