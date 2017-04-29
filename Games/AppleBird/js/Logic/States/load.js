@@ -14,6 +14,7 @@ var loadState={
         this.game.load.image('platform2Sprite',Sprites.platform2);
         
         this.game.load.audio('snd_apple',[Audios.snd_apple]);
+        this.game.load.image('heart',Sprites.heart );
         
         this.game.load.audio('snd_death',[Audios.snd_death]);
         this.game.load.audio('snd_ambiental',[Audios.snd_ambiental]);

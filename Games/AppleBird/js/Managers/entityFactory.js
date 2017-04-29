@@ -6,19 +6,18 @@ entityFactory = function(game){
 
     this.player = new Player(this.game);
     this.HUD = new HUD(this.game);
-    
-    //TODO Añadir las plataformas + manzana
+    this.clouds = new Clouds(this.game);
 }
 
 entityFactory.prototype.create = function(){
+    this.clouds.create();
     this.player.create();
-    
-    //TODO añadir las plataformas + manzanas
     this.HUD.create();
 }
 
-entityFactory.prototype.update = function(plataformas){
-    this.player.update(plataformas);  
+entityFactory.prototype.update = function(plataformas,apples){
+    this.clouds.update();
+    this.player.update(plataformas,apples);   
 };
 
 

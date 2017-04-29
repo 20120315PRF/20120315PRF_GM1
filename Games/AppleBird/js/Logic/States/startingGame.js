@@ -3,10 +3,6 @@ Este estado se usa para el tiempo de transicion desde cuando se le da a START ha
 */
 
 var startingGameState ={
-    
-    //Variables de gestion de tiempo
-    aux:0,
-    timeToBegin:3,
     //Funciones
     preload:function()
     {
@@ -15,7 +11,9 @@ var startingGameState ={
     create:function()
     { 
         //Inicializamos todas las variables del juego
-        initGlobalsVar();
+        //initGlobalsVar();
+        this.aux = 0;
+        this.timeToBegin = 3;
         
         //Metemos todas las entidades en el juego en forma de sprites, ya que en el siguiente estado, se destruiran
         this.initialEntities();
@@ -63,7 +61,7 @@ var startingGameState ={
     {
         
         //sound_ambiental.play();
-        var sky = this.game.add.tileSprite(0, 0, 750, 600, 'backgroundSprite');
+        var sky = this.game.add.tileSprite(0, 0, 750, 550, 'backgroundSprite');
         cloud1 = this.game.add.sprite(450,100,'cloudsSprites','cloud1');
         cloud2 = this.game.add.sprite(450,500,'cloudsSprites','cloud2');
         cloud3 = this.game.add.sprite(50,300,'cloudsSprites','cloud3');

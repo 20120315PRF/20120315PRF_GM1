@@ -21,9 +21,10 @@ Player.prototype.getsprite = function(){
 	return this.player;
 }
 
-Player.prototype.update = function(plataformas){
+Player.prototype.update = function(plataformas,apple){
     a =this.game.physics.arcade.collide(this.player, plataformas);
     
+    this.game.physics.arcade.overlap(this.player,apple,this.collision_apple,null,this);
     this.player.body.velocity.y = 0;
     this.player.body.velocity.x = 0;
     
@@ -39,9 +40,9 @@ Player.prototype.update = function(plataformas){
         }
     }
     
-    if (this.player.position.y > 625)
+    if (this.player.position.y > 550)
     {
-        this.game.state.start('over');
+        Managers.gameMgr.playerKill();
     }
     
     if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT) || this.game.input.keyboard.isDown(Phaser.Keyboard.A))
@@ -54,6 +55,15 @@ Player.prototype.update = function(plataformas){
     }
     
     this.screenWrap();
+}
+
+Player.prototype.collision_apple = function(player, apple)
+{
+    //this.explosion.createExplosion(enemy.body.x, enemy.body.y);
+    
+    apple.kill();
+    
+    Managers.gameMgr.setScore(Configuracion.Game.scoreApple);
 }
 
 Player.prototype.screenWrap = function()

@@ -7,7 +7,11 @@ HUD = function(game)
 HUD.prototype.create = function()
 {
     //HUD
-    this.tf_score = this.game.add.text(20, this.game.height*0.95, 0, {font: '25px Arial', fill: '#FFFFFF', align: 'center'});
+    this.game.add.sprite(20,10,"heart");
+    
+    this.tf_lives = this.game.add.text(50, 10, Configuracion.Player.livesCurrent, {font: '20px Arial', fill: '#FFFFFF', align: 'center'});
+    
+    this.tf_score = this.game.add.text(650, 10,"0 ("+(Configuracion.Game.scoreHeight>0 && Configuracion.Game.scoreHeight || '-')+")", {font: '25px Arial', fill: '#FFFFFF', align: 'center'});
 }
 
 HUD.prototype.update = function()
@@ -16,5 +20,9 @@ HUD.prototype.update = function()
 }
 
 HUD.prototype.addScore = function(score){
-    this.tf_score.setText(''+score);
+    this.tf_score.setText(score+" ("+(Configuracion.Game.scoreHeight>0 && Configuracion.Game.scoreHeight || '-')+")");
 }
+
+HUD.prototype.setLives = function(lives){
+    this.tf_lives.setText(''+lives);
+};

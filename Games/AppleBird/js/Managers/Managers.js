@@ -1,8 +1,8 @@
 
-ManagersClass = function(game, entityFactory){
+ManagersClass = function(game,entityFactory){
     
-    this.gameMgr = new GameManager(game, entityFactory); 
-    this.mapMgr = new MapManager(game, entityFactory); 
+    this.gameMgr = new GameManager(game,entityFactory); 
+    this.mapMgr = new MapManager(game,entityFactory); 
 }
 
 ManagersClass.prototype.create = function(){
@@ -17,4 +17,9 @@ ManagersClass.prototype.update = function(){
 ManagersClass.prototype.getMapMgr= function()
 {
     return this.mapMgr;
+};
+
+ManagersClass.prototype.gameMgr= function()
+{
+    return this.gameMgr;
 };
