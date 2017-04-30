@@ -7,12 +7,11 @@ var loadState={
         this.load.setPreloadSprite(this.preloadBar);
         
         this.game.load.image('bulletSprite',Sprites.bulletPlayer);
+        this.game.load.image('bulletSpriteEnemy',Sprites.bulletEnemy);
         this.game.load.image('playerSprite',Sprites.player);
         
         this.game.load.image('enemy1Sprite',Sprites.enemy1);
         this.game.load.image('enemy2Sprite',Sprites.enemy2);
-        this.game.load.image('enemy3Sprite',Sprites.enemy1);
-        this.game.load.image('enemy4Sprite',Sprites.enemy1);
 
 
         this.game.load.audio('snd_star',[Audios.snd_shoot]);

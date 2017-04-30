@@ -14,7 +14,7 @@ bulletEnemy.prototype.create = function()
     this.bulletsEnemy.enableBody = true;
     this.bulletsEnemy.physicsBodyType = Phaser.Physics.ARCADE;
     
-    this.bulletsEnemy.createMultiple(30, 'bulletSprite');
+    this.bulletsEnemy.createMultiple(30, 'bulletSpriteEnemy');
     this.bulletsEnemy.setAll('anchor.x', Configuracion.Bullet.scaleX);
     this.bulletsEnemy.setAll('anchor.y', Configuracion.Bullet.scaleY);
     this.bulletsEnemy.setAll('checkWorldBounds', true);
@@ -50,7 +50,7 @@ bulletEnemy.prototype.fireBullet = function(posX, posY, rotation)
     if (bullet)
     {
         this.snd_bullet.play();
-
+        bullet.scale.setTo(2,1);
         bullet.reset(posX,posY+8);
         bullet.rotation = rotation;
         this.game.physics.arcade.velocityFromRotation(bullet.rotation, Configuracion.Bullet.speed, bullet.body.velocity);

@@ -40,13 +40,12 @@ var pathAudio = 'Games/Space_Invaders/assets/audio';
 
 var Sprites={
     space:pathSprite+'/space.png',
-    player:pathSprite+'/ship4.png',
+    player:pathSprite+'/ship.png',
     heart:pathSprite+'/heart.png',
-    enemy1:pathSprite+'/enemy1.png',
-    enemy2:pathSprite+'/enemy3.png',
-    enemy3:pathSprite+'/enemy3.png',
-    enemy4:pathSprite+'/enemy4.png',
+    enemy1:pathSprite+'/enemy6.png',
+    enemy2:pathSprite+'/enemy5.png',
     bulletPlayer:pathSprite+'/bullets.png',
+    bulletEnemy:pathSprite+'/bulletsEnemy.png',
     explosion:pathSprite+'/explode.png',
     loadBar:pathSprite+'/loadBar.png',
     menu:this.pathSprite+'/menu.png',
