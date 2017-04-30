@@ -13,7 +13,8 @@ Logic.MapGenerator.init = function()
         Logic.MapGenerator._instance = new Logic.MapGenerator();
         Logic.MapGenerator._semaphore = 0;
     }
-    game.load.image('space',path+'/assets/images/space2.png');
+    game.load.image('space',path+'/assets/images/space30.png');
+    game.load.image('Saturno',path+'/assets/images/Saturno.png');
     return true;
 }
 
@@ -26,8 +27,9 @@ Logic.MapGenerator.prototype =
     
     preload:function()
     {
-        var sky = game.add.sprite(-70,-5,'space');
-        sky.scale.setTo(1.9,1.9);
+        var sky = game.add.sprite(0,0,'space');
+        game.add.sprite(150,80,'Saturno');
+        //sky.scale.setTo(1.9,1.9);
         
         sky.inputEnabled = true;
         

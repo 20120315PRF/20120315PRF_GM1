@@ -6,10 +6,10 @@ var loadState={
         
         game.load.image('bulletSprite',path+'/assets/images/bullets.png');
         game.load.image('playerSprite',path+'/assets/images/ship4.png');
-        game.load.image('AsteroidSmallSprite',path+'/assets/images/asteroid1.png');
-        game.load.image('AsteroidMediumSprite', path+'/assets/images/asteroid24.png');
-        game.load.image('AsteroidLargeSprite', path+'/assets/images/asteroid1.png');
-        game.load.image('AsteroidVerySmallSprite', path+'/assets/images/asteroid24.png');
+        game.load.image('AsteroidSmallSprite',path+'/assets/images/asteroid32.png');
+        game.load.image('AsteroidMediumSprite', path+'/assets/images/asteroid32.png');
+        game.load.image('AsteroidLargeSprite', path+'/assets/images/asteroid32.png');
+        game.load.image('AsteroidVerySmallSprite', path+'/assets/images/asteroid32.png');
 
         game.load.audio('snd_star',[path+'/assets/audio/shoot.wav']);
         game.load.audio('snd_ambiental',[path+'/assets/audio/space2.ogg']);
