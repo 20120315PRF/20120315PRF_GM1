@@ -18,7 +18,7 @@ var loadState={
         game.load.image('startButton',path+'/assets/images/startButton.png');
         game.load.image('menu-bg',path+'/assets/images/menu.jpg' );
         
-        game.load.image('cursor',path+'/assets/images/cursor.png' );
+       // game.load.image('cursor',path+'/assets/images/cursor.png' );
         
         game.load.image('smokeAsteroids',path+'/assets/images/Smoke10.png' );
         game.load.image('heart',path+'/assets/images/heart.png' );

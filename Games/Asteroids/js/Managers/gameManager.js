@@ -54,11 +54,11 @@ Managers.GameManager.prototype =
         Logic.EntityFactory.getinstance().update();
 
         //Esto es para cambiar el cursor cuando se sale de la pestaña del juego
-        if( game.canvas.style.cursor == 'inherit')
-        {
-            game.canvas.style.cursor = 'url(Games/Asteroids/assets/images/cursor.png),auto';
-            console.log("Cambio de cursor");
-        }
+//        if( game.canvas.style.cursor == 'inherit')
+//        {
+//            game.canvas.style.cursor = 'url(Games/Asteroids/assets/images/cursor.png),auto';
+//            console.log("Cambio de cursor");
+//        }
     },
 
     resetShip:function()

@@ -14,7 +14,7 @@ Clouds.prototype.create = function(){
     this.clouds = [cloud1, cloud2, cloud3, cloud4, cloud5, cloud6];
 
     for (i = 0; i < this.clouds.length; i++) { 
-        this.clouds[i].scale.setTo(1.5,1.5);
+        this.clouds[i].scale.setTo(1,1);
     };
 }
 Clouds.prototype.update = function(){

@@ -31,9 +31,9 @@ var menuState = {
         cloud1.scale.setTo(4,5);cloud2.scale.setTo(2,2);cloud3.scale.setTo(2,2);
         cloud5.scale.setTo(1,1);cloud4.scale.setTo(1.5,1.5);
         
-        this.game.add.text(this.game.width*0.23, 20, "APPLE BIRD",{font: 'bold 60pt ponderada',fill: '#FDFFB5', align: 'center' });
+//        this.game.add.text(this.game.width*0.23, 20, "APPLE BIRD",{font: 'bold 60pt ponderada',fill: '#FDFFB5', align: 'center' });
         
-        this.addButton(270,230,"START",'bold 60pt ponderada','#000000','center',this.startGame);
+        this.addButton(270,280,"START",'bold 60pt','#000000','center',this.startGame);
         //this.addButton(50,375,"OPTIONS",'bold 30pt TheMinion','#FFFFFF','center');
         //this.addButton(50,450,"CREDITS",'bold 30pt TheMinion','#FFFFFF','center');
         

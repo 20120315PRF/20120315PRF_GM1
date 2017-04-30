@@ -65,9 +65,6 @@ var startingGameState ={
         cloud1 = this.game.add.sprite(450,100,'cloudsSprites','cloud1');
         cloud2 = this.game.add.sprite(450,500,'cloudsSprites','cloud2');
         cloud3 = this.game.add.sprite(50,300,'cloudsSprites','cloud3');
-        cloud1.scale.setTo(1.5,1.5);
-        cloud2.scale.setTo(1.5,1.5);
-        cloud3.scale.setTo(1.5,1.5);
         
         var player = this.game.add.sprite(this.game.width*0.5,this.game.height*0.85,'bird');
         

@@ -21,7 +21,7 @@ var loadState={
         this.game.load.image('menu-bg', Sprites.menu );
         
         this.game.load.image('heart',Sprites.heart );
-        
+        this.game.load.image('space',Sprites.space);
         this.game.load.spritesheet('explosionSprite', Sprites.explosion, 25, 25, 18);
     },
     create:function()

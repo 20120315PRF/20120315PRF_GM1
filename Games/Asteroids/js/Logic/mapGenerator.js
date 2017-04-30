@@ -35,10 +35,10 @@ Logic.MapGenerator.prototype =
         
         sky.inputEnabled = true;
         
-        sky.events.onInputOver.add(function(){
-            game.canvas.style.cursor = 'url(Games/Asteroids/assets/images/cursor.png),auto'
-
-        }, this);
+//        sky.events.onInputOver.add(function(){
+//            game.canvas.style.cursor = 'url(Games/Asteroids/assets/images/cursor.png),auto'
+//
+//        }, this);
     },
     
     create:function()

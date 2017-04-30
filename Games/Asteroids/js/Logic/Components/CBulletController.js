@@ -47,7 +47,7 @@ Components.CBulletController.prototype.fireBullet=function()
         {
             this.snd_bullet.play();
             var player = globalVar.player.entityGraphic;
-            bullet.reset(player.body.x+16, player.body.y+11);
+            bullet.reset(player.body.x+16, player.body.y+16);
             bullet.lifespan = getAttributeEntity("life","Bullet");
             bullet.rotation = player.rotation;
             game.physics.arcade.velocityFromRotation(player.rotation, 400, bullet.body.velocity);

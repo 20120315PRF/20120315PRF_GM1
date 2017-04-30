@@ -26,7 +26,7 @@ var menuState = {
     },
     create:function()
     {         
-        var menuBG = this.game.add.sprite(0,100,'menu-bg');
+        var menuBG = this.game.add.sprite(0,0,'space');
         menuBG.scale.setTo(1,1.25);
         
         this.game.add.text(this.game.width*0.1, 20, "SPACE INVADERS",{font: 'bold 40pt ponderada',fill: '#FDFFB5', align: 'center' });

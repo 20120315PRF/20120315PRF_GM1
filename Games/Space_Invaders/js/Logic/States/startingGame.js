@@ -11,7 +11,7 @@ var startingGameState ={
     preload:function()
     {
         this.game=game;
-        this.game.load.image('space',Sprites.space);
+        
     },
     create:function()
     { 
