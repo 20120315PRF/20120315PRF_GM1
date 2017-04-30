@@ -15,6 +15,7 @@ Logic.MapGenerator.init = function()
     }
     game.load.image('space',path+'/assets/images/space30.png');
     game.load.image('Saturno',path+'/assets/images/Saturno.png');
+    game.load.image('planeta1',path+'/assets/images/planeta1.png');
     return true;
 }
 
@@ -28,7 +29,8 @@ Logic.MapGenerator.prototype =
     preload:function()
     {
         var sky = game.add.sprite(0,0,'space');
-        game.add.sprite(150,80,'Saturno');
+        game.add.sprite(120,50,'Saturno');
+        game.add.sprite(690,2,'planeta1');
         //sky.scale.setTo(1.9,1.9);
         
         sky.inputEnabled = true;

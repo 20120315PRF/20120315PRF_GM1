@@ -5,7 +5,7 @@ var loadState={
         this.load.setPreloadSprite(this.preloadBar);
         
         game.load.image('bulletSprite',path+'/assets/images/bullets.png');
-        game.load.image('playerSprite',path+'/assets/images/ship4.png');
+        game.load.image('playerSprite',path+'/assets/images/ship3.png');
         game.load.image('AsteroidSmallSprite',path+'/assets/images/asteroid32.png');
         game.load.image('AsteroidMediumSprite', path+'/assets/images/asteroid32.png');
         game.load.image('AsteroidLargeSprite', path+'/assets/images/asteroid32.png');

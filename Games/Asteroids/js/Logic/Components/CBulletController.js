@@ -47,7 +47,7 @@ Components.CBulletController.prototype.fireBullet=function()
         {
             this.snd_bullet.play();
             var player = globalVar.player.entityGraphic;
-            bullet.reset(player.body.x+16, player.body.y+16);
+            bullet.reset(player.body.x+16, player.body.y+11);
             bullet.lifespan = getAttributeEntity("life","Bullet");
             bullet.rotation = player.rotation;
             game.physics.arcade.velocityFromRotation(player.rotation, 400, bullet.body.velocity);
@@ -58,21 +58,21 @@ Components.CBulletController.prototype.fireBullet=function()
 
 Components.CBulletController.prototype.screenWrap=function(sprite)
 {
-    if (sprite.x +getAttributeEntity("padding",this._entityType)< 0)
+    if (sprite.x +16< 0)
     {
-        sprite.x = game.width + getAttributeEntity("padding",this._entityType);
+        sprite.x = game.width + 16;
     }
-    else if (sprite.x - getAttributeEntity("padding",this._entityType)> game.width)
+    else if (sprite.x - 16> game.width)
     {
-        sprite.x = -getAttributeEntity("padding",this._entityType);
+        sprite.x = -16;
     }
 
-    if (sprite.y + getAttributeEntity("padding",this._entityType)< 0)
+    if (sprite.y + 11< 0)
     {
-        sprite.y = game.height + getAttributeEntity("padding",this._entityType);
+        sprite.y = game.height + 11;
     }
-    else if (sprite.y - getAttributeEntity("padding",this._entityType) > game.height)
+    else if (sprite.y - 11 > game.height)
     {
-        sprite.y = -getAttributeEntity("padding",this._entityType);
+        sprite.y = -11;
     }
 };
