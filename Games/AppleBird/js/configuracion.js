@@ -53,10 +53,9 @@ var Sprites={
     background:pathSprite+'/Background.png',
     player:pathSprite+'/player1.png',
     apple:pathSprite+'/apple.png',
-    clouds_json:pathSprite+'/Clouds.json',
+    clouds_json:pathSprite+'/clouds.json',
     clouds_png:pathSprite+'/Clouds.png',
     platform1:pathSprite+'/platform1.png',
-    platform2:pathSprite+'/platform2.png',
     loadBar:pathSprite+'/loadBar.png',
     heart:pathSprite+'/heart.png',
 };
