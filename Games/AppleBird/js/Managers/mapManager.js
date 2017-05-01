@@ -75,7 +75,6 @@ MapManager.prototype.generarPlataforma = function(posY,rand_b=undefined){
         {
             posApple = Manzanas[pos][rand(0,2)];
         }
-        console.log("pos APPE: "+posApple);
         apple.reset(posApple,posY);
         apple.anchor.set(0.5);
     }

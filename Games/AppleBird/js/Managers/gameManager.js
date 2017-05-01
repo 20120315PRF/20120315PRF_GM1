@@ -46,7 +46,6 @@ GameManager.prototype.updateDificulty=function()
     
     if(Configuracion.Game.velocityDescendingCurrent<320)
     {
-        console.log("vel: "+Configuracion.Game.velocityDescendingCurrent);
         Configuracion.Game.velocityDescendingCurrent += 4;
     }
     

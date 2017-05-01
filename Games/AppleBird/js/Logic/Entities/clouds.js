@@ -12,10 +12,6 @@ Clouds.prototype.create = function(){
     cloud6 = this.game.add.sprite(50,-500,'cloudsSprites','cloud6');
     
     this.clouds = [cloud1, cloud2, cloud3, cloud4, cloud5, cloud6];
-
-    for (i = 0; i < this.clouds.length; i++) { 
-        this.clouds[i].scale.setTo(1,1);
-    };
 }
 Clouds.prototype.update = function(){
     for (i = 0; i < this.clouds.length; i++) { 
@@ -26,4 +22,4 @@ Clouds.prototype.update = function(){
             this.clouds[i].position.y = -500
         }
     }; 
-}
+};
