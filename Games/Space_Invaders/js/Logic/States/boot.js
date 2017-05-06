@@ -5,6 +5,8 @@ var bootState=
     {
         this.game=game;
         this.game.load.image('loadBar',Sprites.loadBar);
+        this.game.stage.disableVisibilityChange = true;
+        this.game.config.forceSetTimeOut = true;
     },
     create:function()
     {

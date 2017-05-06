@@ -3,6 +3,7 @@ var bootState=
     preload:function()
     {
         game.load.image('loadBar',path+'/assets/images/loadBar.png');
+        //game.stage.disableVisibilityChange = true;
     },
     create:function()
     {

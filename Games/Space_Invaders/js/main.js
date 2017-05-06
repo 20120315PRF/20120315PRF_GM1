@@ -1,5 +1,6 @@
 //game representa el juego
-var game = new Phaser.Game(750, 600, Phaser.AUTO, 'game-frame');
+var config = {forceSetTimeOut: true, width:750, height:600, renderer:Phaser.AUTO, parent:'game-frame'};
+var game = new Phaser.Game(config);
 
 //Definimos los distintos estados del juego
 game.state.add('boot',bootState);
